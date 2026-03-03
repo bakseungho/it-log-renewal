@@ -1,0 +1,10 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 로고 아이콘 -->
+  <rect x="2" y="8" width="24" height="24" rx="4" fill="#2563EB"/>
+  <path d="M14 14L14 26M10 20L18 20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 회사명 텍스트 -->
+  <text x="32" y="26" font-family="Pretendard, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1E293B">
+    (주)아이티로그
+  </text>
+</svg>
