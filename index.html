@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="웹사이트 리뉴얼 프로젝트 - 3가지 테마 템플릿 모음">
+  <title>Website Renewal Project - Template Showcase</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+      color: white;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .header p {
+      font-size: 20px;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    .templates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .template-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .template-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    }
+
+    .template-preview {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .template-preview::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    }
+
+    .template1 .template-preview {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .template2 .template-preview {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .template3 .template-preview {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      position: relative;
+    }
+
+    .template3 .template-preview::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(0, 217, 255, 0.2) 0%, transparent 50%);
+    }
+
+    .template-content {
+      padding: 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .template-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .template1 .template-badge {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .template2 .template-badge {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+    }
+
+    .template3 .template-badge {
+      background: linear-gradient(135deg, #d4af37 0%, #00d9ff 100%);
+      color: #0a0a0a;
+    }
+
+    .template-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+    }
+
+    .template-description {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .template-features {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .template-features li {
+      font-size: 14px;
+      color: #888;
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .template-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #667eea;
+      font-weight: 700;
+    }
+
+    .template2 .template-features li::before {
+      color: #f5576c;
+    }
+
+    .template3 .template-features li::before {
+      color: #d4af37;
+    }
+
+    .template-link {
+      display: block;
+      text-align: center;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      color: white;
+    }
+
+    .template1 .template-link {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .template1 .template-link:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .template2 .template-link {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .template2 .template-link:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 20px rgba(245, 87, 108, 0.4);
+    }
+
+    .template3 .template-link {
+      background: linear-gradient(135deg, #d4af37 0%, #00d9ff 100%);
+      color: #0a0a0a;
+    }
+
+    .template3 .template-link:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+    }
+
+    .footer {
+      text-align: center;
+      color: white;
+      opacity: 0.8;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 32px;
+      }
+
+      .header p {
+        font-size: 16px;
+      }
+
+      .templates {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .template-content {
+        padding: 24px;
+      }
+
+      .template-title {
+        font-size: 24px;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .template-card {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .template-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .template-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .template-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Website Renewal Project</h1>
+      <p>3가지 테마로 제작된 웹사이트 템플릿 모음</p>
+    </div>
+
+    <div class="templates">
+      <!-- Template 1 -->
+      <div class="template-card template1">
+        <div class="template-preview"></div>
+        <div class="template-content">
+          <span class="template-badge">Template 1</span>
+          <h2 class="template-title">Modern & Clean</h2>
+          <p class="template-description">
+            모던하고 깔끔한 디자인의 기본 템플릿입니다. 
+            심플한 레이아웃과 직관적인 네비게이션으로 사용자 경험을 최적화했습니다.
+          </p>
+          <ul class="template-features">
+            <li>반응형 디자인</li>
+            <li>깔끔한 UI/UX</li>
+            <li>빠른 로딩 속도</li>
+          </ul>
+          <a href="web/template1/index.html" class="template-link">템플릿 보기 →</a>
+        </div>
+      </div>
+
+      <!-- Template 2 -->
+      <div class="template-card template2">
+        <div class="template-preview"></div>
+        <div class="template-content">
+          <span class="template-badge">Template 2</span>
+          <h2 class="template-title">Vibrant & Dynamic</h2>
+          <p class="template-description">
+            생동감 있고 역동적인 디자인의 템플릿입니다. 
+            화려한 그라데이션과 애니메이션으로 시선을 사로잡습니다.
+          </p>
+          <ul class="template-features">
+            <li>그라데이션 디자인</li>
+            <li>부드러운 애니메이션</li>
+            <li>인터랙티브 요소</li>
+          </ul>
+          <a href="web/template2/index.html" class="template-link">템플릿 보기 →</a>
+        </div>
+      </div>
+
+      <!-- Template 3 -->
+      <div class="template-card template3">
+        <div class="template-preview"></div>
+        <div class="template-content">
+          <span class="template-badge">Template 3</span>
+          <h2 class="template-title">Dark & Premium</h2>
+          <p class="template-description">
+            다크 모드 기반의 프리미엄 템플릿입니다. 
+            골드와 시안 포인트 컬러로 고급스러운 분위기를 연출합니다.
+          </p>
+          <ul class="template-features">
+            <li>다크 모드 디자인</li>
+            <li>GSAP 애니메이션</li>
+            <li>풀스크린 히어로</li>
+          </ul>
+          <a href="web/template3/index.html" class="template-link">템플릿 보기 →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© 2024 Website Renewal Project. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
