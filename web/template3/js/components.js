@@ -27,6 +27,13 @@ class HeaderNav {
         this.header.classList.remove('scrolled');
       }
       
+      // Hide/show header on scroll
+      if (currentScroll > lastScroll && currentScroll > 300) {
+        this.header.style.transform = 'translateY(-100%)';
+      } else {
+        this.header.style.transform = 'translateY(0)';
+      }
+      
       lastScroll = currentScroll;
     }, 100));
   }
@@ -336,11 +343,26 @@ class Lightbox {
 class ScrollAnimations {
   constructor() {
     this.elements = document.querySelectorAll('.fade-in, .scale-in');
-    this.init();
+    if (this.elements.length > 0) {
+      this.init();
+    }
   }
 
   init() {
-    this.observe();
+    // Only use IntersectionObserver if GSAP is not available
+    if (typeof gsap === 'undefined') {
+      console.log('Using IntersectionObserver for animations');
+      this.observe();
+    } else {
+      // GSAP will handle animations, but ensure elements are marked
+      this.elements.forEach(el => {
+        if (!el.classList.contains('will-animate')) {
+          // If not marked by main.js, make visible immediately
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        }
+      });
+    }
   }
 
   observe() {
@@ -348,23 +370,45 @@ class ScrollAnimations {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'none';
           observer.unobserve(entry.target);
         }
       });
     }, {
       threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
+      rootMargin: '0px 0px -50px 0px'
     });
 
-    this.elements.forEach(el => observer.observe(el));
+    this.elements.forEach(el => {
+      // Ensure elements are visible by default
+      if (!el.classList.contains('will-animate')) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      } else {
+        observer.observe(el);
+      }
+    });
   }
 }
 
 // Initialize components
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize header navigation
   new HeaderNav();
-  new FormValidator('#contact-form');
+  
+  // Initialize form validation if form exists
+  const contactForm = document.querySelector('#contact-form');
+  if (contactForm) {
+    new FormValidator('#contact-form');
+  }
+  
+  // Initialize lightbox
   new Lightbox();
+  
+  // Initialize scroll animations (fallback for non-GSAP)
   new ScrollAnimations();
+  
+  // Lazy load images
   lazyLoadImages();
 });

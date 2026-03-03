@@ -25,14 +25,14 @@
 }
 
 .btn-secondary {
-  background: var(--gradient-cyan);
+  background: var(--gradient-gold);
   color: var(--color-bg-primary);
-  box-shadow: 0 4px 16px rgba(0, 217, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
 }
 
 .btn-secondary:hover {
   transform: scale(1.05);
-  box-shadow: var(--shadow-glow-cyan);
+  box-shadow: var(--shadow-glow-gold);
 }
 
 .btn-outline {
@@ -89,19 +89,35 @@
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-glow-gold);
   border-color: var(--color-accent-gold);
 }
 
 .card-solution {
   text-align: center;
+  display: block;
+  text-decoration: none;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  will-change: transform;
+}
+
+.card-solution:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-glow-gold);
+  border-color: var(--color-accent-gold);
 }
 
 .card-solution .icon {
   width: 64px;
   height: 64px;
   margin: 0 auto 24px;
+  color: var(--color-accent-gold);
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.card-solution:hover .icon {
+  transform: scale(1.15) rotate(5deg);
   color: var(--color-accent-gold);
 }
 
@@ -162,6 +178,14 @@
 .card-stat {
   text-align: center;
   padding: 40px 24px;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-stat:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-glow-gold);
 }
 
 .card-stat .number {

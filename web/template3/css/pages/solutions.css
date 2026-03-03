@@ -61,6 +61,8 @@
 .overview-content {
   max-width: 1000px;
   margin: 0 auto;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .overview-title {
@@ -90,6 +92,8 @@
   border-radius: var(--radius-lg);
   padding: 32px;
   transition: all 0.4s var(--ease-smooth);
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .feature-item:hover {
@@ -100,7 +104,7 @@
 .feature-icon {
   width: 48px;
   height: 48px;
-  color: var(--color-accent-cyan);
+  color: var(--color-accent-gold);
   margin-bottom: 20px;
 }
 
@@ -138,6 +142,8 @@
   border-radius: var(--radius-lg);
   padding: 40px;
   text-align: center;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .diagram-image {
@@ -183,6 +189,8 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all 0.4s var(--ease-smooth);
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .case-item:hover {

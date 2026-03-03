@@ -9,7 +9,7 @@
   background: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(10px);
   z-index: var(--z-fixed);
-  transition: all var(--transition-base) var(--ease-smooth);
+  transition: all var(--transition-base) var(--ease-smooth), transform 0.3s ease;
 }
 
 .header.scrolled {
@@ -213,7 +213,7 @@
 }
 
 .header-mobile-submenu-item:hover {
-  color: var(--color-accent-cyan);
+  color: var(--color-accent-gold);
 }
 
 /* Responsive */

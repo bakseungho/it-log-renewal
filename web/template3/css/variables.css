@@ -15,10 +15,6 @@
   --color-accent-gold-rgb: 212, 175, 55;
   --color-accent-gold-light: #e6c966;
   --color-accent-gold-dark: #b8941f;
-  --color-accent-cyan: #00d9ff;
-  --color-accent-cyan-rgb: 0, 217, 255;
-  --color-accent-cyan-light: #33e3ff;
-  --color-accent-cyan-dark: #00b8d9;
 
   /* Colors - Text */
   --color-text-primary: #ffffff;
@@ -37,13 +33,12 @@
   --color-warning-bg: rgba(255, 170, 0, 0.1);
   --color-error: #ff4444;
   --color-error-bg: rgba(255, 68, 68, 0.1);
-  --color-info: #00d9ff;
-  --color-info-bg: rgba(0, 217, 255, 0.1);
+  --color-info: #d4af37;
+  --color-info-bg: rgba(212, 175, 55, 0.1);
 
   /* Gradients */
   --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   --gradient-gold: linear-gradient(135deg, #d4af37 0%, #e6c966 100%);
-  --gradient-cyan: linear-gradient(135deg, #00d9ff 0%, #00b8d9 100%);
   --gradient-overlay: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.8) 100%);
 
   /* Typography */
@@ -111,7 +106,6 @@
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
   --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
   --shadow-glow-gold: 0 0 40px rgba(212, 175, 55, 0.3);
-  --shadow-glow-cyan: 0 0 40px rgba(0, 217, 255, 0.3);
 
   /* Blur */
   --blur-sm: blur(4px);

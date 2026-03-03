@@ -85,8 +85,8 @@ h4, .h4 {
   color: var(--color-accent-gold);
 }
 
-.text-cyan {
-  color: var(--color-accent-cyan);
+.text-gold {
+  color: var(--color-accent-gold);
 }
 
 .text-secondary {
@@ -141,10 +141,16 @@ h4, .h4 {
   border-width: 0;
 }
 
+/* Animation classes - with fallback for immediate visibility */
 .fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.will-animate {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .fade-in.active {
@@ -152,10 +158,27 @@ h4, .h4 {
   transform: translateY(0);
 }
 
+/* Fallback: Show elements after 100ms if animation doesn't trigger */
+.fade-in.will-animate {
+  animation: fadeInFallback 0.1s ease 0.1s forwards;
+}
+
+@keyframes fadeInFallback {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .scale-in {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scale-in.will-animate {
   opacity: 0;
   transform: scale(0.8);
-  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .scale-in.active {
@@ -163,10 +186,38 @@ h4, .h4 {
   transform: scale(1);
 }
 
+/* Fallback: Show elements after 100ms if animation doesn't trigger */
+.scale-in.will-animate {
+  animation: scaleInFallback 0.1s ease 0.1s forwards;
+}
+
+@keyframes scaleInFallback {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Focus Styles */
 *:focus {
   outline: 2px solid var(--color-accent-gold);
   outline-offset: 2px;
+}
+
+/* Accessibility: Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in.will-animate,
+  .scale-in.will-animate {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Responsive */

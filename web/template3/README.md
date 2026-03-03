@@ -6,7 +6,7 @@
 **참고 사이트**: https://www.dwce.co.kr/  
 **기술 스택**: HTML5, CSS3, Vanilla JavaScript, jQuery  
 **애니메이션**: GSAP 3.12+, Swiper.js  
-**컬러 테마**: 다크 모드 (#0a0a0a, #1a1a1a) + 골드(#d4af37) + 시안(#00d9ff)
+**컬러 테마**: 다크 모드 (#0a0a0a, #1a1a1a) + 골드(#d4af37)
 
 ## 주요 특징
 
@@ -14,7 +14,7 @@
 - ✅ 다크 모드 기반 프리미엄 디자인
 - ✅ 풀스크린 히어로 슬라이더 (4개 슬라이드)
 - ✅ 대형 타이포그래피 (60-120px)
-- ✅ 골드 + 시안 듀얼 포인트 컬러
+- ✅ 골드 단일 포인트 컬러
 - ✅ 넉넉한 여백 (최소 80px)
 
 ### 인터랙션
@@ -31,6 +31,7 @@
 - ✅ 이미지 레이지 로딩
 - ✅ 폼 유효성 검사
 - ✅ 라이트박스 이미지 갤러리
+- ✅ **Opacity 문제 해결** - 모든 서브페이지 콘텐츠 즉시 표시
 
 ## 파일 구조
 
@@ -150,8 +151,7 @@ web/template3/
 - Black: `#000000`
 
 ### 포인트 컬러
-- Gold: `#d4af37` (프리미엄, 신뢰)
-- Cyan: `#00d9ff` (기술력, 혁신)
+- Gold: `#d4af37` (프리미엄, 신뢰, 혁신)
 
 ### 텍스트
 - Primary: `#ffffff`
@@ -174,6 +174,30 @@ web/template3/
 ## 개발 가이드
 
 자세한 개발 가이드는 `DEVELOPMENT-GUIDE.md`를 참고하세요.
+
+## 최근 업데이트
+
+### 2024-12: 최종 수정 완료 ✅
+- ✅ 시안 컬러(#00d9ff) 완전 제거
+- ✅ 골드 컬러(#d4af37) 단일 액센트로 통일
+- ✅ 회사소개 페이지 완성도 대폭 향상
+- ✅ Icon Box, Stat Card, Gallery Grid 컴포넌트 추가
+- ✅ Timeline 스타일 개선
+- ✅ 모든 페이지 반응형 디자인 완성
+- 📄 상세 내용: `FINAL-FIX-REPORT.md` 참고
+
+### 2024-01: Opacity 문제 수정
+- ✅ 서브페이지 콘텐츠가 즉시 표시되도록 수정
+- ✅ GSAP 폴백 메커니즘 추가
+- ✅ 애니메이션 클래스 구조 개선 (`.will-animate` 도입)
+- ✅ 접근성 향상 (`prefers-reduced-motion` 지원)
+- 📄 상세 내용: `OPACITY-FIX-SUMMARY.md` 참고
+
+## 테스트 페이지
+
+- `opacity-test.html` - Opacity 수정 검증 페이지
+- `animation-test.html` - 애니메이션 테스트 페이지
+- `verify-opacity-fix.js` - 브라우저 콘솔 검증 스크립트
 
 ## 라이선스
 
