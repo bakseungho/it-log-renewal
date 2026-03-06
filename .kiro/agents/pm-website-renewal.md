@@ -23,4 +23,11 @@ When working on website renewal projects:
 - Provide strategic recommendations based on industry best practices
 - Communicate in Korean when the user communicates in Korean
 
+**IMPORTANT - Documentation Policy:**
+- DO NOT create new markdown documentation files unless explicitly requested by the user
+- Focus on strategic analysis and recommendations
+- Only update existing project documents if they already exist and need updates
+- Provide brief summaries in your response instead of creating new files
+- Avoid creating README.md, SUMMARY.md, REPORT.md, or similar documentation files
+
 Be strategic, data-driven, and user-focused in your approach.

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>애니메이션 테스트 - Template3</title>
+  
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header.css">
+  
+  <style>
+    body {
+      background: var(--color-bg-primary);
+      padding-top: 80px;
+    }
+    
+    .test-section {
+      padding: 80px 0;
+      min-height: 100vh;
+    }
+    
+    .test-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    .test-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-accent-gold);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    
+    .test-result {
+      background: var(--color-bg-secondary);
+      padding: 24px;
+      border-radius: 8px;
+      margin-top: 40px;
+    }
+    
+    .test-result h3 {
+      color: var(--color-accent-gold);
+      margin-bottom: 16px;
+    }
+    
+    .test-result ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .test-result li {
+      padding: 8px 0;
+      color: var(--color-text-secondary);
+    }
+    
+    .test-result li.pass::before {
+      content: "✓ ";
+      color: #4ade80;
+      font-weight: bold;
+    }
+    
+    .test-result li.fail::before {
+      content: "✗ ";
+      color: #f87171;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="header-logo-link">
+        <img src="images/logo-white.png" alt="아이티로그" class="header-logo">
+      </a>
+      <nav class="header-nav">
+        <ul class="header-menu">
+          <li><a href="#test1" class="header-menu-item">테스트 1</a></li>
+          <li><a href="#test2" class="header-menu-item">테스트 2</a></li>
+          <li><a href="#test3" class="header-menu-item">테스트 3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Test Section 1: Fade In Animation -->
+  <section id="test1" class="test-section">
+    <div class="test-container">
+      <h2 class="test-title">테스트 1: Fade In 애니메이션</h2>
+      <div class="test-grid">
+        <div class="card card-solution fade-in">
+          <div class="icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="title">카드 1</h3>
+          <p class="description">스크롤 시 페이드인 효과 테스트</p>
+        </div>
+        
+        <div class="card card-solution fade-in">
+          <div class="icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="12" y="12" width="40" height="40" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="title">카드 2</h3>
+          <p class="description">호버 시 위로 이동 효과</p>
+        </div>
+        
+        <div class="card card-solution fade-in">
+          <div class="icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 8L12 20V36C12 46 20 54 32 56C44 54 52 46 52 36V20L32 8Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="title">카드 3</h3>
+          <p class="description">아이콘 확대 효과</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Test Section 2: Counter Animation -->
+  <section id="test2" class="test-section">
+    <div class="test-container">
+      <h2 class="test-title">테스트 2: 카운터 애니메이션</h2>
+      <div class="test-grid">
+        <div class="card-stat">
+          <div class="number">1500+</div>
+          <div class="label">설치 현장</div>
+          <div class="description">전국 주요 건설 현장</div>
+        </div>
+        
+        <div class="card-stat">
+          <div class="number">20년</div>
+          <div class="label">연구개발</div>
+          <div class="description">축적된 기술력</div>
+        </div>
+        
+        <div class="card-stat">
+          <div class="number">200+</div>
+          <div class="label">고객사</div>
+          <div class="description">대기업 및 공공기관</div>
+        </div>
+        
+        <div class="card-stat">
+          <div class="number">99.9%</div>
+          <div class="label">시스템 안정성</div>
+          <div class="description">24/7 무중단 운영</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Test Section 3: Scale In Animation -->
+  <section id="test3" class="test-section">
+    <div class="test-container">
+      <h2 class="test-title">테스트 3: Scale In 애니메이션</h2>
+      <div class="test-grid">
+        <div class="card scale-in" style="padding: 40px; text-align: center;">
+          <h3 style="color: var(--color-accent-gold); margin-bottom: 16px;">Scale 효과 1</h3>
+          <p style="color: var(--color-text-secondary);">스크롤 시 확대되며 나타남</p>
+        </div>
+        
+        <div class="card scale-in" style="padding: 40px; text-align: center;">
+          <h3 style="color: var(--color-accent-gold); margin-bottom: 16px;">Scale 효과 2</h3>
+          <p style="color: var(--color-text-secondary);">부드러운 전환 효과</p>
+        </div>
+        
+        <div class="card scale-in" style="padding: 40px; text-align: center;">
+          <h3 style="color: var(--color-accent-gold); margin-bottom: 16px;">Scale 효과 3</h3>
+          <p style="color: var(--color-text-secondary);">자연스러운 애니메이션</p>
+        </div>
+      </div>
+      
+      <!-- Test Results -->
+      <div class="test-result">
+        <h3>테스트 결과</h3>
+        <ul id="test-results">
+          <li>테스트 실행 중...</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollToPlugin.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+    // Animation Test Script
+    document.addEventListener('DOMContentLoaded', () => {
+      const results = [];
+      const resultsList = document.getElementById('test-results');
+      
+      // Test 1: GSAP 로드 확인
+      if (typeof gsap !== 'undefined') {
+        results.push({ name: 'GSAP 라이브러리 로드', pass: true });
+      } else {
+        results.push({ name: 'GSAP 라이브러리 로드', pass: false });
+      }
+      
+      // Test 2: ScrollTrigger 플러그인 확인
+      if (typeof ScrollTrigger !== 'undefined') {
+        results.push({ name: 'ScrollTrigger 플러그인 로드', pass: true });
+      } else {
+        results.push({ name: 'ScrollTrigger 플러그인 로드', pass: false });
+      }
+      
+      // Test 3: Swiper 로드 확인
+      if (typeof Swiper !== 'undefined') {
+        results.push({ name: 'Swiper 라이브러리 로드', pass: true });
+      } else {
+        results.push({ name: 'Swiper 라이브러리 로드', pass: false });
+      }
+      
+      // Test 4: 애니메이션 요소 확인
+      const fadeInElements = document.querySelectorAll('.fade-in');
+      if (fadeInElements.length > 0) {
+        results.push({ name: `Fade In 요소 발견 (${fadeInElements.length}개)`, pass: true });
+      } else {
+        results.push({ name: 'Fade In 요소 발견', pass: false });
+      }
+      
+      // Test 5: 카운터 요소 확인
+      const counterElements = document.querySelectorAll('.card-stat .number');
+      if (counterElements.length > 0) {
+        results.push({ name: `카운터 요소 발견 (${counterElements.length}개)`, pass: true });
+      } else {
+        results.push({ name: '카운터 요소 발견', pass: false });
+      }
+      
+      // Test 6: Scale In 요소 확인
+      const scaleInElements = document.querySelectorAll('.scale-in');
+      if (scaleInElements.length > 0) {
+        results.push({ name: `Scale In 요소 발견 (${scaleInElements.length}개)`, pass: true });
+      } else {
+        results.push({ name: 'Scale In 요소 발견', pass: false });
+      }
+      
+      // Test 7: 헤더 요소 확인
+      const header = document.querySelector('.header');
+      if (header) {
+        results.push({ name: '헤더 요소 발견', pass: true });
+      } else {
+        results.push({ name: '헤더 요소 발견', pass: false });
+      }
+      
+      // Test 8: 카드 호버 효과 확인
+      const cards = document.querySelectorAll('.card-solution, .card-stat');
+      if (cards.length > 0) {
+        results.push({ name: `호버 효과 카드 발견 (${cards.length}개)`, pass: true });
+      } else {
+        results.push({ name: '호버 효과 카드 발견', pass: false });
+      }
+      
+      // Display results
+      resultsList.innerHTML = '';
+      results.forEach(result => {
+        const li = document.createElement('li');
+        li.className = result.pass ? 'pass' : 'fail';
+        li.textContent = result.name;
+        resultsList.appendChild(li);
+      });
+      
+      // Summary
+      const passCount = results.filter(r => r.pass).length;
+      const totalCount = results.length;
+      const summary = document.createElement('li');
+      summary.style.marginTop = '16px';
+      summary.style.fontWeight = 'bold';
+      summary.style.color = passCount === totalCount ? '#4ade80' : '#f87171';
+      summary.textContent = `총 ${totalCount}개 테스트 중 ${passCount}개 통과`;
+      resultsList.appendChild(summary);
+      
+      // Console log for debugging
+      console.log('=== 애니메이션 테스트 결과 ===');
+      results.forEach(result => {
+        console.log(`${result.pass ? '✓' : '✗'} ${result.name}`);
+      });
+      console.log(`총 ${totalCount}개 테스트 중 ${passCount}개 통과`);
+    });
+  </script>
+</body>
+</html>

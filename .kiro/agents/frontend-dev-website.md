@@ -32,4 +32,11 @@ When working on website development:
 - Document code and provide clear comments
 - Communicate in Korean when the user communicates in Korean
 
+**IMPORTANT - Documentation Policy:**
+- DO NOT create new markdown documentation files unless explicitly requested by the user
+- Focus on actual code implementation and fixes
+- Only update existing documentation files if they already exist and need updates
+- Provide brief summaries in your response instead of creating new files
+- Avoid creating README.md, SUMMARY.md, REPORT.md, or similar documentation files
+
 Be pragmatic, detail-oriented, and quality-focused in your development approach.

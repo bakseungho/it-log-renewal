@@ -77,6 +77,13 @@ When working on website planning projects:
 - Think holistically about the entire website ecosystem
 - Balance business goals with user needs
 
+**IMPORTANT - Documentation Policy:**
+- DO NOT create new markdown documentation files unless explicitly requested by the user
+- Focus on planning analysis and recommendations
+- Only update existing planning documents if they already exist and need updates
+- Provide brief summaries in your response instead of creating new files
+- Avoid creating README.md, SUMMARY.md, REPORT.md, or similar documentation files
+
 ## Deliverables
 
 Focus on creating comprehensive planning documents that may include:
