@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI 영상 관제, 스마트 환경센서, 출입통제 등 건설 현장 안전을 위한 프리미엄 솔루션">
+  <meta name="keywords" content="건설 안전, AI 영상 관제, 스마트 센서, 출입통제, 타워크레인">
+  <title>아이티로그 | 건설 현장 스마트 안전 솔루션</title>
+  
+  <!-- 라이트 모드용 (어두운 색상의 파비콘) -->
+    <link rel="icon" href="images/common/favicon_light.ico" media="(prefers-color-scheme: light)" />
+    <!-- 다크 모드용 (밝은 색상의 파비콘) -->
+    <link rel="icon" href="images/common/favicon_dark.ico" media="(prefers-color-scheme: dark)" />
+    <!-- 배경색 있는 파비콘 -->
+    <!-- <link rel="shortcut icon" href="./assets/img/favicon.ico" /> -->
+
+  <!-- Favicon -->
+  <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+  
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="header-logo-link">
+        <img src="images/common/header_logo.png" alt="아이티로그" class="header-logo">
+      </a>
+      
+      <nav class="header-nav">
+        <ul class="header-menu">
+          <li class="header-dropdown">
+            <a href="pages/about/company.html" class="header-menu-item">회사소개</a>
+            <ul class="header-dropdown-menu">
+              <li><a href="pages/about/company.html" class="header-dropdown-item">회사소개</a></li>
+              <li><a href="pages/about/ceo-message.html" class="header-dropdown-item">인사말</a></li>
+              <li><a href="pages/about/history.html" class="header-dropdown-item">회사연혁</a></li>
+              <li><a href="pages/about/safety-policy.html" class="header-dropdown-item">안전보건 경영방침과 목표</a></li>
+              <li><a href="pages/about/location.html" class="header-dropdown-item">오시는 길</a></li>
+            </ul>
+          </li>
+          <li class="header-dropdown">
+            <a href="#" class="header-menu-item">제품 솔루션</a>
+            <ul class="header-dropdown-menu">
+              <li><a href="pages/solutions/one-stop-solution.html" class="header-dropdown-item">원스탑 산업관리 스마트 솔루션</a></li>
+              <li><a href="pages/solutions/ai-surveillance.html" class="header-dropdown-item">AI 영상 방송 관제 시스템</a></li>
+              <li><a href="pages/solutions/smart-safety.html" class="header-dropdown-item">스마트 건설현장 안전 플랫폼</a></li>
+              <li><a href="pages/solutions/tower-crane.html" class="header-dropdown-item">타워크레인 통합 안전 시스템</a></li>
+              <li><a href="pages/solutions/access-control.html" class="header-dropdown-item">스마트 출입통제 시스템</a></li>
+              <li><a href="pages/solutions/environment-sensor.html" class="header-dropdown-item">스마트 환경센서 시스템</a></li>
+            </ul>
+          </li>
+          <li class="header-dropdown">
+            <a href="pages/projects/index.html" class="header-menu-item">시공사례</a>
+          </li>
+          <li class="header-dropdown">
+            <a href="pages/support/remote-support.html" class="header-menu-item">고객지원</a>
+            <ul class="header-dropdown-menu">
+              <li><a href="pages/support/remote-support.html" class="header-dropdown-item">원격지원</a></li>
+              <li><a href="mailto:ok@it-log.co.kr" class="header-dropdown-item">문의하기</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+      <button class="header-mobile-toggle" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <div class="header-mobile-menu">
+      <a href="pages/about/company.html" class="header-mobile-menu-item">회사소개</a>
+      <div class="header-mobile-submenu">
+        <a href="pages/about/company.html" class="header-mobile-submenu-item">회사소개</a>
+        <a href="pages/about/ceo-message.html" class="header-mobile-submenu-item">인사말</a>
+        <a href="pages/about/history.html" class="header-mobile-submenu-item">회사연혁</a>
+        <a href="pages/about/safety-policy.html" class="header-mobile-submenu-item">안전보건 경영방침과 목표</a>
+        <a href="pages/about/location.html" class="header-mobile-submenu-item">오시는 길</a>
+      </div>
+      
+      <a href="#" class="header-mobile-menu-item">제품 솔루션</a>
+      <div class="header-mobile-submenu">
+        <a href="pages/solutions/one-stop-solution.html" class="header-mobile-submenu-item">원스탑 산업관리 스마트 솔루션</a>
+        <a href="pages/solutions/ai-surveillance.html" class="header-mobile-submenu-item">AI 영상 방송 관제 시스템</a>
+            <a href="pages/solutions/smart-safety.html" class="header-mobile-submenu-item">스마트 건설현장 안전 플랫폼</a>
+        <a href="pages/solutions/tower-crane.html" class="header-mobile-submenu-item">타워크레인 통합 안전 시스템</a>
+        <a href="pages/solutions/access-control.html" class="header-mobile-submenu-item">스마트 출입통제 시스템</a>
+        <a href="pages/solutions/environment-sensor.html" class="header-mobile-submenu-item">스마트 환경센서 시스템</a>
+      </div>
+      
+      <a href="pages/projects/index.html" class="header-mobile-menu-item">시공사례</a>
+      
+      <a href="pages/support/contact.html" class="header-mobile-menu-item">고객지원</a>
+      <div class="header-mobile-submenu">
+        <a href="pages/support/remote-support.html" class="header-mobile-submenu-item">원격지원</a>
+        <a href="pages/support/contact.html" class="header-mobile-submenu-item">문의하기</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="swiper hero-swiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1: 브랜드 가치 -->
+        <div class="swiper-slide hero-slide">
+          <img src="images/hero/img01.jpg" alt="건설 현장 안전" class="hero-background">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <p class="hero-subtitle">Sustainable Safety Partner</p>
+            <h1 class="hero-title">
+              건설은 안전하게!<br />안전은 스마트하게!
+            </h1>
+            <p class="hero-description">
+              기술과 사람을 잇는 아이티로그만의 혁신적인 안전 체계, 사고 제로(Zero)를 향한 가장 확실한 정답입니다.
+            </p>
+            <div class="hero-actions">
+              <a href="pages/solutions/ai-surveillance.html" class="btn btn-primary btn-lg">솔루션 보기</a>
+              <a href="mailto:ok@it-log.co.kr" class="btn btn-outline btn-lg">문의하기</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 2: 핵심 기술 -->
+        <div class="swiper-slide hero-slide">
+          <img src="images/hero/img02.png" alt="AI 영상 관제" class="hero-background">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <p class="hero-subtitle">Smart AI Surveillance</p>
+            <h1 class="hero-title">
+              사각지대 없는<br />지능형 AI 영상 관제 시스템
+            </h1>
+            <p class="hero-description">
+              AI 실시간 위험 감지로 현장의 모든 순간을 분석하고, 위급 상황 발생 시 즉각적인 통합 대응을 지원합니다.
+            </p>
+            <div class="hero-actions">
+              <a href="pages/solutions/ai-surveillance.html" class="btn btn-secondary btn-lg">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 3: 현장 맞춤 솔루션 -->
+        <div class="swiper-slide hero-slide">
+          <img src="images/hero/img03.png" alt="환경센서" class="hero-background">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <p class="hero-subtitle">Smart Environment Monitoring</p>
+            <h1 class="hero-title">
+              쾌적한 작업 환경,<br />실시간으로 지킵니다
+              쾌적하고 안전한 작업 환경,<br />실시간 모니터링으로 실현합니다
+            </h1>
+            <p class="hero-description">
+              스마트 환경센서로 미세먼지, 소음, 온습도 등 유해 요소를 실시간 측정하고, 기준치 초과 시 즉각 알림으로 쾌적한 현장 환경을 유지합니다.
+            </p>
+            <div class="hero-actions">
+              <a href="pages/solutions/environment-sensor.html" class="btn btn-primary btn-lg">환경센서 보기</a>
+              <a href="pages/solutions/one-stop-solution.html" class="btn btn-outline btn-lg">통합 솔루션</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 4: 신뢰와 유지보수 -->
+        <div class="swiper-slide hero-slide">
+          <img src="images/hero/img04.png" alt="고객지원" class="hero-background">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <p class="hero-subtitle">Reliable Support & CS</p>
+            <h1 class="hero-title">
+              전국 어디서나,<br />멈춤 없는 원격지원과 사후관리
+            </h1>
+            <p class="hero-description">
+              구축보다 중요한 것은 신뢰입니다. 아이티로그의 전문 엔지니어가 365일 신속하게 귀하의 현장을 함께 지킵니다.
+            </p>
+            <div class="hero-actions">
+              <a href="pages/support/remote-support.html" class="btn btn-secondary btn-lg">원격지원</a>
+              <a href="mailto:ok@it-log.co.kr" class="btn btn-primary btn-lg">문의하기</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-controls">
+        <div class="swiper-pagination"></div>
+        <button class="hero-autoplay-toggle" aria-label="자동 재생 정지">
+          <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+          </svg>
+          <svg class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="5" width="4" height="14" fill="currentColor"/>
+            <rect x="14" y="5" width="4" height="14" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Swiper Navigation -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+  <!-- Solutions Section -->
+  <section class="solutions-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">원스탑 산업건설 스마트 솔루션</h2>
+        <p class="section-description">아이티로그는 건설 분야의 오랜 노하우와 기술을 집약한 원스톱 솔루션을 선보입니다.<br>
+        출입통제, 영상모니터링, T/C, 건설환경, 근로자 컨트롤을 위한 현장 방송설비에 이르기까지, 유기적으로 연결된 모든 시스템을 이를 제어할 수 있는 관리자 시스템을 통해 원스톱으로 관리할 수 있습니다.</p>
+      </div>
+      
+      <div class="solutions-grid">
+        <a href="pages/solutions/ai-surveillance.html" class="card card-solution">
+          <div class="icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="48" height="48" rx="8" stroke="currentColor" stroke-width="2"/>
+              <circle cx="32" cy="32" r="12" stroke="currentColor" stroke-width="2"/>
+              <circle cx="32" cy="32" r="4" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="title">AI 영상 관제시스템</h3>
+          <p class="description">실시간 위험 감지 및 즉각 대응으로 사각지대 없는 현장 관리</p>
+          <span class="btn-text">자세히 보기 →</span>
+        </a>
+        
+        <a href="pages/solutions/environment-sensor.html" class="card card-solution">
+          <div class="icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 8V56M16 24H48M16 40H48" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="title">스마트 환경센서</h3>
+          <p class="description">미세먼지, 소음, 온습도 등 유해 요소 실시간 모니터링</p>
+          <span class="btn-text">자세히 보기 →</span>
+        </a>
+        
+        <a href="pages/solutions/access-control.html" class="card card-solution">
+          <div class="icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="2"/>
+              <circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="2"/>
+              <path d="M32 38V42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="title">스마트 출입통제</h3>
+          <p class="description">안면인식 기반 출입 관리 및 통합 차량 관제 서비스</p>
+          <span class="btn-text">자세히 보기 →</span>
+        </a>
+        
+        <a href="pages/solutions/smart-safety.html" class="card card-solution">
+          <div class="icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 8L12 20V36C12 46 20 54 32 56C44 54 52 46 52 36V20L32 8Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 32L30 38L40 26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="title">스마트 현장안전</h3>
+          <p class="description">안전교육부터 방문자 관리까지 통합 현장 안전 플랫폼</p>
+          <span class="btn-text">자세히 보기 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">통합 시스템으로 실현하는 스마트 현장 관리</h2>
+        <p class="section-description">아이티로그의 본사 통합 시스템은 지역별, 현장별 현황을 본사에서도 동일하게 확인하고 관리할 수 있도록 하며, 실시간 모니터링은 물론 관리자 플랫폼에 취합되는 데이터 또한 상시 다운로드 및 활용이 가능합니다.<br>
+        통합 시스템을 통한 체계적인 프로젝트 관리로 업무 효율을 향상 시키고, 일하는 방식의 디지털화를 통해 우리 건설 현장에 혁신을 가져올 수 있습니다.<br>
+        <em>* 기업 특성에 맞게 구축 가능합니다.</em></p>
+      </div>
+      
+      <div class="benefits-grid">
+        <div class="card-benefit">
+          <div class="icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M32 8L12 20V36C12 46 20 54 32 56C44 54 52 46 52 36V20L32 8Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="title">본사에서도 현장처럼 통합 안전관리</h3>
+        </div>
+        
+        <div class="card-benefit">
+          <div class="icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 24H48M16 40H48" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="title">본사와 동시 업무 효율 향상</h3>
+        </div>
+        
+        <div class="card-benefit">
+          <div class="icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="title">화재 및 안전 위험 사전 감지 기술 활용</h3>
+        </div>
+        
+        <div class="card-benefit">
+          <div class="icon">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="12" y="16" width="40" height="32" rx="4" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3 class="title">비용은 낮추고 편의성은 높이고</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Section -->
+  <section class="trust-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">숫자로 보는 신뢰</h2>
+        <p class="section-description">16년 경험과 기술력으로 쌓아온 실적</p>
+      </div>
+      
+      <div class="trust-stats">
+        <div class="card-stat">
+          <div class="number" data-target="2009">2009년</div>
+          <div class="label">설립연도</div>
+          <div class="description">16년+ 연구개발</div>
+        </div>
+        
+        <div class="card-stat">
+          <div class="number" data-target="1500">1,500+</div>
+          <div class="label">설치 현장</div>
+          <div class="description">전국 주요 건설 현장</div>
+        </div>
+        
+        <div class="card-stat">
+          <div class="number" data-target="16">16년+</div>
+          <div class="label">연구 기간</div>
+          <div class="description">축적된 기술력과 노하우</div>
+        </div>
+        
+        <div class="card-stat">
+          <div class="number" data-target="62">62+</div>
+          <div class="label">고객사</div>
+          <div class="description">대기업 및 공공기관</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section class="clients-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">신뢰하는 파트너</h2>
+        <p class="section-description">대한민국 대표 기업들이 선택한 아이티로그</p>
+      </div>
+      
+      <div class="clients-grid">
+        <img src="images/common/p_01.png" alt="삼성물산" class="client-logo">
+        <img src="images/common/p_02.png" alt="현대건설" class="client-logo">
+        <img src="images/common/p_03.png" alt="GS건설" class="client-logo">
+        <img src="images/common/p_04.png" alt="대림산업" class="client-logo">
+        <img src="images/common/p_05.png" alt="포스코건설" class="client-logo">
+        <img src="images/common/p_06.png" alt="LH공사" class="client-logo">
+        <img src="images/common/p_07.png" alt="SH공사" class="client-logo">
+        <img src="images/common/p_08.png" alt="롯데건설" class="client-logo">
+        <img src="images/common/p_01.png" alt="대우건설" class="client-logo">
+        <img src="images/common/p_02.png" alt="SK건설" class="client-logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">주요 시공사례</h2>
+        <p class="section-description">대표 프로젝트 실적</p>
+      </div>
+      <div class="projects-grid">
+        <a href="pages/solutions/tower-crane.html" class="card-project">
+          <div class="img_cont">
+            <img src="images/projects/project_01.png" alt="프로젝트 1" class="image">
+          </div>
+          <div class="content">
+            <h3 class="title">대우건설</h3>
+            <p class="meta">타워크레인 통합안전 시스템 구축</p>
+          </div>
+        </a>
+
+        <a href="pages/solutions/access-control.html" class="card-project">
+          <div class="img_cont">
+            <img src="images/projects/project_02.png" alt="프로젝트 2" class="image">
+          </div>
+          <div class="content">
+            <h3 class="title">LH공사</h3>
+            <p class="meta">스마트 출입통제 시스템</p>
+          </div>
+        </a>
+        
+        <a href="pages/solutions/environment-sensor.html" class="card-project">
+          <div class="img_cont">
+            <img src="images/projects/project_03.png" alt="프로젝트 3" class="image">
+          </div>
+          <div class="content">
+            <h3 class="title">대우건설</h3>
+            <p class="meta">환경센서 시스템 시공</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-info">
+        <h2 class="contact-title">고객지원</h2>
+        <p class="contact-description">전문 엔지니어가 365일 귀사의 현장을 함께 지킵니다</p>
+        
+        <div class="contact-details">
+          <p><strong>운영시간:</strong> 휴무 공휴일 제외 월~금 09:00~18:00 / 점심시간 11:30 ~ 12:30</p>
+          <p><strong>이메일:</strong> ok@it-log.co.kr</p>
+        </div>
+      </div>
+      
+      <div class="contact-actions">
+        <a href="pages/support/remote-support.html" class="btn btn-secondary btn-lg">원격지원</a>
+        <a href="mailto:ok@it-log.co.kr" class="btn btn-primary btn-lg">문의하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <img src="images/common/footer_logo.png" alt="아이티로그" class="footer-logo">
+          <div class="footer-info-wrapper">
+            <div class="footer-policy-links">
+              <a href="terms.html" class="footer-policy-link">이용약관</a>
+              <span class="footer-policy-separator">|</span>
+              <a href="privacy.html" class="footer-policy-link">개인정보처리방침</a>
+            </div>
+            <div class="footer-details">
+              <p class="footer-company-name">(주)아이티로그</p>  
+              <p><strong>주소:</strong> 서울특별시 구로구 디지털로33길 28 우림이비즈센터 1차 308호 (우:03877)</p>
+              <p class="footer-contact-info">
+                <span><strong>TEL:</strong> 02-859-2064</span><span>|</span>
+                <span><strong>FAX:</strong> 02-859-2065</span><span>|</span>
+                <span><strong>이메일:</strong> ok@it-log.co.kr</span></p>
+              <p class="footer-copyright">Copyright © 2024 ITLOG. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-sitemap">
+          <div class="footer-sitemap-column">
+            <h3 class="footer-sitemap-title">회사소개</h3>
+            <a href="pages/about/company.html" class="footer-sitemap-link">회사소개</a>
+            <a href="pages/about/ceo-message.html" class="footer-sitemap-link">인사말</a>
+            <a href="pages/about/history.html" class="footer-sitemap-link">회사연혁</a>
+            <a href="pages/about/safety-policy.html" class="footer-sitemap-link">안전보건 경영방침</a>
+            <a href="pages/about/location.html" class="footer-sitemap-link">오시는 길</a>
+          </div>
+          
+          <div class="footer-sitemap-column">
+            <h3 class="footer-sitemap-title">제품 솔루션</h3>
+            <a href="pages/solutions/one-stop-solution.html" class="footer-sitemap-link">원스탑 솔루션</a>
+            <a href="pages/solutions/ai-surveillance.html" class="footer-sitemap-link">AI 영상 관제</a>
+            <a href="pages/solutions/smart-safety.html" class="footer-sitemap-link">건설안전 플랫폼</a>
+            <a href="pages/solutions/tower-crane.html" class="footer-sitemap-link">타워크레인</a>
+            <a href="pages/solutions/access-control.html" class="footer-sitemap-link">출입통제</a>
+            <a href="pages/solutions/environment-sensor.html" class="footer-sitemap-link">환경센서</a>
+          </div>
+          
+          <div class="footer-sitemap-column">
+            <h3 class="footer-sitemap-title">시공사례</h3>
+            <a href="pages/projects/index.html" class="footer-sitemap-link">시공사례</a>
+          </div>
+          
+          <div class="footer-sitemap-column">
+            <h3 class="footer-sitemap-title">고객지원</h3>
+            <a href="pages/support/remote-support.html" class="footer-sitemap-link">원격지원</a>
+            <a href="mailto:ok@it-log.co.kr" class="footer-sitemap-link">문의하기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollToPlugin.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+/* CSS Variables - Light & Professional Theme */
+:root {
+  /* Colors - Light Background */
+  --color-bg-primary: #ffffff;
+  --color-bg-primary-rgb: 255, 255, 255;
+  --color-bg-secondary: #f8f9fa;
+  --color-bg-secondary-rgb: 248, 249, 250;
+  --color-bg-tertiary: #f1f3f5;
+  --color-bg-tertiary-rgb: 241, 243, 245;
+  --color-bg-black: #ffffff;
+  --color-bg-black-rgb: 255, 255, 255;
+
+  /* Colors - Accent (Light Mode Optimized) */
+  --color-accent-primary: #0066FF;
+  --color-accent-primary-rgb: 0, 102, 255;
+  --color-accent-primary-light: #3385FF;
+  --color-accent-primary-lighter: #66A3FF;
+  --color-accent-primary-dark: #0052CC;
+  --color-accent-primary-darker: #003D99;
+  --color-accent-secondary: #00A8E8;
+  
+  /* Interactive States */
+  --color-accent-hover: #0052CC;
+  --color-accent-active: #003D99;
+  --color-accent-focus: #0066FF;
+  
+  /* Legacy gold colors (하위 호환성) */
+  --color-accent-gold: #0066FF;
+  --color-accent-gold-rgb: 0, 102, 255;
+  --color-accent-gold-light: #3385FF;
+  --color-accent-gold-dark: #0052CC;
+
+  /* Colors - Text (WCAG AA Compliant) */
+  --color-text-primary: #1a1a1a;
+  --color-text-primary-rgb: 26, 26, 26;
+  --color-text-secondary: #4a4a4a;
+  --color-text-secondary-rgb: 74, 74, 74;
+  --color-text-tertiary: #6b6b6b;
+  --color-text-tertiary-rgb: 107, 107, 107;
+  --color-text-placeholder: #9b9b9b;
+  --color-text-placeholder-rgb: 155, 155, 155;
+
+  /* Colors - Semantic (WCAG AA Compliant) */
+  --color-success: #00875A;
+  --color-success-bg: rgba(0, 135, 90, 0.08);
+  --color-warning: #FF8B00;
+  --color-warning-bg: rgba(255, 139, 0, 0.08);
+  --color-error: #DE350B;
+  --color-error-bg: rgba(222, 53, 11, 0.08);
+  --color-info: #0066FF;
+  --color-info-bg: rgba(0, 102, 255, 0.08);
+
+  /* Gradients */
+  --gradient-dark: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --gradient-primary: linear-gradient(135deg, #0066FF 0%, #00A8E8 100%);
+  --gradient-primary-subtle: linear-gradient(135deg, rgba(0, 102, 255, 0.05) 0%, rgba(0, 168, 232, 0.05) 100%);
+  --gradient-overlay: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 100%);
+  
+  /* Legacy gradient (하위 호환성) */
+  --gradient-gold: linear-gradient(135deg, #0066FF 0%, #00A8E8 100%);
+
+  /* Typography */
+  --font-primary: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-secondary: 'Inter', 'Pretendard', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Font Sizes - Display */
+  --font-size-display-1: 5rem;      /* 80px */
+  --font-size-display-2: 4.5rem;    /* 72px */
+
+  /* Font Sizes - Heading (template2 기준) */
+  --font-size-h1: 4rem;      /* 64px */
+  --font-size-h2: 3rem;      /* 48px */
+  --font-size-h3: 2rem;      /* 32px */
+  --font-size-h4: 1.5rem;    /* 24px */
+  --font-size-h5: 1.25rem;   /* 20px */
+  --font-size-h6: 1.125rem;  /* 18px */
+
+  /* Font Sizes - Body (template2 기준) */
+  --font-size-body-lg: 1.25rem;  /* 20px */
+  --font-size-body-md: 1rem;     /* 16px */
+  --font-size-body-sm: 0.875rem; /* 14px */
+  --font-size-caption: 0.75rem;  /* 12px */
+
+  /* Line Heights (template2 기준 - 가독성 향상) */
+  --line-height-display: 1.1;
+  --line-height-heading: 1.3;
+  --line-height-body: 1.6;
+
+  /* Font Weights */
+  --font-weight-black: 900;
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 80px;
+  --spacing-5xl: 120px;
+  --spacing-6xl: 160px;
+
+  /* Section Spacing */
+  --section-padding-y: 120px;
+  --section-padding-x: 80px;
+  --card-padding: 40px;
+  --element-gap: 24px;
+
+  /* Layout */
+  --grid-columns: 12;
+  --grid-gap: 32px;
+  --grid-max-width: 1440px;
+  --container-max-width: 1440px;
+
+  /* Shadows (Light Mode - Soft & Subtle) */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  --shadow-glow-primary: 0 0 30px rgba(0, 102, 255, 0.15);
+  --shadow-glow-primary-strong: 0 0 40px rgba(0, 102, 255, 0.25);
+  
+  /* Legacy shadow (하위 호환성) */
+  --shadow-glow-gold: 0 0 30px rgba(0, 102, 255, 0.15);
+
+  /* Blur */
+  --blur-sm: blur(4px);
+  --blur-md: blur(8px);
+  --blur-lg: blur(16px);
+  --blur-xl: blur(24px);
+
+  /* Transitions */
+  --transition-fast: 0.2s;
+  --transition-base: 0.3s;
+  --transition-slow: 0.5s;
+  --transition-slower: 0.8s;
+
+  /* Easing */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* Responsive Variables - Tablet */
+@media (max-width: 1023px) {
+  :root {
+    --font-size-display-1: 4rem;      /* 64px */
+    --font-size-display-2: 3.5rem;    /* 56px */
+    --font-size-h1: 3.25rem;   /* 52px */
+    --font-size-h2: 2.5rem;    /* 40px */
+    --font-size-h3: 2rem;      /* 32px */
+    --font-size-body-md: 1rem; /* 16px */
+    
+    --section-padding-y: 100px;
+    --section-padding-x: 60px;
+    --card-padding: 36px;
+    --grid-gap: 28px;
+  }
+}
+
+/* Responsive Variables - Mobile */
+@media (max-width: 767px) {
+  :root {
+    --font-size-display-1: 3rem;      /* 48px */
+    --font-size-display-2: 2.25rem;   /* 36px */
+    --font-size-h1: 2.5rem;    /* 40px */
+    --font-size-h2: 2rem;      /* 32px */
+    --font-size-h3: 1.5rem;    /* 24px */
+    --font-size-h4: 1.25rem;   /* 20px */
+    --font-size-body-lg: 1.125rem; /* 18px */
+    --font-size-body-md: 1rem; /* 16px */
+    
+    --section-padding-y: 60px;
+    --section-padding-x: 20px;
+    --card-padding: 24px;
+    --element-gap: 16px;
+    --grid-gap: 20px;
+  }
+}

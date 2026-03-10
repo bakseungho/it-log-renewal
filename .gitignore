@@ -43,3 +43,16 @@ temp/
 # Backup Files
 *.bak
 *.backup
+
+# Test Files
+*-test.html
+*-fix-test.html
+test-*.html
+verify-*.js
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python

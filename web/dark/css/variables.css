@@ -1,0 +1,202 @@
+/* CSS Variables - Dark & Premium Theme */
+:root {
+  /* Colors - Dark Background */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-primary-rgb: 10, 10, 10;
+  --color-bg-secondary: #1a1a1a;
+  --color-bg-secondary-rgb: 26, 26, 26;
+  --color-bg-tertiary: #2a2a2a;
+  --color-bg-tertiary-rgb: 42, 42, 42;
+  --color-bg-black: #000000;
+  --color-bg-black-rgb: 0, 0, 0;
+
+  /* Colors - Accent (Dark Mode Optimized) */
+  --color-accent-primary: #4D9FFF;
+  --color-accent-primary-rgb: 77, 159, 255;
+  --color-accent-primary-light: #70B3FF;
+  --color-accent-primary-lighter: #99C7FF;
+  --color-accent-primary-dark: #2E8AFF;
+  --color-accent-primary-darker: #0066FF;
+  --color-accent-secondary: #00E5FF;
+  
+  /* Interactive States */
+  --color-accent-hover: #70B3FF;
+  --color-accent-active: #2E8AFF;
+  --color-accent-focus: #4D9FFF;
+  
+  /* Legacy gold colors (하위 호환성) */
+  --color-accent-gold: #4D9FFF;
+  --color-accent-gold-rgb: 77, 159, 255;
+  --color-accent-gold-light: #70B3FF;
+  --color-accent-gold-dark: #2E8AFF;
+
+  /* Colors - Text */
+  --color-text-primary: #ffffff;
+  --color-text-primary-rgb: 255, 255, 255;
+  --color-text-secondary: #a0a0a0;
+  --color-text-secondary-rgb: 160, 160, 160;
+  --color-text-tertiary: #707070;
+  --color-text-tertiary-rgb: 112, 112, 112;
+  --color-text-placeholder: #505050;
+  --color-text-placeholder-rgb: 80, 80, 80;
+
+  /* Colors - Semantic */
+  --color-success: #00ff88;
+  --color-success-bg: rgba(0, 255, 136, 0.1);
+  --color-warning: #ffaa00;
+  --color-warning-bg: rgba(255, 170, 0, 0.1);
+  --color-error: #ff4444;
+  --color-error-bg: rgba(255, 68, 68, 0.1);
+  --color-info: #d4af37;
+  --color-info-bg: rgba(212, 175, 55, 0.1);
+
+  /* Gradients */
+  --gradient-dark: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  --gradient-primary: linear-gradient(135deg, #4D9FFF 0%, #00E5FF 100%);
+  --gradient-primary-subtle: linear-gradient(135deg, rgba(77, 159, 255, 0.1) 0%, rgba(0, 229, 255, 0.1) 100%);
+  --gradient-overlay: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.8) 100%);
+  
+  /* Legacy gradient (하위 호환성) */
+  --gradient-gold: linear-gradient(135deg, #4D9FFF 0%, #00E5FF 100%);
+
+  /* Typography */
+  --font-primary: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-secondary: 'Inter', 'Pretendard', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Font Sizes - Display */
+  --font-size-display-1: 5rem;      /* 80px */
+  --font-size-display-2: 4.5rem;    /* 72px */
+
+  /* Font Sizes - Heading (template2 기준) */
+  --font-size-h1: 4rem;      /* 64px */
+  --font-size-h2: 3rem;      /* 48px */
+  --font-size-h3: 2rem;      /* 32px */
+  --font-size-h4: 1.5rem;    /* 24px */
+  --font-size-h5: 1.25rem;   /* 20px */
+  --font-size-h6: 1.125rem;  /* 18px */
+
+  /* Font Sizes - Body (template2 기준) */
+  --font-size-body-lg: 1.25rem;  /* 20px */
+  --font-size-body-md: 1rem;     /* 16px */
+  --font-size-body-sm: 0.875rem; /* 14px */
+  --font-size-caption: 0.75rem;  /* 12px */
+
+  /* Line Heights (template2 기준 - 가독성 향상) */
+  --line-height-display: 1.1;
+  --line-height-heading: 1.3;
+  --line-height-body: 1.6;
+
+  /* Font Weights */
+  --font-weight-black: 900;
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 80px;
+  --spacing-5xl: 120px;
+  --spacing-6xl: 160px;
+
+  /* Section Spacing */
+  --section-padding-y: 120px;
+  --section-padding-x: 80px;
+  --card-padding: 40px;
+  --element-gap: 24px;
+
+  /* Layout */
+  --grid-columns: 12;
+  --grid-gap: 32px;
+  --grid-max-width: 1440px;
+  --container-max-width: 1440px;
+
+  /* Shadows (template2 기준 조정) */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --shadow-glow-primary: 0 0 40px rgba(77, 159, 255, 0.4);
+  --shadow-glow-primary-strong: 0 0 60px rgba(77, 159, 255, 0.6);
+  
+  /* Legacy shadow (하위 호환성) */
+  --shadow-glow-gold: 0 0 40px rgba(77, 159, 255, 0.4);
+
+  /* Blur */
+  --blur-sm: blur(4px);
+  --blur-md: blur(8px);
+  --blur-lg: blur(16px);
+  --blur-xl: blur(24px);
+
+  /* Transitions */
+  --transition-fast: 0.2s;
+  --transition-base: 0.3s;
+  --transition-slow: 0.5s;
+  --transition-slower: 0.8s;
+
+  /* Easing */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* Responsive Variables - Tablet */
+@media (max-width: 1023px) {
+  :root {
+    --font-size-display-1: 4rem;      /* 64px */
+    --font-size-display-2: 3.5rem;    /* 56px */
+    --font-size-h1: 3.25rem;   /* 52px */
+    --font-size-h2: 2.5rem;    /* 40px */
+    --font-size-h3: 2rem;      /* 32px */
+    --font-size-body-md: 1rem; /* 16px */
+    
+    --section-padding-y: 100px;
+    --section-padding-x: 60px;
+    --card-padding: 36px;
+    --grid-gap: 28px;
+  }
+}
+
+/* Responsive Variables - Mobile */
+@media (max-width: 767px) {
+  :root {
+    --font-size-display-1: 3rem;      /* 48px */
+    --font-size-display-2: 2.25rem;   /* 36px */
+    --font-size-h1: 2.5rem;    /* 40px */
+    --font-size-h2: 2rem;      /* 32px */
+    --font-size-h3: 1.5rem;    /* 24px */
+    --font-size-h4: 1.25rem;   /* 20px */
+    --font-size-body-lg: 1.125rem; /* 18px */
+    --font-size-body-md: 1rem; /* 16px */
+    
+    --section-padding-y: 60px;
+    --section-padding-x: 20px;
+    --card-padding: 24px;
+    --element-gap: 16px;
+    --grid-gap: 20px;
+  }
+}
