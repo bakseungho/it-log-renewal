@@ -1,5 +1,26 @@
 /* Home Page - Light & Professional Theme */
 
+/* Header Override for Home Page */
+body .header {
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+body .header .header-menu-item {
+  color: #ffffff;
+}
+
+body .header.scrolled {
+  background: #fff;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-lg);
+}
+
+body .header.scrolled .header-menu-item {
+  color: var(--color-text-primary);
+}
+
 /* Hero Section */
 .hero {
   position: relative;
@@ -43,7 +64,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--gradient-overlay);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
   z-index: 2;
 }
 
@@ -58,7 +79,7 @@
 .hero-subtitle {
   font-size: var(--font-size-body-lg);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-text-secondary);
+  color: #4D9FFF;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 24px;
@@ -69,7 +90,7 @@
 .hero-title {
   font-size: var(--font-size-display-1);
   font-weight: var(--font-weight-black);
-  color: var(--color-text-primary);
+  color: #ffffff;
   line-height: var(--line-height-display);
   margin-bottom: 32px;
   opacity: 0;
@@ -77,12 +98,12 @@
 }
 
 .hero-title .highlight {
-  color: var(--color-accent-primary);
+  color: #4D9FFF;
 }
 
 .hero-description {
   font-size: var(--font-size-h5);
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.9);
   line-height: var(--line-height-body);
   margin-bottom: 48px;
   opacity: 0;
@@ -95,6 +116,25 @@
   justify-content: center;
   opacity: 0;
   transform: translateY(30px);
+}
+
+.hero-actions .btn {
+  color: #ffffff;
+}
+
+.hero-actions .btn-primary {
+  color: #ffffff;
+}
+
+.hero-actions .btn-secondary {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.hero-actions .btn-secondary:hover {
+  background: var(--color-accent-primary);
+  border-color: var(--color-accent-primary);
+  color: #ffffff;
 }
 
 /* Swiper Pagination */

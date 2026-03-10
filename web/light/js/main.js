@@ -116,6 +116,14 @@ function initHeroSlider() {
           // 첫 슬라이드만 콘텐츠 표시
           const activeSlide = this.slides[this.activeIndex];
           showSlideContent(activeSlide);
+          
+          // 첫 번째 슬라이드 배경 이미지 줌 아웃 효과 시작
+          const bgImage = activeSlide.querySelector('.hero-background');
+          if (bgImage) {
+            bgImage.style.transition = 'transform 5s ease-out';
+            bgImage.style.transform = 'scale(1.0)';
+          }
+          
           // 첫 번째 슬라이드는 delay만 적용 (5초)
           currentDuration = 5000;
           startProgress(5000, this);
@@ -694,13 +702,13 @@ function initClientLogoEffects() {
     logo.addEventListener('mouseleave', function() {
       if (typeof gsap !== 'undefined') {
         gsap.to(this, {
-          opacity: 0.6,
+          opacity: 1,
           scale: 1,
           duration: 0.3,
           ease: 'power2.out'
         });
       } else {
-        this.style.opacity = '0.6';
+        this.style.opacity = '1';
         this.style.transform = 'scale(1)';
       }
     });
@@ -843,7 +851,12 @@ function initTimelineAnimation() {
 }
 
 // 활성화된 연도에 따라 탭 업데이트
+let isManualTabClick = false; // 수동 탭 클릭 플래그
+
 function updateActiveTab(year) {
+  // 수동 탭 클릭 중에는 자동 업데이트 건너뛰기
+  if (isManualTabClick) return;
+  
   const tabs = document.querySelectorAll('.timeline-tab');
   if (tabs.length === 0) return;
   
@@ -877,6 +890,9 @@ function initTimelineTabs() {
       const targetElement = document.getElementById(`year-${year}`);
       
       if (targetElement) {
+        // 수동 클릭 플래그 설정
+        isManualTabClick = true;
+        
         // 탭 활성화 상태 변경
         tabs.forEach(t => t.classList.remove('active'));
         this.classList.add('active');
@@ -892,9 +908,39 @@ function initTimelineTabs() {
           top: targetPosition,
           behavior: 'smooth'
         });
+        
+        // 스크롤 완료 후 자동 업데이트 재개 (1초 후)
+        setTimeout(() => {
+          isManualTabClick = false;
+        }, 1000);
       }
     });
   });
+}
+
+// Timeline Tabs Sticky Effect
+function initTimelineTabsSticky() {
+  const timelineTabs = document.querySelector('.timeline-tabs');
+  if (!timelineTabs) return;
+  
+  // 탭 바의 초기 위치 저장
+  const tabsOffsetTop = timelineTabs.offsetTop;
+  
+  function checkSticky() {
+    if (window.pageYOffset >= tabsOffsetTop) {
+      timelineTabs.classList.add('stuck');
+    } else {
+      timelineTabs.classList.remove('stuck');
+    }
+  }
+  
+  window.addEventListener('scroll', checkSticky);
+  window.addEventListener('resize', () => {
+    checkSticky();
+  });
+  
+  // 초기 실행
+  checkSticky();
 }
 
 // DOMContentLoaded에서 타임라인 애니메이션 초기화
@@ -902,5 +948,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.timeline')) {
     initTimelineAnimation();
     initTimelineTabs();
+    initTimelineTabsSticky();
   }
 });

@@ -6,16 +6,17 @@
   left: 0;
   right: 0;
   height: 80px;
-  background: transparent;
-  backdrop-filter: none;
+  background: #fff;
+  backdrop-filter: blur(10px);
+  box-shadow: none;
   z-index: var(--z-fixed);
   transition: all var(--transition-base) var(--ease-smooth), transform 0.3s ease;
 }
 
 .header.scrolled {
-  background: rgba(255, 255, 255, 0.95);
+  background: #fff;
   backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
 }
 
 .header-container {
@@ -57,6 +58,10 @@
   color: var(--color-text-primary);
   text-decoration: none;
   transition: color var(--transition-base);
+}
+
+.header.scrolled .header-menu-item {
+  color: var(--color-text-primary);
 }
 
 .header-menu-item::after {

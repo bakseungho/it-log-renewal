@@ -116,6 +116,14 @@ function initHeroSlider() {
           // 첫 슬라이드만 콘텐츠 표시
           const activeSlide = this.slides[this.activeIndex];
           showSlideContent(activeSlide);
+          
+          // 첫 번째 슬라이드 배경 이미지 줌 아웃 효과 시작
+          const bgImage = activeSlide.querySelector('.hero-background');
+          if (bgImage) {
+            bgImage.style.transition = 'transform 5s ease-out';
+            bgImage.style.transform = 'scale(1.0)';
+          }
+          
           // 첫 번째 슬라이드는 delay만 적용 (5초)
           currentDuration = 5000;
           startProgress(5000, this);

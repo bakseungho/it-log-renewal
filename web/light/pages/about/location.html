@@ -87,8 +87,8 @@
       </div>
       <h1 class="page-header-title">오시는 길</h1>
       <p class="page-header-description">아이티로그 본사 위치 안내</p>
-      <div class="page-header-image">
-        <div id="headerMap" style="width: 100%; height: 500px; background: #333;"></div>
+      <div class="page-header-map" style="background-color: #333;">
+        <div id="headerMap" style="width: 100%; height: 500px;"></div>
       </div>
     </div>
   </section>
@@ -102,10 +102,19 @@
     <div class="container">
       <div class="location-info-grid">
         <div class="location-info-item">
-          <h3 class="location-info-title">주소 및 연락처</h3>
+          <h3 class="location-info-title">(주)아이티로그</h3>
           <ul class="location-info-list">
             <li class="location-info-list-item">
-              <strong>주소:</strong> 서울특별시 구로구 디지털로33길 28 우림이비즈센터 1차 308호
+              <strong>주소(도로명):</strong> 서울특별시 구로구 디지털로33길 28 우림이비즈센터 1차 308호
+            </li>
+            <li class="location-info-list-item">
+              <strong>주소(지번):</strong> 서울특별시 구로구 구로동 170-5 우림이비즈센터 1차 308호
+            </li>
+            <li class="location-info-list-item">
+              <strong>전화번호:</strong> 02-859-2064
+            </li>
+            <li class="location-info-list-item">
+              <strong>팩스번호:</strong> 02-859-2065
             </li>
             <li class="location-info-list-item">
               <strong>이메일:</strong> ok@it-log.co.kr
@@ -151,7 +160,7 @@
             <div class="footer-policy-links">
               <a href="../terms.html" class="footer-policy-link">이용약관</a>
               <span class="footer-policy-separator">|</span>
-              <a href="../privacy.html" class="footer-policy-link">개인정보처리방침</a>
+              <a href="../../privacy.html" class="footer-policy-link">개인정보처리방침</a>
             </div>
             <div class="footer-details">
               <p class="footer-company-name">(주)아이티로그</p>  
@@ -206,23 +215,29 @@
     // 헤더 카카오맵 초기화
     var headerContainer = document.getElementById('headerMap');
     var headerOptions = {
-      center: new kakao.maps.LatLng(37.4847, 126.8978), // 우림이비즈센터 좌표
+      center: new kakao.maps.LatLng(37.4870, 126.8952), // 우림이비즈센터 좌표
       level: 3
     };
     var headerMap = new kakao.maps.Map(headerContainer, headerOptions);
     
-    // 헤더 마커 표시
-    var headerMarkerPosition = new kakao.maps.LatLng(37.4847, 126.8978);
+    // 커스텀 마커 이미지 설정
+    var imageSrc = '../../images/common/itlog_marker.png';
+    var imageSize = new kakao.maps.Size(64, 86); // 마커 이미지 크기
+    var imageOption = {offset: new kakao.maps.Point(20, 86)}; // 마커 이미지의 기준점 (중앙 하단)
+    
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+    
+    // 헤더 마커 표시 (커스텀 이미지 적용)
+    var headerMarkerPosition = new kakao.maps.LatLng(37.4870, 126.8952);
     var headerMarker = new kakao.maps.Marker({
-      position: headerMarkerPosition
+      position: headerMarkerPosition,
+      image: markerImage
     });
     headerMarker.setMap(headerMap);
-    
-    // 헤더 인포윈도우 표시
-    var headerInfowindow = new kakao.maps.InfoWindow({
-      content: '<div style="padding:10px; font-size:14px; font-weight:600;">(주)아이티로그</div>'
-    });
-    headerInfowindow.open(headerMap, headerMarker);
+
+    // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+    var zoomControl = new kakao.maps.ZoomControl();
+    headerMap.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
   </script>
 
   <!-- Scripts -->
