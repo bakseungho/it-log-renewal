@@ -17,8 +17,8 @@ body {
   padding: 0;
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   line-height: 1.6;
-  color: #ffffff;
-  background-color: #0a0a0a;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
   overflow-x: hidden;
   opacity: 1 !important;
 }

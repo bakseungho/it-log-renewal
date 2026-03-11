@@ -998,7 +998,7 @@
 
 /* Overview Section */
 .overview-section {
-  padding: var(--section-padding-y) 0;
+  padding: 48px 0 120px;
   background: var(--color-bg-primary);
 }
 
@@ -1106,42 +1106,48 @@
 .components-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 32px;
 }
 
 .component-item {
   text-align: center;
-  padding: 24px;
-  background: var(--color-bg-secondary);
-  border-radius: var(--radius-md);
   transition: all 0.3s var(--ease-smooth);
 }
 
-.component-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.1);
+.component-item figure {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.component-item:hover figure {
+  /* 호버 시 figure는 변화 없음 */
 }
 
 .component-image-placeholder {
   width: 100%;
-  height: 120px;
-  background: var(--color-bg-primary);
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-text-tertiary);
   font-size: var(--font-size-body-sm);
-  margin-bottom: 16px;
 }
 
 .component-image {
   width: 100%;
-  height: 120px;
+  height: 100%;
   object-fit: cover;
-  background: var(--color-bg-primary);
-  border-radius: var(--radius-sm);
-  margin-bottom: 16px;
+  transition: transform 0.3s var(--ease-smooth);
+}
+
+.component-item:hover .component-image {
+  transform: scale(1.05);
 }
 
 .component-name {
@@ -1528,12 +1534,8 @@
     gap: 16px;
   }
   
-  .component-item {
-    padding: 16px;
-  }
-  
   .component-image-placeholder {
-    height: 100px;
+    /* aspect-ratio로 자동 조정됨 */
   }
   
   .diagram-container {
