@@ -32,14 +32,50 @@ function initHeaderScroll() {
   const header = document.querySelector('.header');
   if (!header) return;
   
+  // 메인 페이지인지 확인 (body에 home-page 클래스가 있는지 체크)
+  const isHomePage = document.body.classList.contains('home-page');
+  
+  // 로고 SVG path 요소들 가져오기
+  const logoSvg = header.querySelector('.header-logo-link svg');
+  const logoPaths = logoSvg ? logoSvg.querySelectorAll('path') : [];
+  
+  // 로고 색상 변경 함수 (메인 페이지에서만 작동)
+  function updateLogoColor(isScrolled) {
+    if (!isHomePage || logoPaths.length === 0) return;
+    
+    logoPaths.forEach(path => {
+      const currentFill = path.getAttribute('fill');
+      // #EF3A3C는 그대로 유지, 나머지만 변경
+      if (currentFill && currentFill !== '#EF3A3C' && currentFill !== 'none') {
+        if (isScrolled) {
+          // 스크롤 시: 원래 색상 (#6D6D6F)
+          path.setAttribute('fill', '#6D6D6F');
+        } else {
+          // 최상단: 흰색
+          path.setAttribute('fill', '#ffffff');
+        }
+      }
+    });
+  }
+  
+  // 초기 로고 색상 설정 (메인 페이지에서만)
+  if (isHomePage) {
+    // 페이지 로드 직후 초기 색상 설정
+    setTimeout(() => {
+      updateLogoColor(window.pageYOffset > 50);
+    }, 0);
+  }
+  
   // 스크롤 이벤트
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
     if (currentScroll > 50) {
       header.classList.add('scrolled');
+      updateLogoColor(true);
     } else {
       header.classList.remove('scrolled');
+      updateLogoColor(false);
     }
   });
   
@@ -47,12 +83,14 @@ function initHeaderScroll() {
   header.addEventListener('mouseenter', () => {
     if (window.pageYOffset <= 50) {
       header.classList.add('scrolled');
+      updateLogoColor(true);
     }
   });
   
   header.addEventListener('mouseleave', () => {
     if (window.pageYOffset <= 50) {
       header.classList.remove('scrolled');
+      updateLogoColor(false);
     }
   });
 }

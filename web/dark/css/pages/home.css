@@ -82,7 +82,7 @@
 
 .hero-description {
   font-size: var(--font-size-h5);
-  color: var(--color-text-secondary);
+  color: #fff;
   line-height: var(--line-height-body);
   margin-bottom: 48px;
   opacity: 0;

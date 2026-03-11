@@ -1,23 +1,23 @@
 /* Home Page - Light & Professional Theme */
 
-/* Header Override for Home Page */
-body .header {
+/* Header Override for Home Page - 메인 페이지에만 적용 */
+body.home-page .header {
   background: transparent;
   backdrop-filter: none;
   box-shadow: none;
 }
 
-body .header .header-menu-item {
+body.home-page .header .header-menu-item {
   color: #ffffff;
 }
 
-body .header.scrolled {
+body.home-page .header.scrolled {
   background: #fff;
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-lg);
 }
 
-body .header.scrolled .header-menu-item {
+body.home-page .header.scrolled .header-menu-item {
   color: var(--color-text-primary);
 }
 
@@ -103,7 +103,7 @@ body .header.scrolled .header-menu-item {
 
 .hero-description {
   font-size: var(--font-size-h5);
-  color: rgba(255, 255, 255, 0.9);
+  color: #fff;
   line-height: var(--line-height-body);
   margin-bottom: 48px;
   opacity: 0;
