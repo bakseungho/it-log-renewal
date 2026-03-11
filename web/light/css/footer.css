@@ -59,7 +59,7 @@
 }
 
 .footer-policy-link:hover {
-  color: var(--primary-color);
+  color: var(--color-accent-primary);
 }
 
 .footer-policy-separator {
