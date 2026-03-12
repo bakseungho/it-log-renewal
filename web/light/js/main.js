@@ -32,50 +32,14 @@ function initHeaderScroll() {
   const header = document.querySelector('.header');
   if (!header) return;
   
-  // 메인 페이지인지 확인 (body에 home-page 클래스가 있는지 체크)
-  const isHomePage = document.body.classList.contains('home-page');
-  
-  // 로고 SVG path 요소들 가져오기
-  const logoSvg = header.querySelector('.header-logo-link svg');
-  const logoPaths = logoSvg ? logoSvg.querySelectorAll('path') : [];
-  
-  // 로고 색상 변경 함수 (메인 페이지에서만 작동)
-  function updateLogoColor(isScrolled) {
-    if (!isHomePage || logoPaths.length === 0) return;
-    
-    logoPaths.forEach(path => {
-      const currentFill = path.getAttribute('fill');
-      // #EF3A3C는 그대로 유지, 나머지만 변경
-      if (currentFill && currentFill !== '#EF3A3C' && currentFill !== 'none') {
-        if (isScrolled) {
-          // 스크롤 시: 원래 색상 (#6D6D6F)
-          path.setAttribute('fill', '#6D6D6F');
-        } else {
-          // 최상단: 흰색
-          path.setAttribute('fill', '#ffffff');
-        }
-      }
-    });
-  }
-  
-  // 초기 로고 색상 설정 (메인 페이지에서만)
-  if (isHomePage) {
-    // 페이지 로드 직후 초기 색상 설정
-    setTimeout(() => {
-      updateLogoColor(window.pageYOffset > 50);
-    }, 0);
-  }
-  
   // 스크롤 이벤트
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
     if (currentScroll > 50) {
       header.classList.add('scrolled');
-      updateLogoColor(true);
     } else {
       header.classList.remove('scrolled');
-      updateLogoColor(false);
     }
   });
   
@@ -83,14 +47,12 @@ function initHeaderScroll() {
   header.addEventListener('mouseenter', () => {
     if (window.pageYOffset <= 50) {
       header.classList.add('scrolled');
-      updateLogoColor(true);
     }
   });
   
   header.addEventListener('mouseleave', () => {
     if (window.pageYOffset <= 50) {
       header.classList.remove('scrolled');
-      updateLogoColor(false);
     }
   });
 }
@@ -917,6 +879,47 @@ function updateActiveTab(year) {
   });
 }
 
+// data-target 방식의 탭을 위한 스크롤 동기화
+function updateActiveTabByScroll() {
+  // 수동 탭 클릭 중에는 자동 업데이트 건너뛰기
+  if (isManualTabClick) return;
+  
+  const tabs = document.querySelectorAll('.timeline-tab[data-target]');
+  if (tabs.length === 0) return;
+  
+  const tabsHeight = document.querySelector('.timeline-tabs')?.offsetHeight || 0;
+  const scrollPosition = window.pageYOffset + tabsHeight + 100; // 100px 여유
+  
+  let activeTarget = null;
+  
+  // 각 섹션의 위치를 확인하여 현재 보이는 섹션 찾기
+  tabs.forEach(tab => {
+    const target = tab.getAttribute('data-target');
+    const targetElement = document.getElementById(target);
+    
+    if (targetElement) {
+      const elementTop = targetElement.offsetTop;
+      const elementBottom = elementTop + targetElement.offsetHeight;
+      
+      // 현재 스크롤 위치가 섹션 범위 내에 있으면
+      if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+        activeTarget = target;
+      }
+    }
+  });
+  
+  // 활성 탭 업데이트
+  if (activeTarget) {
+    tabs.forEach(tab => {
+      if (tab.getAttribute('data-target') === activeTarget) {
+        tab.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+      }
+    });
+  }
+}
+
 // Timeline Tabs (for History Page)
 function initTimelineTabs() {
   const tabs = document.querySelectorAll('.timeline-tab');
@@ -924,8 +927,18 @@ function initTimelineTabs() {
   
   tabs.forEach(tab => {
     tab.addEventListener('click', function() {
+      // data-year 속성이 있으면 연혁 페이지 로직 사용
       const year = this.getAttribute('data-year');
-      const targetElement = document.getElementById(`year-${year}`);
+      // data-target 속성이 있으면 일반 탭 로직 사용
+      const target = this.getAttribute('data-target');
+      
+      let targetElement = null;
+      
+      if (year) {
+        targetElement = document.getElementById(`year-${year}`);
+      } else if (target) {
+        targetElement = document.getElementById(target);
+      }
       
       if (targetElement) {
         // 수동 클릭 플래그 설정
@@ -985,7 +998,28 @@ function initTimelineTabsSticky() {
 document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.timeline')) {
     initTimelineAnimation();
+  }
+  
+  // 타임라인 탭이 있으면 초기화 (연혁 페이지 또는 다른 탭 페이지)
+  if (document.querySelector('.timeline-tabs')) {
     initTimelineTabs();
     initTimelineTabsSticky();
+    
+    // data-target 방식의 탭이 있으면 스크롤 동기화 활성화
+    if (document.querySelector('.timeline-tab[data-target]')) {
+      let scrollTicking = false;
+      window.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+          window.requestAnimationFrame(() => {
+            updateActiveTabByScroll();
+            scrollTicking = false;
+          });
+          scrollTicking = true;
+        }
+      });
+      
+      // 초기 실행
+      updateActiveTabByScroll();
+    }
   }
 });

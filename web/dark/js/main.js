@@ -879,6 +879,47 @@ function updateActiveTab(year) {
   });
 }
 
+// data-target 방식의 탭을 위한 스크롤 동기화
+function updateActiveTabByScroll() {
+  // 수동 탭 클릭 중에는 자동 업데이트 건너뛰기
+  if (isManualTabClick) return;
+  
+  const tabs = document.querySelectorAll('.timeline-tab[data-target]');
+  if (tabs.length === 0) return;
+  
+  const tabsHeight = document.querySelector('.timeline-tabs')?.offsetHeight || 0;
+  const scrollPosition = window.pageYOffset + tabsHeight + 100; // 100px 여유
+  
+  let activeTarget = null;
+  
+  // 각 섹션의 위치를 확인하여 현재 보이는 섹션 찾기
+  tabs.forEach(tab => {
+    const target = tab.getAttribute('data-target');
+    const targetElement = document.getElementById(target);
+    
+    if (targetElement) {
+      const elementTop = targetElement.offsetTop;
+      const elementBottom = elementTop + targetElement.offsetHeight;
+      
+      // 현재 스크롤 위치가 섹션 범위 내에 있으면
+      if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+        activeTarget = target;
+      }
+    }
+  });
+  
+  // 활성 탭 업데이트
+  if (activeTarget) {
+    tabs.forEach(tab => {
+      if (tab.getAttribute('data-target') === activeTarget) {
+        tab.classList.add('active');
+      } else {
+        tab.classList.remove('active');
+      }
+    });
+  }
+}
+
 // Timeline Tabs (for History Page)
 function initTimelineTabs() {
   const tabs = document.querySelectorAll('.timeline-tab');
@@ -886,8 +927,18 @@ function initTimelineTabs() {
   
   tabs.forEach(tab => {
     tab.addEventListener('click', function() {
+      // data-year 속성이 있으면 연혁 페이지 로직 사용
       const year = this.getAttribute('data-year');
-      const targetElement = document.getElementById(`year-${year}`);
+      // data-target 속성이 있으면 일반 탭 로직 사용
+      const target = this.getAttribute('data-target');
+      
+      let targetElement = null;
+      
+      if (year) {
+        targetElement = document.getElementById(`year-${year}`);
+      } else if (target) {
+        targetElement = document.getElementById(target);
+      }
       
       if (targetElement) {
         // 수동 클릭 플래그 설정
@@ -947,7 +998,28 @@ function initTimelineTabsSticky() {
 document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.timeline')) {
     initTimelineAnimation();
+  }
+  
+  // 타임라인 탭이 있으면 초기화 (연혁 페이지 또는 다른 탭 페이지)
+  if (document.querySelector('.timeline-tabs')) {
     initTimelineTabs();
     initTimelineTabsSticky();
+    
+    // data-target 방식의 탭이 있으면 스크롤 동기화 활성화
+    if (document.querySelector('.timeline-tab[data-target]')) {
+      let scrollTicking = false;
+      window.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+          window.requestAnimationFrame(() => {
+            updateActiveTabByScroll();
+            scrollTicking = false;
+          });
+          scrollTicking = true;
+        }
+      });
+      
+      // 초기 실행
+      updateActiveTabByScroll();
+    }
   }
 });

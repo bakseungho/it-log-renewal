@@ -1,4 +1,4 @@
-/* Solutions Page - Light & Professional Theme */
+/* Solutions Page - Dark & Premium Theme */
 
 /* Solution Hero */
 .solution-hero {
@@ -27,7 +27,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.6) 0%, rgba(10, 10, 10, 0.9) 100%);
   z-index: -1;
 }
 
@@ -141,7 +141,7 @@
 .components-section {
   margin-top: 80px;
   padding-top: 60px;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .components-title {
@@ -425,14 +425,14 @@
 .platform-feature-item {
   text-align: center;
   padding: 30px 20px;
-  background: var(--color-bg-secondary);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .platform-feature-item:hover {
-  background: var(--color-bg-tertiary);
+  background: rgba(255, 255, 255, 0.08);
   transform: translateY(-5px);
   border-color: var(--primary-color);
 }
@@ -469,14 +469,14 @@
 .process-step {
   position: relative;
   padding: 40px 30px;
-  background: var(--color-bg-secondary);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .process-step:hover {
-  background: var(--color-bg-tertiary);
+  background: rgba(255, 255, 255, 0.05);
   transform: translateY(-5px);
   border-color: var(--primary-color);
 }
@@ -518,10 +518,10 @@
 
 .solution-card {
   display: block;
-  background: var(--color-bg-secondary);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   text-decoration: none;
 }
@@ -529,14 +529,14 @@
 .solution-card:hover {
   transform: translateY(-10px);
   border-color: var(--primary-color);
-  box-shadow: 0 10px 30px rgba(0, 102, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
 }
 
 .solution-card-image {
   width: 100%;
   height: 200px;
   overflow: hidden;
-  background: var(--color-bg-tertiary);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .solution-card-image img {
@@ -577,7 +577,7 @@
   max-width: 100%;
   height: auto;
   border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Responsive */
