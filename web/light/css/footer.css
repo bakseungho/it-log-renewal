@@ -1,9 +1,9 @@
-/* Footer - Dark & Premium Theme with Sitemap */
+/* Footer - Light & Professional Theme with Sitemap */
 
 .footer {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   padding: 48px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer-container {
