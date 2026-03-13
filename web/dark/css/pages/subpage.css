@@ -483,6 +483,7 @@
   font-size: var(--font-size-body-md);
   color: var(--color-text-secondary);
   line-height: var(--line-height-body);
+  word-break: keep-all;
 }
 
 /* Timeline List */
@@ -777,8 +778,9 @@
 }
 
 .ceo-message-content .content-text {
-  font-size: var(--font-size-body-lg);
-  color: var(--color-text-secondary);
+  font-size: 18px;
+  font-weight: 400;
+  color: #ccc;
   line-height: var(--line-height-body);
   margin-bottom: 24px;
 }
@@ -788,42 +790,47 @@
 }
 
 /* Location Info Styles */
-.location-info-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
+.location-info-title {
+  font-size: 32px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: 24px;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.location-info-grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 0;
 }
 
 .location-info-item {
   padding: 0;
 }
 
-.location-info-title {
-  font-size: var(--font-size-h4);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
-  margin-bottom: 24px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--color-accent-primary);
-}
 
 .location-info-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .location-info-list-item {
-  font-size: var(--font-size-body-lg);
-  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ccc;
   line-height: var(--line-height-body);
-  margin-bottom: 16px;
-}
-
-.location-info-list-item:last-child {
-  margin-bottom: 0;
 }
 
 .location-info-list-item strong {
@@ -833,8 +840,8 @@
 
 @media (max-width: 767px) {
   .location-info-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -850,7 +857,7 @@
   font-size: var(--font-size-h3);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   text-align: left;
 }
 
@@ -858,7 +865,7 @@
   font-size: var(--font-size-h5);
   font-weight: var(--font-weight-semibold);
   color: var(--color-accent-primary);
-  margin-bottom: 32px;
+  margin-bottom: 38px;
   text-align: left;
 }
 
@@ -873,8 +880,9 @@
   position: relative;
   padding-left: 40px;
   margin-bottom: 20px;
-  font-size: var(--font-size-body-lg);
-  color: var(--color-text-secondary);
+  font-size: 16px;
+  font-weight: 400;  
+  color: #ccc;
   line-height: var(--line-height-body);
   counter-increment: policy-counter;
 }

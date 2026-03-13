@@ -3,7 +3,7 @@
 .footer {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   padding: 48px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .footer-container {
@@ -59,11 +59,11 @@
 }
 
 .footer-policy-link:hover {
-  color: var(--primary-color);
+  color: var(--color-accent-primary);
 }
 
 .footer-policy-separator {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(0, 0, 0, 0.2);
 }
 
 .footer-details {
@@ -111,7 +111,7 @@
 .footer-sitemap-title {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #1a1a1a;
   margin: 0 0 8px 0;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--primary-color);
@@ -127,7 +127,7 @@
 }
 
 .footer-sitemap-link:hover {
-  color: var(--primary-color);
+  color: #1a1a1a;
 }
 
 /* Responsive */
