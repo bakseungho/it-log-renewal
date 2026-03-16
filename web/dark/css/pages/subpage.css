@@ -1064,7 +1064,7 @@
 }
 
 .overview-content {
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
   opacity: 1 !important;
   visibility: visible !important;
@@ -1553,8 +1553,6 @@
 .overview-image {
   max-width: 100%;
   height: auto;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Responsive - Solutions Specific */
