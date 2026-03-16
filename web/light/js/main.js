@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounterAnimations();
   initParallax();
   initTopButton();
+  
+  // 페이지 로드 완료 시 fade-in
+  document.body.classList.add('page-loaded');
 });
 
 // Header Scroll Effect
@@ -507,6 +510,158 @@ function initScrollAnimations() {
       ease: 'power2.out',
     });
   }
+
+  // Subpage section scroll animations
+  initSubpageScrollAnimations();
+}
+
+// Subpage Scroll Fade-In / Slide-Up Animations
+function initSubpageScrollAnimations() {
+  if (typeof gsap === 'undefined') return;
+
+  // 페이지 헤더 내부 요소는 제외
+  function isInHeader(el) {
+    return el.closest('.page-header') || el.closest('.hero');
+  }
+
+  // 개별 요소 셀렉터
+  const singleSelectors = [
+    '.content-title',
+    '.content-subtitle',
+    '.content-text',
+    '.section-tag',
+    '.overview-title',
+    '.overview-subtitle',
+    '.overview-text',
+    '.features-section-title',
+    '.diagram-container',
+    '.cases-title',
+    '.contact-title',
+    '.contact-description',
+    '.contact-actions',
+    '.policy-title',
+    '.policy-subtitle',
+    '.policy-divider',
+    '.location-info-title',
+    '.location-info-grid',
+    '.platform-description',
+    '.filter-tabs'
+  ];
+
+  // 모든 대상 요소를 수집하고 초기 상태를 숨김 처리
+  const allTargets = [];
+
+  singleSelectors.forEach(selector => {
+    document.querySelectorAll(selector).forEach(el => {
+      if (isInHeader(el)) return;
+      if (el.closest('.fade-in.will-animate')) return;
+      allTargets.push({ type: 'single', el });
+    });
+  });
+
+  // 그리드 아이템 stagger 그룹
+  const staggerGroups = [
+    { parent: '.grid', children: '.icon-box' },
+    { parent: '.overview-features', children: '.feature-item' },
+    { parent: '.cases-grid', children: '.case-item' },
+    { parent: '.projects-grid', children: '.card-project' },
+    { parent: '.components-grid', children: '.component-item' },
+    { parent: '.gallery-grid', children: '.gallery-item' },
+    { parent: '.platform-features', children: '.platform-feature-item' },
+    { parent: '.process-steps', children: '.process-step' },
+    { parent: '.solutions-grid', children: '.solution-card' },
+    { parent: '.policy-list', children: '.policy-list-item' },
+  ];
+
+  const staggerTargets = [];
+  staggerGroups.forEach(({ parent, children }) => {
+    document.querySelectorAll(parent).forEach(container => {
+      if (isInHeader(container)) return;
+      const items = container.querySelectorAll(children);
+      if (items.length === 0) return;
+      staggerTargets.push({ container, items });
+      items.forEach(item => gsap.set(item, { opacity: 0, y: 40 }));
+    });
+  });
+
+  // CTA 섹션
+  const ctaSections = document.querySelectorAll('.contact-section, .solution-cta');
+
+  // 이미지 요소
+  const contentImages = document.querySelectorAll('.content-card img:not(.icon-box-icon img)');
+
+  // 1) 개별 요소 초기 숨김 + ScrollTrigger
+  allTargets.forEach(({ el }) => {
+    gsap.set(el, { opacity: 0, y: 30 });
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 80%',
+      once: true,
+      onEnter: () => {
+        gsap.to(el, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power2.out',
+        });
+      }
+    });
+  });
+
+  // 2) 그리드 아이템 stagger
+  staggerTargets.forEach(({ container, items }) => {
+    ScrollTrigger.create({
+      trigger: container,
+      start: 'top 80%',
+      once: true,
+      onEnter: () => {
+        gsap.to(items, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power2.out',
+        });
+      }
+    });
+  });
+
+  // 3) CTA 섹션
+  ctaSections.forEach(section => {
+    gsap.set(section, { opacity: 0, y: 30 });
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top 80%',
+      once: true,
+      onEnter: () => {
+        gsap.to(section, {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+        });
+      }
+    });
+  });
+
+  // 4) 이미지 요소
+  contentImages.forEach(img => {
+    if (isInHeader(img)) return;
+    gsap.set(img, { opacity: 0, y: 20 });
+    ScrollTrigger.create({
+      trigger: img,
+      start: 'top 80%',
+      once: true,
+      onEnter: () => {
+        gsap.to(img, {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          ease: 'power2.out',
+        });
+      }
+    });
+  });
 }
 
 // Counter Animations
