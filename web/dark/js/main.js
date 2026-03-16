@@ -475,7 +475,7 @@ function initCounterAnimations() {
           const counter = entry.target;
           const target = parseFloat(counter.getAttribute('data-target'));
           const originalText = counter.textContent;
-          const numberMatch = originalText.match(/[\d.]+/);
+          const numberMatch = originalText.match(/[\d,.]+/);
           if (!numberMatch) return;
           
           const suffix = originalText.substring(numberMatch.index + numberMatch[0].length);
@@ -515,7 +515,7 @@ function initCounterAnimations() {
     const originalText = counter.textContent;
     
     // Extract suffix (like +, %, 년 etc)
-    const numberMatch = originalText.match(/[\d.]+/);
+    const numberMatch = originalText.match(/[\d,.]+/);
     if (!numberMatch) return;
     
     const suffix = originalText.substring(numberMatch.index + numberMatch[0].length);

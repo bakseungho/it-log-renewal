@@ -15,7 +15,7 @@
 
 .btn-primary {
   background: var(--gradient-primary);
-  color: var(--color-white);
+  color: #fff;
   box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
 }
 
