@@ -203,7 +203,7 @@
 }
 
 .card-stat .number {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-accent-primary);
   line-height: 1;

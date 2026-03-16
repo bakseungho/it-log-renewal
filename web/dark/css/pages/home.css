@@ -430,7 +430,7 @@
 /* Clients Section */
 .clients-section {
   padding: var(--section-padding-y) 0;
-  background: var(--color-bg-secondary);
+  /* background: var(--color-bg-secondary); */
 }
 
 .clients-grid {
