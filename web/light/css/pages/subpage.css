@@ -177,7 +177,7 @@
 
 .content-list-item {
   position: relative;
-  padding-left: 32px;
+  padding-left: 24px;
   margin-bottom: 16px;
   font-size: var(--font-size-body-lg);
   color: var(--color-text-secondary);
@@ -683,7 +683,6 @@
   color: var(--color-text-primary);
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 2px solid var(--color-accent-primary);
 }
 
 /* Breadcrumb */
@@ -983,6 +982,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+}
+
+.card-project figure {
+  height: 240px;
+  overflow: hidden;
 }
 
 .card-project .category {

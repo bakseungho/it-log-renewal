@@ -157,7 +157,7 @@
 
 .content-list-item {
   position: relative;
-  padding-left: 32px;
+  padding-left: 24px;
   margin-bottom: 16px;
   font-size: var(--font-size-body-lg);
   color: var(--color-text-secondary);

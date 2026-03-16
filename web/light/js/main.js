@@ -140,6 +140,7 @@ function initHeroSlider() {
         crossFade: true
       },
       autoplay: false, // autoplay 비활성화, 수동으로 제어
+      simulateTouch: false, // 마우스 드래그 비활성화, 터치는 허용
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -186,9 +187,13 @@ function initHeroSlider() {
           const activeSlide = this.slides[this.activeIndex];
           showSlideContent(activeSlide);
           
-          // 배경 이미지 줌 아웃 효과
+          // 배경 이미지 줌 아웃 효과 - 먼저 리셋 후 애니메이션
           const bgImage = activeSlide.querySelector('.hero-background');
           if (bgImage) {
+            bgImage.style.transition = 'none';
+            bgImage.style.transform = 'scale(1.1)';
+            // 강제 리플로우 후 애니메이션 시작
+            bgImage.offsetHeight;
             bgImage.style.transition = 'transform 5s ease-out';
             bgImage.style.transform = 'scale(1.0)';
           }
@@ -208,15 +213,22 @@ function initHeroSlider() {
         e.stopPropagation();
         
         if (isPaused) {
-          // 재생
+          // 재생 - 현재 슬라이드에서 처음부터 시작
+          isPaused = false;
           autoplayToggle.classList.remove('paused');
           autoplayToggle.setAttribute('aria-label', '자동 재생 정지');
-          resumeProgress(swiper);
+          startProgress(currentDuration, swiper);
         } else {
-          // 정지
+          // 정지 - 타이머 0으로 초기화
           autoplayToggle.classList.add('paused');
           autoplayToggle.setAttribute('aria-label', '자동 재생 시작');
-          pauseProgress();
+          isPaused = true;
+          stopProgress();
+          currentProgress = 0;
+          const currentActiveBullet = document.querySelector('.swiper-pagination-bullet-active');
+          if (currentActiveBullet) {
+            currentActiveBullet.style.background = 'rgba(255, 255, 255, 0.3)';
+          }
         }
       });
     }
@@ -278,6 +290,12 @@ function initHeroSlider() {
     function resumeProgress(swiperInstance) {
       if (isPaused) {
         isPaused = false;
+        
+        // 프로그레스가 0이면 처음부터 시작
+        if (currentProgress === 0) {
+          startProgress(currentDuration, swiperInstance);
+          return;
+        }
         
         // 남은 시간 계산
         const remainingProgress = 100 - currentProgress;
@@ -343,11 +361,7 @@ function initHeroSlider() {
       const description = content.querySelector('.hero-description');
       const actions = content.querySelector('.hero-actions');
       
-      // 배경 이미지 초기화
-      const bgImage = slide.querySelector('.hero-background');
-      if (bgImage) {
-        bgImage.style.transform = 'scale(1.1)';
-      }
+      // 배경 이미지는 slideChangeTransitionEnd에서 처리
       
       // 순차적으로 요소 표시 (더 빠른 타이밍)
       setTimeout(() => {
