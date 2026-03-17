@@ -77,9 +77,13 @@ body.home-page .header.scrolled .header-menu-item {
 }
 
 .hero-subtitle {
-  font-size: var(--font-size-body-lg);
+  display: inline-block;
+  font-size: var(--font-size-body-sm);
   font-weight: var(--font-weight-semibold);
-  color: #4D9FFF;
+  color: #ffffff;
+  background: var(--color-accent-primary);
+  padding: 6px 20px;
+  border-radius: 100px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 24px;

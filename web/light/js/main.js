@@ -28,6 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 페이지 로드 완료 시 fade-in
   document.body.classList.add('page-loaded');
+
+  // 이용약관, 개인정보처리방침 페이지에서는 헤더 애니메이션 제거
+  const pagePath = window.location.pathname;
+  if (pagePath.includes('terms.html') || pagePath.includes('privacy.html')) {
+    document.querySelectorAll('.page-header-breadcrumb, .page-header-title, .page-header-image').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      el.style.animation = 'none';
+    });
+  }
 });
 
 // Header Scroll Effect
@@ -411,9 +421,11 @@ function initScrollAnimations() {
     return;
   }
 
-  // Fade In animations
+  // Fade In animations (서브페이지에서는 initSubpageScrollAnimations에서 처리)
+  const path = window.location.pathname;
+  const isSubpage = !(path.endsWith('/') || path.endsWith('/index.html') || path === '');
   const fadeInElements = document.querySelectorAll('.fade-in.will-animate');
-  if (fadeInElements.length > 0) {
+  if (fadeInElements.length > 0 && !isSubpage) {
     gsap.utils.toArray('.fade-in.will-animate').forEach(element => {
       gsap.from(element, {
         scrollTrigger: {
@@ -494,23 +506,6 @@ function initScrollAnimations() {
     });
   }
 
-  // Feature Items
-  const featureItems = document.querySelectorAll('.feature-item');
-  if (featureItems.length > 0) {
-    gsap.from(featureItems, {
-      scrollTrigger: {
-        trigger: '.overview-features',
-        start: 'top 70%',
-        toggleActions: 'play none none none',
-      },
-      opacity: 0,
-      y: 50,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: 'power2.out',
-    });
-  }
-
   // Subpage section scroll animations
   initSubpageScrollAnimations();
 }
@@ -519,145 +514,128 @@ function initScrollAnimations() {
 function initSubpageScrollAnimations() {
   if (typeof gsap === 'undefined') return;
 
-  // 페이지 헤더 내부 요소는 제외
-  function isInHeader(el) {
-    return el.closest('.page-header') || el.closest('.hero');
-  }
+  // 이용약관, 개인정보처리방침, 메인페이지에서는 애니메이션 제외
+  const path = window.location.pathname;
+  if (path.includes('terms.html') || path.includes('privacy.html') || path.endsWith('/') || path.endsWith('/index.html') || path === '') return;
 
-  // 개별 요소 셀렉터
-  const singleSelectors = [
-    '.content-title',
-    '.content-subtitle',
-    '.content-text',
-    '.section-tag',
-    '.overview-title',
-    '.overview-subtitle',
-    '.overview-text',
-    '.features-section-title',
-    '.diagram-container',
-    '.cases-title',
-    '.contact-title',
-    '.contact-description',
-    '.contact-actions',
-    '.policy-title',
-    '.policy-subtitle',
-    '.policy-divider',
+  // 섹션 컨테이너 셀렉터 (트리거 단위)
+  const sectionSelectors = [
+    '.support-steps',
+    '.grid.grid-2',
+    '.content-card',
+    '.ceo-message-content',
+    '.overview-section > .container',
+    '.diagram-section .container',
+    '.cases-section .container',
+    '.solution-cta .container',
+    '.platform-section .container',
+    '.process-section .container',
+    '.solutions-grid-section .container',
+    '.content-section > .container > .filter-tabs',
+    '.content-section > .container > .projects-grid',
+    '.policy-section',
     '.location-info-title',
     '.location-info-grid',
+  ];
+
+  // 섹션 내 자식 요소 순서 (위에서 아래로 순차 등장)
+  const childSelectors = [
+    '.section-tag',
+    '.support-steps',
+    '.content-title',
+    '.content-subtitle',
+    '.overview-title',
+    '.overview-subtitle',
+    '.features-section-title',
+    '.diagram-title',
+    '.cases-title',
+    '.contact-title',
     '.platform-description',
-    '.filter-tabs'
+    '.policy-title',
+    '.policy-subtitle',
+    '.overview-text',
+    '.content-text',
+    '.contact-description',
+    '.contact-actions',
+    'img',
+    '.grid',
+    '.overview-features',
+    '.cases-grid',
+    '.projects-grid',
+    '.components-grid',
+    '.gallery-grid',
+    '.platform-features',
+    '.process-steps',
+    '.solutions-grid',
+    '.policy-list',
+    '.filter-tabs',
+    '.diagram-container',
+    '.ceo-message-content > div',
   ];
 
-  // 모든 대상 요소를 수집하고 초기 상태를 숨김 처리
-  const allTargets = [];
+  const matchedSections = [];
+  document.querySelectorAll(sectionSelectors.join(',')).forEach(section => {
+    // 페이지 헤더, 히어로 내부 제외
+    if (section.closest('.page-header') || section.closest('.hero')) return;
 
-  singleSelectors.forEach(selector => {
-    document.querySelectorAll(selector).forEach(el => {
-      if (isInHeader(el)) return;
-      if (el.closest('.fade-in.will-animate')) return;
-      allTargets.push({ type: 'single', el });
-    });
-  });
+    // 이미 매칭된 섹션의 자식이면 건너뛰기 (중복 트리거 방지)
+    const isNestedInMatched = matchedSections.some(ms => ms.contains(section));
+    if (isNestedInMatched) return;
+    matchedSections.push(section);
 
-  // 그리드 아이템 stagger 그룹
-  const staggerGroups = [
-    { parent: '.grid', children: '.icon-box' },
-    { parent: '.overview-features', children: '.feature-item' },
-    { parent: '.cases-grid', children: '.case-item' },
-    { parent: '.projects-grid', children: '.card-project' },
-    { parent: '.components-grid', children: '.component-item' },
-    { parent: '.gallery-grid', children: '.gallery-item' },
-    { parent: '.platform-features', children: '.platform-feature-item' },
-    { parent: '.process-steps', children: '.process-step' },
-    { parent: '.solutions-grid', children: '.solution-card' },
-    { parent: '.policy-list', children: '.policy-list-item' },
-  ];
+    // 섹션 내 애니메이션 대상 수집 (DOM 순서 유지)
+    const animTargets = [];
+    const walker = document.createTreeWalker(section, NodeFilter.SHOW_ELEMENT);
+    let node;
+    const matched = new Set();
 
-  const staggerTargets = [];
-  staggerGroups.forEach(({ parent, children }) => {
-    document.querySelectorAll(parent).forEach(container => {
-      if (isInHeader(container)) return;
-      const items = container.querySelectorAll(children);
-      if (items.length === 0) return;
-      staggerTargets.push({ container, items });
-      items.forEach(item => gsap.set(item, { opacity: 0, y: 40 }));
-    });
-  });
+    // 그리드 컨테이너 셀렉터 (전체를 하나의 블록으로 처리)
+    const gridContainerSelectors = ['.support-steps', '.grid', '.overview-features', '.cases-grid', '.projects-grid', '.components-grid', '.gallery-grid', '.platform-features', '.process-steps', '.solutions-grid', '.policy-list'];
 
-  // CTA 섹션
-  const ctaSections = document.querySelectorAll('.contact-section, .solution-cta');
-
-  // 이미지 요소
-  const contentImages = document.querySelectorAll('.content-card img:not(.icon-box-icon img)');
-
-  // 1) 개별 요소 초기 숨김 + ScrollTrigger
-  allTargets.forEach(({ el }) => {
-    gsap.set(el, { opacity: 0, y: 30 });
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 80%',
-      once: true,
-      onEnter: () => {
-        gsap.to(el, {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          ease: 'power2.out',
-        });
+    while ((node = walker.nextNode())) {
+      if (matched.has(node)) continue;
+      // 이미 매칭된 그리드 컨테이너의 자식이면 건너뛰기
+      let isInsideMatched = false;
+      for (const m of matched) {
+        if (m.contains(node)) { isInsideMatched = true; break; }
       }
-    });
-  });
+      if (isInsideMatched) continue;
 
-  // 2) 그리드 아이템 stagger
-  staggerTargets.forEach(({ container, items }) => {
-    ScrollTrigger.create({
-      trigger: container,
-      start: 'top 80%',
-      once: true,
-      onEnter: () => {
-        gsap.to(items, {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: 'power2.out',
-        });
+      for (const sel of childSelectors) {
+        if (node.matches && node.matches(sel)) {
+          // img 태그가 그리드 아이템 내부에 있으면 건너뛰기
+          if (sel === 'img' && node.closest('.case-item, .card-project, .icon-box, .feature-item, .component-item, .gallery-item, .solution-card, .process-step, .platform-feature-item')) continue;
+          // 그리드 컨테이너는 전체를 하나의 블록으로 처리
+          const isGrid = gridContainerSelectors.some(gs => node.matches(gs));
+          animTargets.push({ type: 'single', el: node });
+          matched.add(node);
+          break;
+        }
       }
-    });
-  });
+    }
 
-  // 3) CTA 섹션
-  ctaSections.forEach(section => {
-    gsap.set(section, { opacity: 0, y: 30 });
+    if (animTargets.length === 0) return;
+
+    // 모든 대상 초기 숨김
+    animTargets.forEach(target => {
+      gsap.set(target.el, { opacity: 0, y: 30 });
+    });
+
+    // 섹션이 뷰포트 80% 지점에 도달하면 내부 요소 순차 등장
     ScrollTrigger.create({
       trigger: section,
       start: 'top 80%',
       once: true,
       onEnter: () => {
-        gsap.to(section, {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-        });
-      }
-    });
-  });
-
-  // 4) 이미지 요소
-  contentImages.forEach(img => {
-    if (isInHeader(img)) return;
-    gsap.set(img, { opacity: 0, y: 20 });
-    ScrollTrigger.create({
-      trigger: img,
-      start: 'top 80%',
-      once: true,
-      onEnter: () => {
-        gsap.to(img, {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          ease: 'power2.out',
+        let delay = 0;
+        animTargets.forEach(target => {
+          gsap.to(target.el, {
+            opacity: 1, y: 0,
+            duration: 0.7,
+            delay: delay,
+            ease: 'power2.out',
+          });
+          delay += 0.18;
         });
       }
     });
