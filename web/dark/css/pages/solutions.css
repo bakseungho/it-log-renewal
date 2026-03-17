@@ -192,8 +192,9 @@
 
 /* Diagram Section */
 .diagram-section {
-  padding: var(--section-padding-y) 0;
-  background: var(--color-bg-secondary);
+  padding: 24px 0;
+  /* padding: var(--section-padding-y) 0; */
+  /* background: var(--color-bg-secondary); */
 }
 
 .diagram-title {

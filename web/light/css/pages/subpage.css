@@ -214,6 +214,70 @@
   line-height: 1;
 }
 
+/* Company */
+.company-section .company-content-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 44px;
+  padding-bottom: 80px;
+}
+
+.company-section .company-content-inner .company-img-cont {
+  width: 574px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.company-section .company-content-inner .company-img-cont img {
+  display: block;
+  width: 100%;
+}
+
+.company-section .company-content-inner .company-content-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1;
+  padding: 48px 0;
+}
+
+.company-section .company-content-inner .company-content-cont .content-text {
+  font-size: 28px;
+  color: #242424;
+  text-align: left;
+  word-break: keep-all;
+  text-wrap: pretty;
+}
+
+.company-section .company-content-inner .company-content-cont .content-text b {
+  color: var(--color-accent-primary);
+}
+
+.company-content-cont .company-number-cont {
+  display: flex;
+  gap: 72px;
+}
+
+.company-content-cont .company-number-cont .company-number-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.company-content-cont .company-number-cont .company-number-item b {
+  color: var(--color-accent-primary);
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.company-content-cont .company-number-cont .company-number-item span {
+  font-size: 18px;
+  font-weight: 400;
+  color: #242424;
+}
+
 /* Timeline */
 .timeline {
   position: relative;
@@ -1221,7 +1285,8 @@
 
 /* Diagram Section */
 .diagram-section {
-  padding: var(--section-padding-y) 0;
+  padding: 24px 0;
+  /* padding: var(--section-padding-y) 0; */
   background: var(--color-bg-secondary);
 }
 
@@ -1356,12 +1421,30 @@
 /* Platform Section */
 .platform-section {
   padding: 80px 0;
-  background: linear-gradient(135deg, rgba(0, 123, 255, 0.05) 0%, rgba(0, 86, 179, 0.05) 100%);
+  background: url('../../images/solutions/onestop_bg2.jpg') no-repeat bottom center;
+  background-size: cover;
+  /* background: linear-gradient(135deg, rgba(0, 123, 255, 0.05) 0%, rgba(0, 86, 179, 0.05) 100%); */
 }
 
 .platform-content {
-  max-width: 1000px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin: 26px auto 0;
+}
+
+.platform-item {
+  border-radius: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 12px 20px;
+}
+
+.platform-item span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #242424;
 }
 
 .platform-description {

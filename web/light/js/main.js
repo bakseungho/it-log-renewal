@@ -555,6 +555,7 @@ function initSubpageScrollAnimations() {
     '.policy-subtitle',
     '.overview-text',
     '.content-text',
+    '.company-content-inner',
     '.contact-description',
     '.contact-actions',
     'img',
@@ -590,7 +591,7 @@ function initSubpageScrollAnimations() {
     const matched = new Set();
 
     // 그리드 컨테이너 셀렉터 (전체를 하나의 블록으로 처리)
-    const gridContainerSelectors = ['.support-steps', '.grid', '.overview-features', '.cases-grid', '.projects-grid', '.components-grid', '.gallery-grid', '.platform-features', '.process-steps', '.solutions-grid', '.policy-list'];
+    const gridContainerSelectors = ['.support-steps', '.company-content-inner', '.grid', '.overview-features', '.cases-grid', '.projects-grid', '.components-grid', '.gallery-grid', '.platform-features', '.process-steps', '.solutions-grid', '.policy-list'];
 
     while ((node = walker.nextNode())) {
       if (matched.has(node)) continue;
