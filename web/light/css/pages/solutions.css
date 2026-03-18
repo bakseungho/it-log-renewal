@@ -219,7 +219,8 @@
 .diagram-image {
   width: 100%;
   height: auto;
-  border-radius: var(--radius-md);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: transform 0.3s var(--ease-smooth);
 }
