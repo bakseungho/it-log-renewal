@@ -216,18 +216,26 @@
   visibility: visible !important;
 }
 
-.diagram-image {
+.diagram-figure {
+  display: block;
   width: 100%;
-  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  cursor: pointer;
+  margin: 24px 0 auto;
+  overflow: hidden;
+}
+
+.diagram-image {
+  width: auto;
+  height: auto;
+  max-width: inherit;
+  background: rgba(0, 0, 0, 0.03);
   transition: transform 0.3s var(--ease-smooth);
 }
 
-.diagram-image:hover {
+/* .diagram-image:hover {
   transform: scale(1.02);
-}
+} */
 
 .diagram-caption {
   font-size: var(--font-size-body-sm);

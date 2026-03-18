@@ -147,6 +147,10 @@
   background: var(--color-bg-primary);
 }
 
+.content-section .content-card {
+  padding-bottom: 80px;
+}
+
 .content-card {
   border-radius: var(--radius-lg);
   padding: 48px;
@@ -223,7 +227,6 @@
 }
 
 .company-section .company-content-inner .company-img-cont {
-  width: 574px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 16px;
   overflow: hidden;
@@ -276,6 +279,60 @@
   font-size: 18px;
   font-weight: 400;
   color: #242424;
+}
+
+.phil-section {
+  padding-bottom: 80px;
+}
+
+.phil-section .grid-3 {
+  gap: 24px;
+}
+
+.phil-section .phil-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 16px;
+  gap: 64px;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.phil-section .phil-item:hover {
+  border-color: var(--color-accent-primary);
+}
+
+.phil-section .phil-item:hover .phil-icon-cont {
+  background: var(--color-accent-primary);
+}
+
+.phil-section .phil-item:hover .phil-icon-cont svg path {
+  fill: #fff;
+}
+
+.phil-section .phil-item:hover h4 {
+  color: var(--color-accent-primary);
+}
+
+.phil-section .phil-item .phil-icon-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+}
+
+.phil-section .phil-item h4 {
+  text-align: left;
+}
+
+.phil-section .phil-item p {
+  text-align: left;
 }
 
 /* Timeline */
@@ -593,7 +650,8 @@
 }
 
 .icon-box-description {
-  font-size: var(--font-size-body-md);
+  font-size: 18px;
+  /* font-size: var(--font-size-body-md); */
   color: var(--color-text-secondary);
   line-height: var(--line-height-body);
 }
@@ -1307,12 +1365,20 @@
   text-align: center;
 }
 
-.diagram-image {
+.diagram-figure {
+  display: block;
   width: 100%;
-  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  cursor: pointer;
+  margin: 24px 0 auto;
+  overflow: hidden;
+}
+
+.diagram-image {
+  width: auto;
+  height: auto;
+  max-width: inherit;
+  background: rgba(0, 0, 0, 0.03);
   transition: transform 0.3s var(--ease-smooth);
 }
 
