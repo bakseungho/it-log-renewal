@@ -212,8 +212,6 @@
   border-radius: var(--radius-lg);
   padding: 40px;
   text-align: center;
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
 .diagram-figure {

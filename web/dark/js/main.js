@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroSlider();
   initScrollAnimations();
   initCounterAnimations();
+  initCompanyCounterAnimations();
   initParallax();
   initTopButton();
   
@@ -482,8 +483,6 @@ function initSubpageScrollAnimations() {
 
   // 섹션 컨테이너 셀렉터 (트리거 단위)
   const sectionSelectors = [
-    '.support-steps',
-    '.grid.grid-2',
     '.content-card',
     '.ceo-message-content',
     '.overview-section > .container',
@@ -503,7 +502,7 @@ function initSubpageScrollAnimations() {
   // 섹션 내 자식 요소 순서 (위에서 아래로 순차 등장)
   const childSelectors = [
     '.section-tag',
-    '.support-steps',
+    '.section-title',
     '.content-title',
     '.content-subtitle',
     '.overview-title',
@@ -513,6 +512,7 @@ function initSubpageScrollAnimations() {
     '.cases-title',
     '.contact-title',
     '.platform-description',
+    '.platform-content',
     '.policy-title',
     '.policy-subtitle',
     '.overview-text',
@@ -537,6 +537,10 @@ function initSubpageScrollAnimations() {
   ];
 
   const matchedSections = [];
+  // 원격지원 전용 블록은 별도 처리하므로 일반 루프에서 제외
+  document.querySelectorAll('.remote-intro, .support-steps, .support-caution').forEach(el => {
+    matchedSections.push(el);
+  });
   document.querySelectorAll(sectionSelectors.join(',')).forEach(section => {
     // 페이지 헤더, 히어로 내부 제외
     if (section.closest('.page-header') || section.closest('.hero')) return;
@@ -553,7 +557,7 @@ function initSubpageScrollAnimations() {
     const matched = new Set();
 
     // 그리드 컨테이너 셀렉터 (전체를 하나의 블록으로 처리)
-    const gridContainerSelectors = ['.support-steps', '.company-content-inner', '.grid', '.overview-features', '.cases-grid', '.projects-grid', '.components-grid', '.gallery-grid', '.platform-features', '.process-steps', '.solutions-grid', '.policy-list'];
+    const gridContainerSelectors = ['.company-content-inner', '.platform-content', '.grid', '.overview-features', '.cases-grid', '.projects-grid', '.components-grid', '.gallery-grid', '.platform-features', '.process-steps', '.solutions-grid', '.policy-list'];
 
     while ((node = walker.nextNode())) {
       if (matched.has(node)) continue;
@@ -577,7 +581,10 @@ function initSubpageScrollAnimations() {
       }
     }
 
-    if (animTargets.length === 0) return;
+    if (animTargets.length === 0) {
+      // 내부 자식이 매칭되지 않으면 섹션 자체를 애니메이션 대상으로 처리
+      animTargets.push({ type: 'single', el: section });
+    }
 
     // 모든 대상 초기 숨김
     animTargets.forEach(target => {
@@ -603,6 +610,28 @@ function initSubpageScrollAnimations() {
       }
     });
   });
+
+  // 원격지원 페이지: .remote-intro, .support-steps, .support-caution 순차 등장
+  const supportBlocks = document.querySelectorAll('.remote-intro, .support-steps, .support-caution');
+  if (supportBlocks.length > 0) {
+    supportBlocks.forEach(block => {
+      gsap.set(block, { opacity: 0, y: 30 });
+    });
+    supportBlocks.forEach((block, i) => {
+      ScrollTrigger.create({
+        trigger: block,
+        start: 'top 80%',
+        once: true,
+        onEnter: () => {
+          gsap.to(block, {
+            opacity: 1, y: 0,
+            duration: 0.7,
+            ease: 'power2.out',
+          });
+        }
+      });
+    });
+  }
 }
 
 // Counter Animations
@@ -694,6 +723,40 @@ function initCounterAnimations() {
         });
       }
     });
+  });
+}
+
+// Company Number Counter Animations
+function initCompanyCounterAnimations() {
+  const container = document.querySelector('.company-content-inner');
+  const counters = document.querySelectorAll('.company-number-item b[data-target]');
+  if (!container || counters.length === 0) return;
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  counters.forEach(counter => {
+    const suffix = counter.getAttribute('data-suffix') || '';
+    counter.textContent = '0' + suffix;
+  });
+
+  ScrollTrigger.create({
+    trigger: container,
+    start: 'top 80%',
+    once: true,
+    onEnter: () => {
+      counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const obj = { value: 0 };
+        gsap.to(obj, {
+          value: target,
+          duration: 2.5,
+          ease: 'power2.out',
+          onUpdate: function() {
+            counter.textContent = Math.ceil(obj.value) + suffix;
+          }
+        });
+      });
+    }
   });
 }
 

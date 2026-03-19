@@ -39,15 +39,21 @@
   display: flex;
   align-items: center;
   gap: 48px;
+  height: 100%;
 }
 
 .header-menu {
   display: flex;
+  align-items: center;
   gap: 48px;
+  height: 100%;
 }
 
 .header-menu-item {
+  display: flex;
+  align-items: center;
   position: relative;
+  height: 100%;
   font-size: var(--font-size-body-md);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
@@ -58,7 +64,7 @@
 .header-menu-item::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: 20px;
   left: 0;
   width: 0;
   height: 2px;
@@ -66,11 +72,11 @@
   transition: width var(--transition-base) var(--ease-smooth);
 }
 
-.header-menu-item:hover {
+.header-dropdown:hover .header-menu-item {
   color: var(--color-accent-primary);
 }
 
-.header-menu-item:hover::after {
+.header-dropdown:hover .header-menu-item::after {
   width: 100%;
 }
 
@@ -80,7 +86,10 @@
 
 /* Dropdown */
 .header-dropdown {
+  display: flex;
+  align-items: center;
   position: relative;
+  height: 100%;
 }
 
 /* 투명한 브릿지 영역 추가 - hover 끊김 방지 */
@@ -97,7 +106,7 @@
 
 .header-dropdown-menu {
   position: absolute;
-  top: calc(100% + 16px);
+  top: calc(100% - 10px);
   left: 0;
   min-width: 240px;
   background: var(--color-bg-secondary);
