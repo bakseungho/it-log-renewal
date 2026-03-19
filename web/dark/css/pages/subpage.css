@@ -274,7 +274,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   gap: 64px;
   padding: 24px;
@@ -314,6 +314,76 @@
 .phil-section .phil-item p {
   text-align: left;
 }
+
+.tech-section .tech-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.tech-section .tech-item {
+  display: flex;
+  align-items: center;
+  gap: 88px;
+}
+
+.tech-section .tech-item.tech-item-right {
+  flex-direction: row-reverse;
+}
+
+.tech-section .tech-item .tech-content-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 34px;
+  flex: 1;
+}
+
+.tech-section .tech-item .tech-img-cont {
+  width: 680px;
+  height: 360px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.tech-section .tech-item .tech-img-cont img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tech-section .tech-item .tech-content-cont .tech-icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+}
+
+.tech-section .tech-item .tech-content-cont .tech-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tech-section .tech-item .tech-content-cont .tech-info-box h4 {
+  text-align: left;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.tech-section .tech-item .tech-content-cont .tech-info-box p {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+  color: #d5d5d5;
+}
+
 
 /* Timeline */
 .timeline {
@@ -1228,14 +1298,16 @@
 .overview-features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .feature-item {
-  background: var(--color-bg-secondary);
-  border-radius: var(--radius-lg);
+  /* background: var(--color-bg-secondary); */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
   padding: 40px;
   transition: all 0.4s var(--ease-smooth);
   display: flex;
@@ -1243,10 +1315,10 @@
   height: 100%;
 }
 
-.feature-item:hover {
+/* .feature-item:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-glow-primary);
-}
+} */
 
 .feature-icon {
   width: 56px;
