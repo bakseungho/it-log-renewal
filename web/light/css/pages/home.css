@@ -479,7 +479,7 @@ body.home-page .header.scrolled .header-menu-item {
 .clients-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 40px;
+  gap: 12px;
   align-items: center;
   opacity: 1 !important;
   visibility: visible !important;
@@ -490,7 +490,7 @@ body.home-page .header.scrolled .header-menu-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.03);
+  /* background: rgba(0, 0, 0, 0.03); */
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   height: 128px;
@@ -565,6 +565,8 @@ body.home-page .header.scrolled .header-menu-item {
 }
 
 .projects-grid .card-project {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.03);
   opacity: 1 !important;
   visibility: visible !important;
 }

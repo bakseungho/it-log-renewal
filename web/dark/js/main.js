@@ -541,6 +541,10 @@ function initSubpageScrollAnimations() {
   document.querySelectorAll('.remote-intro, .support-steps, .support-caution').forEach(el => {
     matchedSections.push(el);
   });
+  // tech-section 내부 요소는 별도 처리하므로 일반 루프에서 제외
+  document.querySelectorAll('.tech-section, .tech-section .tech-wrap, .tech-section .tech-item').forEach(el => {
+    matchedSections.push(el);
+  });
   document.querySelectorAll(sectionSelectors.join(',')).forEach(section => {
     // 페이지 헤더, 히어로 내부 제외
     if (section.closest('.page-header') || section.closest('.hero')) return;
@@ -628,6 +632,54 @@ function initSubpageScrollAnimations() {
             duration: 0.7,
             ease: 'power2.out',
           });
+        }
+      });
+    });
+  }
+
+  // 회사소개 페이지: .tech-section 헤더 + .tech-item 순차 애니메이션
+  const techSection = document.querySelector('.tech-section');
+  if (techSection) {
+    // 1) tech-section 상단 요소 (section-tag, content-title, content-text) 순차 등장
+    const techHeaderEls = techSection.querySelectorAll(':scope > .section-tag, :scope > .content-title, :scope > .content-text');
+    if (techHeaderEls.length > 0) {
+      techHeaderEls.forEach(el => gsap.set(el, { opacity: 0, y: 30 }));
+      ScrollTrigger.create({
+        trigger: techSection,
+        start: 'top 80%',
+        once: true,
+        onEnter: () => {
+          let delay = 0;
+          techHeaderEls.forEach(el => {
+            gsap.to(el, { opacity: 1, y: 0, duration: 0.7, delay: delay, ease: 'power2.out' });
+            delay += 0.18;
+          });
+        }
+      });
+    }
+
+    // 2) 각 tech-item 개별 ScrollTrigger
+    const techItems = techSection.querySelectorAll('.tech-item');
+    techItems.forEach(item => {
+      const figure = item.querySelector('figure.tech-img-cont');
+      const content = item.querySelector('.tech-content-cont');
+      const isRight = item.classList.contains('tech-item-right');
+
+      // 초기 숨김
+      if (figure) gsap.set(figure, { opacity: 0, y: 30 });
+      if (content) gsap.set(content, { opacity: 0, x: isRight ? -50 : 50 });
+
+      ScrollTrigger.create({
+        trigger: item,
+        start: 'top 80%',
+        once: true,
+        onEnter: () => {
+          if (figure) {
+            gsap.to(figure, { opacity: 1, y: 0, duration: 1.8, ease: 'power2.out' });
+          }
+          if (content) {
+            gsap.to(content, { opacity: 1, x: 0, duration: 0.9, delay: 0.6, ease: 'power2.out' });
+          }
         }
       });
     });
