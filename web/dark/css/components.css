@@ -140,6 +140,7 @@
 .card-project {
   background: var(--color-bg-secondary);
   border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   overflow: hidden;
   transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
   transform: translateY(0);
@@ -148,10 +149,10 @@
   flex-direction: column;
 }
 
-.card-project:hover {
+/* .card-project:hover {
   transform: translateY(-8px) !important;
   box-shadow: var(--shadow-xl);
-}
+} */
 
 .card-project .img_cont {
   width: 100%;
