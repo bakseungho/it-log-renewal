@@ -1301,8 +1301,8 @@
 .overview-features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  max-width: 1200px;
+  gap: 24px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
