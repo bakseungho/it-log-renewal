@@ -37,6 +37,12 @@
   transform: translateY(-2px);
 }
 
+.btn-br-w:hover {
+  background: #fff;
+  color: var(--color-accent-primary);
+  transition: all .3s;
+}
+
 .btn-outline {
   background: transparent;
   color: var(--color-text-primary);
