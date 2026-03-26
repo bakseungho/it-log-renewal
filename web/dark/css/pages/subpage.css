@@ -1558,6 +1558,11 @@
   margin-bottom: 40px;
 }
 
+/* one-stop common section */
+.cont-section {
+  text-align: center;
+}
+
 /* Platform Section */
 .platform-section {
   padding: 80px 0;
