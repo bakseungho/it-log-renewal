@@ -1657,6 +1657,7 @@
   padding: 0 24px;
   border-left: 1px solid #d5d5d5;
   transition: all 0.3s ease;
+  text-align: left;
 }
 
 .process-step:hover {
@@ -1751,6 +1752,7 @@
 
 .solution-card-content {
   padding: 30px;
+  text-align: left;
 }
 
 .solution-card-title {
