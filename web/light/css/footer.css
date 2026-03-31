@@ -138,6 +138,7 @@
   }
   
   .footer-sitemap {
+    display: none;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
@@ -146,6 +147,10 @@
 @media (max-width: 768px) {
   .footer {
     padding: 40px 0 20px;
+  }
+
+  .footer-logo {
+    width: 120px;
   }
   
   .footer-sitemap {

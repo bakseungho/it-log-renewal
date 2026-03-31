@@ -141,6 +141,13 @@
   background: #e9ecef;
 }
 
+@media (max-width: 767px) {
+  .page-header-breadcrumb {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+}
+
 /* Content Section */
 .content-section {
   padding: var(--section-padding-y) 0;
@@ -587,6 +594,10 @@
     padding: 10px 24px;
     font-size: var(--font-size-body-sm);
   }
+
+  .timeline {
+    padding: 0;
+  }
   
   .timeline::before {
     left: 20px;
@@ -595,13 +606,27 @@
   .timeline-item {
     flex-direction: row !important;
     padding-left: 60px;
+    margin-bottom: 0;
   }
-  
+
   .timeline-content {
     width: 100%;
+    padding: 32px 12px;
+    background: transparent;
+  }
+
+  .timeline-content li {
+    display: flex;
+    gap: 8px;
+    word-break: keep-all;
   }
   
-  .timeline-dot {
+  .timeline-item .timeline-dot {
+    left: 20px;
+  }
+  
+  .timeline::after,
+  .timeline::before {
     left: 20px;
   }
   
@@ -617,11 +642,15 @@
   }
   
   .page-header-content {
-    padding: 0 20px;
+    padding: 0;
   }
   
   .page-header-title {
-    font-size: var(--font-size-h3);
+    font-size: 32px;
+    padding: 0 20px;
+    word-break: keep-all;
+    line-height: 1.4;
+    margin-bottom: 40px;
   }
   
   .page-header-description {
@@ -631,10 +660,12 @@
   
   .page-header-image {
     max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
   }
   
   .page-header-image img {
-    height: 200px;
+    height: 180px;
   }
   
   .content-card {
@@ -643,7 +674,7 @@
   
   .timeline-tabs {
     gap: 8px;
-    padding: 16px 0;
+    padding: 12px 0 !important;
   }
   
   .timeline-tab {
@@ -653,15 +684,13 @@
   
   .timeline-item {
     padding-left: 40px;
-    margin-bottom: 40px;
   }
-  
-  .timeline-dot {
+
+  .timeline-item .timeline-dot {
     left: 10px;
-    width: 16px;
-    height: 16px;
   }
   
+  .timeline::after,
   .timeline::before {
     left: 10px;
   }
@@ -752,7 +781,8 @@
   left: 50%;
   width: 24px;
   height: 24px;
-  background: rgba(0, 0, 0, 0.15);
+  background: #d5d5d5;
+  /* background: rgba(0, 0, 0, 0.15); */
   border: 4px solid var(--color-bg-primary);
   border-radius: 50%;
   transform: translateX(-50%);
@@ -1023,6 +1053,7 @@
   color: #4a4a4a;
   line-height: var(--line-height-body);
   margin-bottom: 24px;
+  word-break: keep-all;
 }
 
 .ceo-message-content .content-text:last-of-type {
@@ -1435,6 +1466,19 @@
   text-align: center;
 }
 
+.diagram-caption {
+  display: block;
+  border: 1px solid var(--color-accent-primary);
+  text-align: center;
+  width: 392px;
+  margin: 0 auto;
+  padding: 4px 12px;
+  border-radius: 50px;
+  color: var(--color-accent-primary);
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .diagram-figure {
   display: block;
   width: 100%;
@@ -1452,15 +1496,22 @@
   transition: transform 0.3s var(--ease-smooth);
 }
 
+.diagram-sub-text {
+  text-align: center;
+  color: #888;
+  font-size: 16px;
+  margin: 14px auto 0;
+}
+
 /* .diagram-image:hover {
   transform: scale(1.02);
 } */
 
-.diagram-caption {
+/* .diagram-caption {
   font-size: var(--font-size-body-sm);
   color: var(--color-text-tertiary);
   margin-top: 16px;
-}
+} */
 
 /* Cases Section */
 .cases-section {
@@ -1781,6 +1832,13 @@
   /* border: 1px solid rgba(0, 0, 0, 0.08); */
 }
 
+.content-privacy,
+.content-term {
+  width: 1280px;
+  margin: 0 auto;
+  word-break: keep-all;
+}
+
 /* Responsive - Solutions Specific */
 @media (max-width: 1023px) {
   .overview-features {
@@ -1817,9 +1875,17 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  .diagram-image {
+    width: 100%;
+  }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  .overview-section {
+    padding: 0 0 80px;
+  }
+
   .features-section-title {
     font-size: var(--font-size-h4);
     margin-top: 60px;
@@ -1838,6 +1904,15 @@
     width: 48px;
     height: 48px;
     margin-bottom: 20px;
+  }
+
+  .feature-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .feature-description {
+    font-size: 16px;
   }
   
   .components-grid {
@@ -1870,5 +1945,44 @@
   .process-section,
   .solutions-grid-section {
     padding: 60px 0;
+  }
+
+  .diagram-caption {
+    width: auto;
+    font-size: 16px;
+  }
+
+  .diagram-sub-text {
+    font-size: 12px;
+  }
+
+  .features-section-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .overview-title {
+    font-size: 24px;
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+
+  .cases-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .overview-subtitle {
+    font-size: 18px;
+  }
+
+  .overview-text {
+    font-size: 16px;
+  }
+
+  .content-privacy,
+  .content-term {
+    width: 100%;
+    padding: 20px;
   }
 }

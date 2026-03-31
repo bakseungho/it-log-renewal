@@ -6,6 +6,7 @@ class HeaderNav {
     this.header = document.querySelector('.header');
     this.mobileToggle = document.querySelector('.header-mobile-toggle');
     this.mobileMenu = document.querySelector('.header-mobile-menu');
+    this.mobileToggleSpan = document.querySelectorAll('.header-mobile-toggle span');
     this.init();
   }
 
@@ -53,6 +54,7 @@ class HeaderNav {
       link.addEventListener('click', () => {
         this.mobileToggle.classList.remove('active');
         this.mobileMenu.classList.remove('active');
+        // this.mobileToggleSpan.style.color = '#000';
         document.body.style.overflow = '';
       });
     });

@@ -145,11 +145,16 @@ Template3 초기 기획 단계에서 생성된 문서들:
 - `fix_smart_safety_duplicate.py`: 중복 콘텐츠 제거
 
 ## 📌 참고사항
-
 - 모든 문서는 Markdown 형식으로 작성
 - 이미지는 `web/dark/images/` 또는 `web/light/images/`에 저장
 - CSS 변수는 `web/[theme]/css/variables.css`에 정의
 - 공통 스타일은 다크 테마 기준으로 작성 후 동기화
+
+## 반응형 분기점
+- PC, 노트북 (해상도 1024px ~)
+- 테블릿 세로 가로 (해상도 768px ~ 1023px)
+- 모바일 세로 (해상도 480px ~ 767px)
+- 모바일 가로 (해상도 ~ 479px)
 
 # 주의사항
 - 내용 업데이트 중심은 다크 테마 기준으로 적용
