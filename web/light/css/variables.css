@@ -1,18 +1,7 @@
-/* CSS Variables - Light & Professional Theme */
+/* CSS Variables - Light & Professional Theme (화이트 배경) */
 :root {
-  /* Colors - Light Background */
-  --color-bg-primary: #ffffff;
-  --color-bg-primary-rgb: 255, 255, 255;
-  --color-bg-secondary: #f8f9fa;
-  --color-bg-secondary-rgb: 248, 249, 250;
-  --color-bg-tertiary: #f1f3f5;
-  --color-bg-tertiary-rgb: 241, 243, 245;
-  --color-bg-black: #ffffff;
-  --color-bg-black-rgb: 255, 255, 255;
-
   /* Colors - Accent (Light Mode Optimized) */
-  --color-accent-primary: #0066FF;
-  --color-accent-primary-rgb: 0, 102, 255;
+  --color-accent-primary: #0066FF; /* point color(WCAG AA Compliant) - brand color 대체 파란색 팔레트 적용 */
   --color-accent-primary-light: #3385FF;
   --color-accent-primary-lighter: #66A3FF;
   --color-accent-primary-dark: #0052CC;
@@ -26,19 +15,24 @@
   
   /* Legacy gold colors (하위 호환성) */
   --color-accent-gold: #0066FF;
-  --color-accent-gold-rgb: 0, 102, 255;
   --color-accent-gold-light: #3385FF;
   --color-accent-gold-dark: #0052CC;
 
-  /* Colors - Text (WCAG AA Compliant) */
-  --color-text-primary: #1a1a1a;
-  --color-text-primary-rgb: 26, 26, 26;
-  --color-text-secondary: #4a4a4a;
-  --color-text-secondary-rgb: 74, 74, 74;
-  --color-text-tertiary: #6b6b6b;
-  --color-text-tertiary-rgb: 107, 107, 107;
-  --color-text-placeholder: #9b9b9b;
-  --color-text-placeholder-rgb: 155, 155, 155;
+  /* Black Colors - Text (WCAG AA Compliant) */
+  --color-text-primary: #1a1a1a; /* 타이틀 */
+  --color-text-secondary: #505050; /* 본문 내용이나 서브 문구 */
+  --color-text-tertiary: #767676; /* 강조되지 않고 서브텍스트 컬러용 */
+  --color-text-placeholder: #999; /* 비활성화 */
+
+  /* Black Colors - Line */
+  --color-line-light: #F1F1F5; /* 화이트 bg */
+  --color-line-regular: #E5E5EC; /* 인풋박스, 셀렉트박스 */
+  --color-line-black: #111; /* 화이트 bg - 강조 */
+
+  /* Colors - Light Background */
+  --color-bg-primary: #ffffff;
+  --color-bg-light: #F7F7FB;
+  --color-bg-regular: #F1F1F5;
 
   /* Colors - Semantic (WCAG AA Compliant) */
   --color-success: #00875A;

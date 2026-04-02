@@ -118,7 +118,7 @@
   top: calc(100% - 10px);
   left: 0;
   min-width: 240px;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-light);
   border-radius: var(--radius-md);
   padding: 16px 0;
   opacity: 0;
@@ -145,7 +145,7 @@
 }
 
 .header-dropdown-item:hover {
-  background: var(--color-bg-tertiary);
+  background: var(--color-bg-regular);
   color: var(--color-accent-primary);
 }
 

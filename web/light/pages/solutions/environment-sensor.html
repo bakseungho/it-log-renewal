@@ -213,13 +213,12 @@
         <span class="separator">·</span>
         <span class="active">스마트 환경센서 시스템</span>
       </div>
-      <h1 class="page-header-title">스마트 환경센서 시스템</h1>      <div class="page-header-image">
+      <h1 class="page-header-title">스마트 환경센서 시스템</h1>
+      <div class="page-header-image">
         <img src="../../images/solutions/sensor_bg.png" alt="스마트 환경센서 시스템">
       </div>
     </div>
   </section>
-
-
 
   <!-- Overview Section -->
   <section class="overview-section">
@@ -242,44 +241,111 @@
       <div class="overview-features">
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 바람/대기 흐름 -->
+              <path d="M8 18h20a4 4 0 1 0-4-4"/>
+              <path d="M6 26h26a3 3 0 1 1-3 3"/>
+              <path d="M10 34h16a3.5 3.5 0 1 0-3.5-3.5"/>
+              <!-- 모니터링 화면 -->
+              <rect x="34" y="20" width="24" height="18" rx="2"/>
+              <!-- 실시간 파형 (라이브 데이터) -->
+              <polyline points="38,32 41,26 44,34 47,28 50,32 53,30" stroke-width="1.5"/>
+              <!-- 라이브 표시 점 -->
+              <circle cx="53" cy="30" r="1.5" fill="currentColor"/>
+              <!-- 모니터 받침 -->
+              <line x1="46" y1="38" x2="46" y2="42"/>
+              <line x1="41" y1="42" x2="51" y2="42"/>
+            </svg>
+
+            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="6" y="6" width="36" height="36" rx="6" stroke="currentColor" stroke-width="2"/>
               <path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            </svg> -->
           </div>
+          <!-- monitor + wave -->
           <h3 class="feature-title">대기 상태 실시간 모니터링</h3>
           <p class="feature-description">미세먼지(PM2.5, PM10)부터 소음, 기압, 풍향, 풍속에 이르기까지 현장의 모든 대기 데이터를 실시간 측정하여 최적의 환경 상태를 유지합니다.</p>
         </div>
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 건물 -->
+              <rect x="18" y="16" width="20" height="32" rx="1"/>
+              <line x1="24" y1="22" x2="24" y2="26"/>
+              <line x1="32" y1="22" x2="32" y2="26"/>
+              <line x1="24" y1="30" x2="24" y2="34"/>
+              <line x1="32" y1="30" x2="32" y2="34"/>
+              <line x1="24" y1="38" x2="24" y2="42"/>
+              <line x1="32" y1="38" x2="32" y2="42"/>
+              <!-- 거동 감지 파형 -->
+              <path d="M44 24c3-3 3-9 0-12" opacity="0.4"/>
+              <path d="M48 26c5-5 5-15 0-20" opacity="0.25"/>
+              <path d="M10 24c-3-3-3-9 0-12" opacity="0.4"/>
+              <path d="M6 26c-5-5-5-15 0-20" opacity="0.25"/>
+              <!-- 바닥선 -->
+              <line x1="12" y1="48" x2="52" y2="48"/>
+            </svg>
+            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
               <circle cx="24" cy="24" r="4" fill="currentColor"/>
-            </svg>
+            </svg> -->
           </div>
+          <!-- building + angle -->
           <h3 class="feature-title">지능형 구조물 안전 및 거동 감지</h3>
           <p class="feature-description">센서를 통해 구조물의 균열, 진동, 기울기 변화를 정밀 모니터링하며, 붕괴 징후 등 위험 발생 시 즉각적인 경보를 송출하여 현장 안전 사고를 방지합니다.</p>
         </div>
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 가스 구름 -->
+              <path d="M12 34a8 8 0 0 1 1-16 10 10 0 0 1 19-2 7 7 0 0 1 6 12"/>
+              <!-- 유해 표시 (작은 입자들) -->
+              <circle cx="18" cy="26" r="1" fill="currentColor" opacity="0.4"/>
+              <circle cx="24" cy="22" r="1" fill="currentColor" opacity="0.3"/>
+              <circle cx="30" cy="27" r="1" fill="currentColor" opacity="0.4"/>
+              <!-- 돋보기 (정밀 분석) -->
+              <circle cx="38" cy="38" r="8"/>
+              <line x1="44" y1="44" x2="52" y2="52" stroke-width="3"/>
+              <!-- 돋보기 안 파형 (분석 데이터) -->
+              <polyline points="32,38 35,34 38,40 41,36 44,38" stroke-width="1.5"/>
+            </svg>
+            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="6" y="12" width="36" height="24" rx="4" stroke="currentColor" stroke-width="2"/>
               <path d="M24 18V30M18 24H30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            </svg> -->
           </div>
+          <!-- c -->
           <h3 class="feature-title">12종 복합 유해가스 정밀 분석</h3>
           <p class="feature-description">현장에서 발생할 수 있는 12종의 유해가스를 실시간으로 감지하고 농도를 분석하여, 질식 및 가스 중독 사고로부터 작업자를 안전하게 보호합니다.</p>
         </div>
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 사이렌/경고등 -->
+              <path d="M14 32a8 8 0 0 1 16 0"/>
+              <rect x="12" y="32" width="20" height="6" rx="1"/>
+              <line x1="22" y1="20" x2="22" y2="24"/>
+              <line x1="14" y1="22" x2="16" y2="25"/>
+              <line x1="30" y1="22" x2="28" y2="25"/>
+              <!-- 타임라인 (이력 관리) -->
+              <line x1="44" y1="14" x2="44" y2="50"/>
+              <!-- 이력 노드들 -->
+              <circle cx="44" cy="20" r="2.5" fill="currentColor" opacity="0.3"/>
+              <line x1="47" y1="20" x2="56" y2="20"/>
+              <circle cx="44" cy="32" r="2.5" fill="currentColor" opacity="0.5"/>
+              <line x1="47" y1="32" x2="56" y2="32"/>
+              <circle cx="44" cy="44" r="2.5" fill="currentColor"/>
+              <line x1="47" y1="44" x2="56" y2="44"/>
+            </svg>
+            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 36L24 12L36 36H12Z" stroke="currentColor" stroke-width="2"/>
               <path d="M24 22V28M24 32V34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            </svg> -->
           </div>
+          <!-- megaphone, bell-ringing, list-checks, siren -->
           <h3 class="feature-title">자동 경보 발령 및 체계적인 이력 관리</h3>
           <p class="feature-description">설정된 환경 기준치 초과 시 시스템이 자동으로 알림을 발송하며, 수집된 모든 데이터를 바탕으로 분석 보고서를 자동 생성하여 효율적인 사후 관리를 지원합니다.</p>
         </div>

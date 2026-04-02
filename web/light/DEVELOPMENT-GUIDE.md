@@ -90,7 +90,7 @@ web/template3/
 ```css
 /* 다크 배경 */
 background: var(--color-bg-primary);      /* #0a0a0a */
-background: var(--color-bg-secondary);    /* #1a1a1a */
+background: var(--color-bg-light);    /* #1a1a1a */
 
 /* 포인트 컬러 */
 color: var(--color-accent-gold);          /* #d4af37 */

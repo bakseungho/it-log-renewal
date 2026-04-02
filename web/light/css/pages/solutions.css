@@ -104,7 +104,7 @@
 }
 
 .feature-item {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-light);
   border-radius: var(--radius-lg);
   padding: 32px;
   transition: all 0.4s var(--ease-smooth);
@@ -161,7 +161,7 @@
 .component-item {
   text-align: center;
   padding: 24px;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-light);
   border-radius: var(--radius-md);
   transition: all 0.3s var(--ease-smooth);
 }
@@ -194,7 +194,7 @@
 .diagram-section {
   padding: 24px 0;
   /* padding: var(--section-padding-y) 0; */
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-light);
 }
 
 .diagram-title {
@@ -262,7 +262,7 @@
 }
 
 .case-item {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-light);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all 0.4s var(--ease-smooth);
@@ -433,14 +433,14 @@
 .platform-feature-item {
   text-align: center;
   padding: 30px 20px;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-light);
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
 .platform-feature-item:hover {
-  background: var(--color-bg-tertiary);
+  background: var(--color-bg-regular);
   transform: translateY(-5px);
   border-color: var(--primary-color);
 }
@@ -477,14 +477,14 @@
 .process-step {
   position: relative;
   padding: 40px 30px;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-light);
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
 .process-step:hover {
-  background: var(--color-bg-tertiary);
+  background: var(--color-bg-regular);
   transform: translateY(-5px);
   border-color: var(--primary-color);
 }
@@ -526,7 +526,7 @@
 
 .solution-card {
   display: block;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-light);
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -544,7 +544,7 @@
   width: 100%;
   height: 200px;
   overflow: hidden;
-  background: var(--color-bg-tertiary);
+  background: var(--color-bg-regular);
 }
 
 .solution-card-image img {

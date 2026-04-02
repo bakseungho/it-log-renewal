@@ -248,7 +248,7 @@ body.home-page .header.scrolled .header-menu-item {
 /* One-Stop Solution Section */
 .onestop-section {
   padding: var(--section-padding-y) 0;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-light);
   text-align: center;
 }
 
@@ -481,7 +481,7 @@ body.home-page .header.scrolled .header-menu-item {
 /* Clients Section */
 .clients-section {
   padding: var(--section-padding-y) 0;
-  /* background: var(--color-bg-secondary); */
+  /* background: var(--color-bg-light); */
 }
 
 .clients-grid {

@@ -240,44 +240,238 @@
       <div class="overview-features">
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 스캔 프레임 모서리 -->
+              <path d="M10 22V14h8"/>
+              <path d="M46 14h8v8"/>
+              <path d="M54 42v8h-8"/>
+              <path d="M18 50h-8v-8"/>
+              <!-- 얼굴 윤곽 -->
+              <ellipse cx="32" cy="30" rx="10" ry="13"/>
+              <!-- 눈 -->
+              <circle cx="28" cy="27" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="36" cy="27" r="1.5" fill="currentColor" opacity="0.5"/>
+              <!-- 입 -->
+              <path d="M29 35a4 4 0 0 0 6 0" stroke-width="1.5"/>
+              <!-- AI 스캔 라인 -->
+              <line x1="18" y1="32" x2="46" y2="32" stroke-dasharray="3 2" opacity="0.4"/>
+              <!-- AI 인식 포인트 -->
+              <circle cx="22" cy="24" r="1" fill="currentColor" opacity="0.3"/>
+              <circle cx="42" cy="24" r="1" fill="currentColor" opacity="0.3"/>
+              <circle cx="22" cy="36" r="1" fill="currentColor" opacity="0.3"/>
+              <circle cx="42" cy="36" r="1" fill="currentColor" opacity="0.3"/>
+              <!-- 인식 완료 체크 -->
+              <circle cx="50" cy="48" r="6" fill="currentColor" opacity="0.15"/>
+              <polyline points="47,48 49,50 53,46" stroke-width="2"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 얼굴 -->
+              <circle cx="22" cy="28" r="12"/>
+              <!-- 눈 -->
+              <circle cx="18" cy="26" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="26" cy="26" r="1.5" fill="currentColor" opacity="0.5"/>
+              <!-- 코 -->
+              <line x1="22" y1="28" x2="22" y2="31"/>
+              <!-- 입 -->
+              <path d="M19 34a4 3 0 0 0 6 0" stroke-width="1.5"/>
+              <!-- 연결선 (딥러닝 분석) -->
+              <line x1="34" y1="22" x2="42" y2="16" opacity="0.4"/>
+              <line x1="34" y1="28" x2="42" y2="28" opacity="0.4"/>
+              <line x1="34" y1="34" x2="42" y2="40" opacity="0.4"/>
+              <!-- 뉴럴넷 노드 Layer 1 -->
+              <circle cx="44" cy="16" r="2.5"/>
+              <circle cx="44" cy="28" r="2.5"/>
+              <circle cx="44" cy="40" r="2.5"/>
+              <!-- 뉴럴넷 연결 -->
+              <line x1="47" y1="17" x2="53" y2="22" opacity="0.3"/>
+              <line x1="47" y1="28" x2="53" y2="22" opacity="0.3"/>
+              <line x1="47" y1="28" x2="53" y2="34" opacity="0.3"/>
+              <line x1="47" y1="39" x2="53" y2="34" opacity="0.3"/>
+              <!-- 뉴럴넷 노드 Layer 2 (출력) -->
+              <circle cx="55" cy="22" r="2.5"/>
+              <circle cx="55" cy="34" r="2.5"/>
+              <!-- AI 라벨 -->
+              <text x="55" y="48" text-anchor="middle" font-size="7" font-weight="bold" fill="currentColor" stroke="none">AI</text>
+            </svg>
+            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="6" y="6" width="36" height="36" rx="6" stroke="currentColor" stroke-width="2"/>
               <path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            </svg> -->
           </div>
+          <!-- face-mask, user-focus, scan -->
           <h3 class="feature-title">AI 딥러닝 기반 안면인식 시스템</h3>
           <p class="feature-description">딥러닝 알고리즘을 통해 마스크 착용이나 안경, 헤어스타일 변화 등 까다로운 조건에서도 사용자 본인을 정확하게 식별하고 인식 속도와 정확도를 동시에 높여 멈춤 없는 쾌적한 출입 환경을 제공합니다.</p>
         </div>
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 스캔 게이트 -->
+              <path d="M14 10v44"/>
+              <path d="M50 10v44"/>
+              <path d="M14 10h36"/>
+              <!-- 사람 (출입자) -->
+              <circle cx="32" cy="22" r="5"/>
+              <line x1="32" y1="27" x2="32" y2="40"/>
+              <line x1="32" y1="32" x2="24" y2="36"/>
+              <line x1="32" y1="32" x2="40" y2="36"/>
+              <line x1="32" y1="40" x2="26" y2="50"/>
+              <line x1="32" y1="40" x2="38" y2="50"/>
+              <!-- 정밀 스캔 라인들 -->
+              <line x1="18" y1="20" x2="46" y2="20" stroke-dasharray="2 2" opacity="0.25"/>
+              <line x1="18" y1="28" x2="46" y2="28" stroke-dasharray="2 2" opacity="0.35"/>
+              <line x1="18" y1="36" x2="46" y2="36" stroke-dasharray="2 2" opacity="0.35"/>
+              <line x1="18" y1="44" x2="46" y2="44" stroke-dasharray="2 2" opacity="0.25"/>
+              <!-- 상태 표시 (체크) -->
+              <circle cx="52" cy="16" r="5" fill="currentColor" opacity="0.15"/>
+              <polyline points="49,16 51,18 55,14" stroke-width="2"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 스캔 프레임 -->
+              <path d="M10 18V10h8"/>
+              <path d="M38 10h8v8"/>
+              <path d="M46 46v8h-8"/>
+              <path d="M18 54h-8v-8"/>
+              <!-- 사람 실루엣 -->
+              <circle cx="28" cy="20" r="5"/>
+              <path d="M28 25v14"/>
+              <path d="M28 30l-7 5"/>
+              <path d="M28 30l7 5"/>
+              <path d="M28 39l-5 12"/>
+              <path d="M28 39l5 12"/>
+              <!-- 스캔 빔 (위→아래) -->
+              <line x1="14" y1="30" x2="42" y2="30" stroke-width="1.5" opacity="0.4" stroke-dasharray="3 2"/>
+              <!-- 상태 데이터 패널 -->
+              <line x1="48" y1="18" x2="58" y2="18" stroke-width="1.5" opacity="0.5"/>
+              <line x1="48" y1="24" x2="56" y2="24" stroke-width="1.5" opacity="0.4"/>
+              <line x1="48" y1="30" x2="58" y2="30" stroke-width="1.5" opacity="0.5"/>
+              <line x1="48" y1="36" x2="54" y2="36" stroke-width="1.5" opacity="0.4"/>
+              <!-- 상태 점 (정상/주의/경고) -->
+              <circle cx="46" cy="18" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="46" cy="24" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="46" cy="30" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="46" cy="36" r="1.5" fill="currentColor" opacity="0.5"/>
+            </svg>
+            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
               <circle cx="24" cy="24" r="4" fill="currentColor"/>
-            </svg>
+            </svg> -->
           </div>
+          <!-- user-focus, scan, person, door -->
           <h3 class="feature-title">출입자 상태 기반 정밀 스캐닝</h3>
           <p class="feature-description">출입 인증과 동시에 체온 측정 및 음주 여부를 실시간 확인하여, 건강 상태나 음주 수치가 기준치를 초과하거나 미등록 인원인 경우 즉시 출입을 차단합니다.</p>
         </div>
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 스캔 게이트 -->
+              <path d="M8 10v44"/>
+              <path d="M56 10v44"/>
+              <path d="M8 10h48"/>
+              <!-- 차량 본체 -->
+              <rect x="16" y="32" width="32" height="12" rx="3"/>
+              <path d="M22 32v-6a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v6"/>
+              <!-- 바퀴 -->
+              <circle cx="22" cy="46" r="3"/>
+              <circle cx="42" cy="46" r="3"/>
+              <!-- 번호판 -->
+              <rect x="27" y="36" width="10" height="5" rx="1"/>
+              <!-- 스캔 라인들 -->
+              <line x1="12" y1="20" x2="52" y2="20" stroke-dasharray="2 2" opacity="0.25"/>
+              <line x1="12" y1="30" x2="52" y2="30" stroke-dasharray="2 2" opacity="0.35"/>
+              <line x1="12" y1="40" x2="52" y2="40" stroke-dasharray="2 2" opacity="0.35"/>
+              <line x1="12" y1="50" x2="52" y2="50" stroke-dasharray="2 2" opacity="0.25"/>
+              <!-- 상태 표시 (체크) -->
+              <circle cx="52" cy="16" r="5" fill="currentColor" opacity="0.15"/>
+              <polyline points="49,16 51,18 55,14" stroke-width="2"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 인식 프레임 (모서리) -->
+              <path d="M10 18V10h8"/>
+              <path d="M46 10h8v8"/>
+              <path d="M54 46v8h-8"/>
+              <path d="M18 54h-8v-8"/>
+              <!-- 번호판 -->
+              <rect x="16" y="24" width="28" height="16" rx="3"/>
+              <line x1="22" y1="30" x2="38" y2="30" stroke-width="1.5"/>
+              <line x1="24" y1="35" x2="36" y2="35" stroke-width="1" opacity="0.5"/>
+              <!-- 스캔 빔 -->
+              <line x1="14" y1="32" x2="46" y2="32" stroke-width="1.5" opacity="0.4" stroke-dasharray="3 2"/>
+              <!-- 상태 데이터 패널 -->
+              <line x1="50" y1="20" x2="60" y2="20" stroke-width="1.5" opacity="0.5"/>
+              <line x1="50" y1="26" x2="58" y2="26" stroke-width="1.5" opacity="0.4"/>
+              <line x1="50" y1="32" x2="60" y2="32" stroke-width="1.5" opacity="0.5"/>
+              <line x1="50" y1="38" x2="56" y2="38" stroke-width="1.5" opacity="0.4"/>
+              <!-- 상태 점 -->
+              <circle cx="48" cy="20" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="48" cy="26" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="48" cy="32" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="48" cy="38" r="1.5" fill="currentColor" opacity="0.5"/>
+            </svg>
+            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="6" y="12" width="36" height="24" rx="4" stroke="currentColor" stroke-width="2"/>
               <path d="M24 18V30M18 24H30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            </svg> -->
           </div>
+          <!-- car, license, scan, barcode, surveillance -->
           <h3 class="feature-title">차량 번호판 자동 인식 및 통합 관제 (LPR)</h3>
           <p class="feature-description">딥러닝 기반의 차량 번호판 자동 인식(LPR) 기술을 통해 별도의 조작 없이도 등록 차량의 빠른 입출차를 지원하며, 차량과 인원의 출입 데이터를 하나의 플랫폼에서 통합 관리합니다.</p>
         </div>
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 문서 -->
+              <path d="M12 10h26l8 8v36H12z"/>
+              <path d="M38 10v8h8"/>
+              <!-- 기록 라인들 -->
+              <line x1="18" y1="26" x2="34" y2="26" stroke-width="1.5" opacity="0.4"/>
+              <line x1="18" y1="32" x2="30" y2="32" stroke-width="1.5" opacity="0.4"/>
+              <line x1="18" y1="38" x2="32" y2="38" stroke-width="1.5" opacity="0.4"/>
+              <!-- 실시간 분석 그래프 (우측 하단 오버레이) -->
+              <rect x="32" y="34" width="24" height="20" rx="2" fill="currentColor" opacity="0.08"/>
+              <rect x="32" y="34" width="24" height="20" rx="2"/>
+              <!-- 바 차트 -->
+              <line x1="38" y1="50" x2="38" y2="42" stroke-width="2.5" opacity="0.5"/>
+              <line x1="44" y1="50" x2="44" y2="38" stroke-width="2.5" opacity="0.7"/>
+              <line x1="50" y1="50" x2="50" y2="44" stroke-width="2.5" opacity="0.5"/>
+              <!-- 실시간 표시 (점멸 점) -->
+              <circle cx="52" cy="38" r="2" fill="currentColor" opacity="0.6"/>
+              <!-- 상태 표시 (체크) -->
+              <circle cx="52" cy="16" r="5" fill="currentColor" opacity="0.15"/>
+              <polyline points="49,16 51,18 55,14" stroke-width="2"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 클립보드 -->
+              <rect x="10" y="14" width="30" height="40" rx="3"/>
+              <rect x="20" y="10" width="10" height="8" rx="2"/>
+              <!-- 체크 기록들 -->
+              <circle cx="17" cy="28" r="1.5" fill="currentColor" opacity="0.5"/>
+              <line x1="22" y1="28" x2="34" y2="28" stroke-width="1.5" opacity="0.4"/>
+              <circle cx="17" cy="35" r="1.5" fill="currentColor" opacity="0.5"/>
+              <line x1="22" y1="35" x2="32" y2="35" stroke-width="1.5" opacity="0.4"/>
+              <circle cx="17" cy="42" r="1.5" fill="currentColor" opacity="0.5"/>
+              <line x1="22" y1="42" x2="34" y2="42" stroke-width="1.5" opacity="0.4"/>
+              <!-- 분석 패널 (우측) -->
+              <rect x="42" y="20" width="16" height="28" rx="2"/>
+              <!-- 꺾은선 그래프 -->
+              <polyline points="46,42 49,36 52,38 55,30 " stroke-width="1.5" opacity="0.6"/>
+              <!-- 상태 데이터 -->
+              <line x1="46" y1="26" x2="54" y2="26" stroke-width="1.5" opacity="0.4"/>
+              <!-- 연결선 (기록→분석) -->
+              <line x1="40" y1="34" x2="42" y2="34" stroke-dasharray="2 2" opacity="0.35"/>
+            </svg>
+            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 36L24 12L36 36H12Z" stroke="currentColor" stroke-width="2"/>
               <path d="M24 22V28M24 32V34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            </svg> -->
           </div>
+          <!-- file-chart, clipboard-text, chart-line-up, list-checks -->
           <h3 class="feature-title">실시간 출입 기록 및 자동 분석 리포트</h3>
           <p class="feature-description">모든 출입 데이터를 실시간으로 클라우드에 기록하고 통계화하며, 사용자 요구에 맞춰 일간·월간 보고서를 제공하여 효율적인 인력 및 보안 관리를 돕습니다.</p>
         </div>

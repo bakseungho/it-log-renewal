@@ -37,7 +37,7 @@ body.page-loaded {
 }
 
 .section-secondary {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-light);
 }
 
 .section-fullscreen {

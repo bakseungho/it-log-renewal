@@ -213,7 +213,8 @@
         <span class="separator">·</span>
         <span class="active">타워크레인 통합안전 시스템</span>
       </div>
-      <h1 class="page-header-title">타워크레인 통합안전 시스템</h1>      <div class="page-header-image">
+      <h1 class="page-header-title">타워크레인 통합안전 시스템</h1>
+      <div class="page-header-image">
         <img src="../../images/solutions/crane_bg.png" alt="타워크레인 통합안전 시스템">
       </div>
     </div>
@@ -243,44 +244,266 @@
       <div class="overview-features">
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 풍속계 지주 -->
+              <line x1="28" y1="30" x2="28" y2="54"/>
+              <line x1="22" y1="54" x2="34" y2="54"/>
+              <!-- 풍속계 회전부 (3날개) -->
+              <circle cx="28" cy="20" r="3"/>
+              <path d="M28 17c-2-6-8-8-10-6"/>
+              <path d="M31 21c5-3 9-1 9 2"/>
+              <path d="M26 23c-1 6 3 9 6 9"/>
+              <!-- 바람 흐름선 -->
+              <path d="M6 18h8" opacity="0.3"/>
+              <path d="M4 24h10" opacity="0.4"/>
+              <path d="M6 30h8" opacity="0.3"/>
+              <!-- 위험 수치 경고 (우측) -->
+              <path d="M46 14l6 10H40z" fill="currentColor" opacity="0.12"/>
+              <path d="M46 14l6 10H40z"/>
+              <line x1="46" y1="18" x2="46" y2="21" stroke-width="2"/>
+              <circle cx="46" cy="23" r="0.5" fill="currentColor"/>
+              <!-- 실시간 수치 표시 -->
+              <line x1="42" y1="32" x2="54" y2="32" stroke-width="1.5" opacity="0.5"/>
+              <line x1="42" y1="38" x2="50" y2="38" stroke-width="1.5" opacity="0.4"/>
+              <line x1="42" y1="44" x2="52" y2="44" stroke-width="1.5" opacity="0.5"/>
+              <!-- 상태 점 -->
+              <circle cx="40" cy="32" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="40" cy="38" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="40" cy="44" r="1.5" fill="currentColor" opacity="0.5"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 바람 곡선 (좌측) -->
+              <path d="M6 20h16a6 6 0 0 0 0-12"/>
+              <path d="M6 30h20a8 8 0 0 1 0 16"/>
+              <path d="M6 40h12a5 5 0 0 0 0-10"/>
+              <!-- 센서 기둥 -->
+              <line x1="38" y1="16" x2="38" y2="54"/>
+              <line x1="34" y1="54" x2="42" y2="54"/>
+              <!-- 센서 헤드 -->
+              <circle cx="38" cy="14" r="3"/>
+              <!-- 게이지 (위험 수준) -->
+              <rect x="46" y="22" width="12" height="26" rx="2"/>
+              <line x1="48" y1="44" x2="56" y2="44" stroke-width="1" opacity="0.3"/>
+              <line x1="48" y1="38" x2="56" y2="38" stroke-width="1" opacity="0.3"/>
+              <line x1="48" y1="32" x2="56" y2="32" stroke-width="1" opacity="0.3"/>
+              <!-- 게이지 채움 (위험 레벨) -->
+              <rect x="49" y="34" width="6" height="12" rx="1" fill="currentColor" opacity="0.25"/>
+              <!-- 작업 중지 표시 -->
+              <circle cx="52" cy="14" r="5" fill="currentColor" opacity="0.15"/>
+              <line x1="49" y1="14" x2="55" y2="14" stroke-width="2.5"/>
+            </svg>
+            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="6" y="6" width="36" height="36" rx="6" stroke="currentColor" stroke-width="2"/>
               <path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            </svg> -->
           </div>
+          <!-- wind, google-photo, speedometer, prohibit, fan -->
           <h3 class="feature-title">실시간 풍속 감지 및 능동형 작업 제어</h3>
           <p class="feature-description">초정밀 풍속 센서를 통해 실시간으로 풍속을 측정하며, 강풍 등 위험 수치 도달 시 즉각적인 작업 중지 알림으로 사고를 사전 방지합니다.</p>
         </div>
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 크레인 붐 (상단) -->
+              <line x1="6" y1="10" x2="36" y2="10"/>
+              <line x1="6" y1="10" x2="6" y2="16"/>
+              <!-- 와이어 -->
+              <line x1="28" y1="10" x2="28" y2="22"/>
+              <!-- 훅 -->
+              <path d="M24 22h8"/>
+              <path d="M28 22v4a5 5 0 0 1-8 2"/>
+              <!-- 하중 (매달린 물체) -->
+              <rect x="20" y="34" width="16" height="12" rx="2" fill="currentColor" opacity="0.1"/>
+              <rect x="20" y="34" width="16" height="12" rx="2"/>
+              <!-- 하중 무게 표시선 -->
+              <line x1="24" y1="40" x2="32" y2="40" stroke-width="1.5" opacity="0.4"/>
+              <!-- 하중 게이지 (우측) -->
+              <rect x="44" y="14" width="12" height="32" rx="2"/>
+              <line x1="46" y1="42" x2="54" y2="42" stroke-width="1" opacity="0.3"/>
+              <line x1="46" y1="36" x2="54" y2="36" stroke-width="1" opacity="0.3"/>
+              <line x1="46" y1="30" x2="54" y2="30" stroke-width="1" opacity="0.3"/>
+              <line x1="46" y1="24" x2="54" y2="24" stroke-width="1" opacity="0.3"/>
+              <!-- 게이지 채움 (위험 레벨) -->
+              <rect x="47" y="22" width="8" height="22" rx="1" fill="currentColor" opacity="0.2"/>
+              <!-- 과부하 경고 -->
+              <path d="M46 8l6 10h-12z" fill="currentColor" opacity="0.12"/>
+              <path d="M46 8l6 10h-12z"/>
+              <line x1="46" y1="11" x2="46" y2="14" stroke-width="2"/>
+              <circle cx="46" cy="16" r="0.5" fill="currentColor"/>
+              <!-- 상태 점 -->
+              <circle cx="42" cy="52" r="1.5" fill="currentColor" opacity="0.5"/>
+              <line x1="46" y1="52" x2="56" y2="52" stroke-width="1.5" opacity="0.5"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 저울 기둥 -->
+              <line x1="28" y1="16" x2="28" y2="50"/>
+              <line x1="20" y1="50" x2="36" y2="50"/>
+              <!-- 저울 팔 (기울어짐 = 과부하) -->
+              <line x1="12" y1="20" x2="44" y2="14"/>
+              <!-- 좌측 접시 (무거움 - 하강) -->
+              <path d="M8 20l4 12h8l4-12"/>
+              <line x1="12" y1="32" x2="20" y2="32" stroke-width="1"/>
+              <!-- 우측 접시 (가벼움 - 상승) -->
+              <path d="M36 14l4 12h8l4-12"/>
+              <!-- 하중 블록 (좌측) -->
+              <rect x="11" y="26" width="10" height="5" rx="1" fill="currentColor" opacity="0.15"/>
+              <!-- 과부하 경고 (우측 상단) -->
+              <path d="M52 10l5 9h-10z" fill="currentColor" opacity="0.12"/>
+              <path d="M52 10l5 9h-10z"/>
+              <line x1="52" y1="13" x2="52" y2="16" stroke-width="2"/>
+              <circle cx="52" cy="17.5" r="0.5" fill="currentColor"/>
+              <!-- 수치 데이터 -->
+              <line x1="46" y1="32" x2="58" y2="32" stroke-width="1.5" opacity="0.5"/>
+              <line x1="46" y1="38" x2="54" y2="38" stroke-width="1.5" opacity="0.4"/>
+              <line x1="46" y1="44" x2="56" y2="44" stroke-width="1.5" opacity="0.5"/>
+              <!-- 상태 점 -->
+              <circle cx="44" cy="32" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="44" cy="38" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="44" cy="44" r="1.5" fill="currentColor" opacity="0.5"/>
+            </svg>
+
+            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
               <circle cx="24" cy="24" r="4" fill="currentColor"/>
-            </svg>
+            </svg> -->
           </div>
+          <!-- crane + wave, barbell, scales -->
           <h3 class="feature-title">지능형 하중 및 과부하 경고 시스템</h3>
           <p class="feature-description">크레인에 가해지는 하중을 실시간 감지하여, 기준치 초과 시 강력한 경고를 송출함으로써 과부하로 인한 전도 및 파손 사고를 예방합니다.</p>
         </div>
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 센서 본체 (좌측) -->
+              <rect x="6" y="24" width="10" height="16" rx="2"/>
+              <circle cx="11" cy="32" r="2" fill="currentColor" opacity="0.3"/>
+              <!-- 감지 파동 (동심 호) -->
+              <path d="M20 26a8 8 0 0 1 0 12" opacity="0.3"/>
+              <path d="M24 22a14 14 0 0 1 0 20" opacity="0.45"/>
+              <path d="M28 18a20 20 0 0 1 0 28" opacity="0.6"/>
+              <!-- 안전거리 표시선 -->
+              <line x1="36" y1="14" x2="36" y2="50" stroke-dasharray="3 2" opacity="0.35"/>
+              <!-- 장애물 (우측 블록) -->
+              <rect x="42" y="22" width="14" height="20" rx="2" fill="currentColor" opacity="0.1"/>
+              <rect x="42" y="22" width="14" height="20" rx="2"/>
+              <!-- 차단 표시 (X) -->
+              <line x1="46" y1="28" x2="52" y2="36" stroke-width="2" opacity="0.5"/>
+              <line x1="52" y1="28" x2="46" y2="36" stroke-width="2" opacity="0.5"/>
+              <!-- 경고 표시 -->
+              <circle cx="52" cy="12" r="5" fill="currentColor" opacity="0.15"/>
+              <line x1="52" y1="10" x2="52" y2="13" stroke-width="2"/>
+              <circle cx="52" cy="15" r="0.5" fill="currentColor"/>
+              <!-- 거리 수치 -->
+              <line x1="34" y1="54" x2="44" y2="54" stroke-width="1.5" opacity="0.4"/>
+              <circle cx="32" cy="54" r="1.5" fill="currentColor" opacity="0.5"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 레이더 원 -->
+              <circle cx="24" cy="32" r="18" opacity="0.15"/>
+              <circle cx="24" cy="32" r="12" opacity="0.25"/>
+              <circle cx="24" cy="32" r="6" opacity="0.35"/>
+              <!-- 레이더 중심 -->
+              <circle cx="24" cy="32" r="2" fill="currentColor" opacity="0.5"/>
+              <!-- 레이더 스윕 라인 -->
+              <line x1="24" y1="32" x2="38" y2="22" stroke-width="1.5" opacity="0.5"/>
+              <!-- 감지된 장애물 점 -->
+              <circle cx="34" cy="26" r="2.5" fill="currentColor" opacity="0.4"/>
+              <circle cx="30" cy="40" r="2" fill="currentColor" opacity="0.3"/>
+              <!-- 자동 정지 제어 (우측) -->
+              <circle cx="52" cy="20" r="8"/>
+              <rect x="48" y="18" width="8" height="4" rx="0.5" fill="currentColor" opacity="0.4"/>
+              <!-- 상태 데이터 -->
+              <line x1="46" y1="36" x2="58" y2="36" stroke-width="1.5" opacity="0.5"/>
+              <line x1="46" y1="42" x2="54" y2="42" stroke-width="1.5" opacity="0.4"/>
+              <line x1="46" y1="48" x2="56" y2="48" stroke-width="1.5" opacity="0.5"/>
+              <!-- 상태 점 -->
+              <circle cx="44" cy="36" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="44" cy="42" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="44" cy="48" r="1.5" fill="currentColor" opacity="0.5"/>
+            </svg>
+            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="6" y="12" width="36" height="24" rx="4" stroke="currentColor" stroke-width="2"/>
               <path d="M24 18V30M18 24H30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            </svg> -->
           </div>
+          <!-- crane + box, radar, broadcast, prohibit, wall -->
           <h3 class="feature-title">고성능 충돌 방지 및 장애물 감지</h3>
           <p class="feature-description">센서가 주변 장애물과 타 장비와의 거리를 측정하여 충돌 위험 시 자동 제어를 실행하며, 안전거리를 유지해 작업 밀집 지역 내 충돌을 원천 차단합니다.</p>
         </div>
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 관제 모니터 -->
+              <rect x="12" y="8" width="28" height="20" rx="2"/>
+              <line x1="22" y1="28" x2="22" y2="34"/>
+              <line x1="30" y1="28" x2="30" y2="34"/>
+              <line x1="16" y1="34" x2="36" y2="34"/>
+              <!-- 모니터 내 차트 -->
+              <polyline points="17,22 21,18 25,20 29,14 33,17 36,15" stroke-width="1.5" opacity="0.5"/>
+              <!-- 네트워크 연결선 (모니터 → 노드들) -->
+              <line x1="26" y1="38" x2="12" y2="48" stroke-dasharray="2 2" opacity="0.35"/>
+              <line x1="26" y1="38" x2="26" y2="50" stroke-dasharray="2 2" opacity="0.35"/>
+              <line x1="26" y1="38" x2="40" y2="48" stroke-dasharray="2 2" opacity="0.35"/>
+              <!-- 연동 노드 (현장 장비들) -->
+              <circle cx="12" cy="50" r="3" fill="currentColor" opacity="0.15"/>
+              <circle cx="12" cy="50" r="3"/>
+              <circle cx="26" cy="52" r="3" fill="currentColor" opacity="0.15"/>
+              <circle cx="26" cy="52" r="3"/>
+              <circle cx="40" cy="50" r="3" fill="currentColor" opacity="0.15"/>
+              <circle cx="40" cy="50" r="3"/>
+              <!-- 데이터 분석 패널 (우측) -->
+              <rect x="46" y="10" width="12" height="24" rx="2"/>
+              <line x1="48" y1="16" x2="56" y2="16" stroke-width="1.5" opacity="0.4"/>
+              <line x1="48" y1="22" x2="54" y2="22" stroke-width="1.5" opacity="0.4"/>
+              <line x1="48" y1="28" x2="56" y2="28" stroke-width="1.5" opacity="0.4"/>
+              <!-- 상태 점 -->
+              <circle cx="46" cy="16" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="46" cy="22" r="1.5" fill="currentColor" opacity="0.5"/>
+              <circle cx="46" cy="28" r="1.5" fill="currentColor" opacity="0.5"/>
+              <!-- 실시간 표시 -->
+              <circle cx="54" cy="42" r="5" fill="currentColor" opacity="0.15"/>
+              <polyline points="51,42 53,44 57,40" stroke-width="2"/>
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 대시보드 프레임 -->
+              <rect x="6" y="8" width="52" height="36" rx="3"/>
+              <!-- 분할선 -->
+              <line x1="32" y1="12" x2="32" y2="40" stroke-width="1" opacity="0.2"/>
+              <line x1="10" y1="26" x2="54" y2="26" stroke-width="1" opacity="0.2"/>
+              <!-- 좌상: 꺾은선 그래프 -->
+              <polyline points="12,22 16,18 20,20 24,14 28,17" stroke-width="1.5" opacity="0.6"/>
+              <!-- 우상: 바 차트 -->
+              <line x1="36" y1="22" x2="36" y2="16" stroke-width="2.5" opacity="0.4"/>
+              <line x1="40" y1="22" x2="40" y2="12" stroke-width="2.5" opacity="0.6"/>
+              <line x1="44" y1="22" x2="44" y2="18" stroke-width="2.5" opacity="0.4"/>
+              <line x1="48" y1="22" x2="48" y2="14" stroke-width="2.5" opacity="0.5"/>
+              <!-- 좌하: 데이터 리스트 -->
+              <circle cx="12" cy="30" r="1" fill="currentColor" opacity="0.4"/>
+              <line x1="15" y1="30" x2="28" y2="30" stroke-width="1" opacity="0.4"/>
+              <circle cx="12" cy="35" r="1" fill="currentColor" opacity="0.4"/>
+              <line x1="15" y1="35" x2="26" y2="35" stroke-width="1" opacity="0.4"/>
+              <!-- 우하: 원형 게이지 -->
+              <circle cx="44" cy="33" r="6" opacity="0.3"/>
+              <path d="M44 27a6 6 0 0 1 5 9" stroke-width="2" opacity="0.6"/>
+              <!-- 연동 화살표 (하단) -->
+              <line x1="24" y1="44" x2="24" y2="52" stroke-dasharray="2 2" opacity="0.35"/>
+              <line x1="40" y1="44" x2="40" y2="52" stroke-dasharray="2 2" opacity="0.35"/>
+              <polyline points="22,50 24,54 26,50" stroke-width="1.5" opacity="0.4"/>
+              <polyline points="38,50 40,54 42,50" stroke-width="1.5" opacity="0.4"/>
+            </svg>
+            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 36L24 12L36 36H12Z" stroke="currentColor" stroke-width="2"/>
               <path d="M24 22V28M24 32V34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            </svg> -->
           </div>
+          <!-- monitor + wave -->
           <h3 class="feature-title">통합 관제 연동 및 데이터 분석</h3>
           <p class="feature-description">모든 작업 이력을 자동으로 기록·분석하여 관리자 시스템과 실시간 연동하며, 데이터 기반의 현장 안전 리포트를 제공하여 체계적인 관리를 지원합니다.</p>
         </div>
