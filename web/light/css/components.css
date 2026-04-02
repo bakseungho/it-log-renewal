@@ -180,7 +180,6 @@
   font-size: var(--font-size-h5);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
-  margin-bottom: 8px;
 }
 
 .card-project .meta {

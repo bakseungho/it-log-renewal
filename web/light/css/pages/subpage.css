@@ -1347,10 +1347,10 @@
   height: 100%;
 }
 
-.feature-item:hover {
+/* .feature-item:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-glow-primary);
-}
+} */
 
 .feature-icon {
   width: 56px;
@@ -1372,6 +1372,7 @@
   color: var(--color-text-secondary);
   line-height: var(--line-height-body);
   flex-grow: 1;
+  word-break: keep-all;
 }
 
 /* Components Section */
@@ -1533,18 +1534,76 @@
   gap: 32px;
 }
 
+/* Cases Swiper Slider */
+.cases-slider-wrap {
+  position: relative;
+  padding: 0;
+}
+
+.cases-swiper {
+  overflow: hidden;
+}
+
+.cases-swiper .swiper-slide {
+  height: auto;
+}
+
+.cases-swiper .case-item {
+  height: 100%;
+}
+
+.cases-swiper-prev,
+.cases-swiper-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  background: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.cases-swiper-prev { left: -24px; }
+.cases-swiper-next { right: -24px; }
+
+.cases-swiper-prev:hover,
+.cases-swiper-next:hover {
+  background: var(--color-accent-primary);
+  color: #fff;
+  border-color: var(--color-accent-primary);
+}
+
+.cases-swiper-prev.swiper-button-disabled,
+.cases-swiper-next.swiper-button-disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
 .case-item {
   background: var(--color-bg-light);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: all 0.4s var(--ease-smooth);
+  pointer-events: none;
+  user-select: none;
 }
 
+/*
 .case-item:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
 }
+*/
 
 .case-image-container {
   width: 100%;
@@ -1572,7 +1631,6 @@
   font-size: var(--font-size-h5);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
-  margin-bottom: 12px;
 }
 
 .case-description {
@@ -1859,6 +1917,15 @@
   .cases-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+  }
+
+  .cases-slider-wrap {
+    padding: 0;
+  }
+
+  .cases-swiper-prev,
+  .cases-swiper-next {
+    display: none;
   }
   
   .platform-features {

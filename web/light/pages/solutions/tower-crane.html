@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="../../css/header.css">
   <link rel="stylesheet" href="../../css/footer.css">
   <link rel="stylesheet" href="../../css/pages/subpage.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
   <!-- Header -->
@@ -229,7 +230,7 @@
         <h2 class="overview-title">시스템 개요</h2>
         <p class="overview-subtitle">안심하고 작업할 수 있는 환경에서 능률과 안전성을 동시에 높이세요.</p>
         <p class="overview-text">
-          타워크레인은 작은 부주의도 대형 사고를 불러올 수 있어, 필수적인 장비와 소프트웨어를 통해 사고를 미연에 예방하는 시스템이 필수적입니다.
+          타워크레인은 작은 부주의도 대형 사고를 불러올 수 있어, 필수적인 장비와 소프트웨어를 통해 사고를 미연에 예방하는 시스템이 필수적입니다.<br/>
           타워크레인 통합안전 시스템을 도입하여, 위험상황을 미리 예측하고,
           방지하여 안전한 작업 현장을 만들 수 있습니다.
         </p>
@@ -244,59 +245,11 @@
       <div class="overview-features">
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 풍속계 지주 -->
-              <line x1="28" y1="30" x2="28" y2="54"/>
-              <line x1="22" y1="54" x2="34" y2="54"/>
-              <!-- 풍속계 회전부 (3날개) -->
-              <circle cx="28" cy="20" r="3"/>
-              <path d="M28 17c-2-6-8-8-10-6"/>
-              <path d="M31 21c5-3 9-1 9 2"/>
-              <path d="M26 23c-1 6 3 9 6 9"/>
-              <!-- 바람 흐름선 -->
-              <path d="M6 18h8" opacity="0.3"/>
-              <path d="M4 24h10" opacity="0.4"/>
-              <path d="M6 30h8" opacity="0.3"/>
-              <!-- 위험 수치 경고 (우측) -->
-              <path d="M46 14l6 10H40z" fill="currentColor" opacity="0.12"/>
-              <path d="M46 14l6 10H40z"/>
-              <line x1="46" y1="18" x2="46" y2="21" stroke-width="2"/>
-              <circle cx="46" cy="23" r="0.5" fill="currentColor"/>
-              <!-- 실시간 수치 표시 -->
-              <line x1="42" y1="32" x2="54" y2="32" stroke-width="1.5" opacity="0.5"/>
-              <line x1="42" y1="38" x2="50" y2="38" stroke-width="1.5" opacity="0.4"/>
-              <line x1="42" y1="44" x2="52" y2="44" stroke-width="1.5" opacity="0.5"/>
-              <!-- 상태 점 -->
-              <circle cx="40" cy="32" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="40" cy="38" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="40" cy="44" r="1.5" fill="currentColor" opacity="0.5"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M31.0435 16.3478C31.0435 12.89 28.2404 10.0869 24.7826 10.0869C21.3248 10.0869 18.5217 12.89 18.5217 16.3478C18.5217 16.9241 18.0546 17.3913 17.4783 17.3913C16.902 17.3913 16.4348 16.9241 16.4348 16.3478C16.4348 11.7374 20.1722 8 24.7826 8C29.393 8 33.1304 11.7374 33.1304 16.3478C33.1304 20.9582 29.393 24.6956 24.7826 24.6956H7.04348C6.46718 24.6956 6 24.2284 6 23.6521C6 23.0758 6.46718 22.6086 7.04348 22.6086H24.7826C28.2404 22.6086 31.0435 19.8056 31.0435 16.3478Z" fill="black" />
+              <path d="M41.4783 43.4784C41.4783 46.9361 38.6752 49.7392 35.2174 49.7392C31.7596 49.7392 28.9565 46.9361 28.9565 43.4784C28.9565 42.9021 28.4893 42.4349 27.913 42.4349C27.3367 42.4349 26.8696 42.9021 26.8696 43.4784C26.8696 48.0887 30.607 51.8262 35.2174 51.8262C39.8278 51.8262 43.5652 48.0887 43.5652 43.4784C43.5652 38.868 39.8278 35.1306 35.2174 35.1306H7.04348C6.46718 35.1306 6 35.5978 6 36.1741C6 36.7504 6.46718 37.2175 7.04348 37.2175H35.2174C38.6752 37.2175 41.4783 40.0206 41.4783 43.4784Z" fill="black "/>
+              <path d="M51.913 22.6076C51.913 19.1498 49.11 16.3467 45.6522 16.3467C42.1944 16.3467 39.3913 19.1498 39.3913 22.6076C39.3913 23.1839 38.9241 23.651 38.3478 23.651C37.7715 23.651 37.3043 23.1839 37.3043 22.6076C37.3043 17.9972 41.0418 14.2598 45.6522 14.2598C50.2626 14.2598 54 17.9972 54 22.6076C54 27.2179 50.2626 30.9554 45.6522 30.9554H7.04348C6.46718 30.9554 6 30.4882 6 29.9119C6 29.3356 6.46718 28.8684 7.04348 28.8684H45.6522C49.11 28.8684 51.913 26.0653 51.913 22.6076Z" fill="var(--color-accent-primary)" />
             </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 바람 곡선 (좌측) -->
-              <path d="M6 20h16a6 6 0 0 0 0-12"/>
-              <path d="M6 30h20a8 8 0 0 1 0 16"/>
-              <path d="M6 40h12a5 5 0 0 0 0-10"/>
-              <!-- 센서 기둥 -->
-              <line x1="38" y1="16" x2="38" y2="54"/>
-              <line x1="34" y1="54" x2="42" y2="54"/>
-              <!-- 센서 헤드 -->
-              <circle cx="38" cy="14" r="3"/>
-              <!-- 게이지 (위험 수준) -->
-              <rect x="46" y="22" width="12" height="26" rx="2"/>
-              <line x1="48" y1="44" x2="56" y2="44" stroke-width="1" opacity="0.3"/>
-              <line x1="48" y1="38" x2="56" y2="38" stroke-width="1" opacity="0.3"/>
-              <line x1="48" y1="32" x2="56" y2="32" stroke-width="1" opacity="0.3"/>
-              <!-- 게이지 채움 (위험 레벨) -->
-              <rect x="49" y="34" width="6" height="12" rx="1" fill="currentColor" opacity="0.25"/>
-              <!-- 작업 중지 표시 -->
-              <circle cx="52" cy="14" r="5" fill="currentColor" opacity="0.15"/>
-              <line x1="49" y1="14" x2="55" y2="14" stroke-width="2.5"/>
-            </svg>
-            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="6" width="36" height="36" rx="6" stroke="currentColor" stroke-width="2"/>
-              <path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg> -->
           </div>
           <!-- wind, google-photo, speedometer, prohibit, fan -->
           <h3 class="feature-title">실시간 풍속 감지 및 능동형 작업 제어</h3>
@@ -305,70 +258,14 @@
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 크레인 붐 (상단) -->
-              <line x1="6" y1="10" x2="36" y2="10"/>
-              <line x1="6" y1="10" x2="6" y2="16"/>
-              <!-- 와이어 -->
-              <line x1="28" y1="10" x2="28" y2="22"/>
-              <!-- 훅 -->
-              <path d="M24 22h8"/>
-              <path d="M28 22v4a5 5 0 0 1-8 2"/>
-              <!-- 하중 (매달린 물체) -->
-              <rect x="20" y="34" width="16" height="12" rx="2" fill="currentColor" opacity="0.1"/>
-              <rect x="20" y="34" width="16" height="12" rx="2"/>
-              <!-- 하중 무게 표시선 -->
-              <line x1="24" y1="40" x2="32" y2="40" stroke-width="1.5" opacity="0.4"/>
-              <!-- 하중 게이지 (우측) -->
-              <rect x="44" y="14" width="12" height="32" rx="2"/>
-              <line x1="46" y1="42" x2="54" y2="42" stroke-width="1" opacity="0.3"/>
-              <line x1="46" y1="36" x2="54" y2="36" stroke-width="1" opacity="0.3"/>
-              <line x1="46" y1="30" x2="54" y2="30" stroke-width="1" opacity="0.3"/>
-              <line x1="46" y1="24" x2="54" y2="24" stroke-width="1" opacity="0.3"/>
-              <!-- 게이지 채움 (위험 레벨) -->
-              <rect x="47" y="22" width="8" height="22" rx="1" fill="currentColor" opacity="0.2"/>
-              <!-- 과부하 경고 -->
-              <path d="M46 8l6 10h-12z" fill="currentColor" opacity="0.12"/>
-              <path d="M46 8l6 10h-12z"/>
-              <line x1="46" y1="11" x2="46" y2="14" stroke-width="2"/>
-              <circle cx="46" cy="16" r="0.5" fill="currentColor"/>
-              <!-- 상태 점 -->
-              <circle cx="42" cy="52" r="1.5" fill="currentColor" opacity="0.5"/>
-              <line x1="46" y1="52" x2="56" y2="52" stroke-width="1.5" opacity="0.5"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M17.0001 5C17.3522 5 17.679 5.18606 17.8595 5.4883L26.8597 20.5591C26.9522 20.7141 27.0003 20.8922 27.0003 21.0727V54.0015H25.0003V21.3481L16.4318 7.00006H11V54.0015H9V6.00003C9 5.44773 9.44772 5 10 5H17.0001Z" fill="black"/>
+              <path d="M53.9997 19C54.552 19 54.9998 19.4477 54.9998 20C54.9998 20.5523 54.552 21.0001 53.9997 21.0001L10.999 21.0001C10.4467 21.0001 9.99902 20.5523 9.99902 20C9.99902 19.4477 10.4467 19 10.999 19L53.9997 19Z" fill="black"/>
+              <path d="M45.001 20.998V31.9984H43.001V20.998H45.001Z" fill="black"/>
+              <path d="M30.0004 52.998C30.5527 52.998 31.0004 53.4458 31.0004 53.9981C31.0004 54.5504 30.5527 54.9981 30.0004 54.9981H6.00002C5.44772 54.9981 5 54.5504 5 53.9981C5 53.4458 5.44772 52.998 6.00002 52.998H30.0004Z" fill="black"/>
+              <path d="M25.9993 35.002V37.002H9.99902V35.002H25.9993Z" fill="black"/>
+              <path d="M50.0002 38.0002V40.0002H38V38.0002H50.0002ZM50.0002 34.0001H38V40.0002C36.8954 40.0002 36 39.1048 36 38.0002V34.0001C36 32.8955 36.8954 32 38 32H50.0002C51.1048 32 52.0003 32.8955 52.0003 34.0001V38.0002L51.9905 38.2053C51.8878 39.2136 51.0356 40.0002 50.0002 40.0002V34.0001Z" fill="var(--color-accent-primary)"/>
             </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 저울 기둥 -->
-              <line x1="28" y1="16" x2="28" y2="50"/>
-              <line x1="20" y1="50" x2="36" y2="50"/>
-              <!-- 저울 팔 (기울어짐 = 과부하) -->
-              <line x1="12" y1="20" x2="44" y2="14"/>
-              <!-- 좌측 접시 (무거움 - 하강) -->
-              <path d="M8 20l4 12h8l4-12"/>
-              <line x1="12" y1="32" x2="20" y2="32" stroke-width="1"/>
-              <!-- 우측 접시 (가벼움 - 상승) -->
-              <path d="M36 14l4 12h8l4-12"/>
-              <!-- 하중 블록 (좌측) -->
-              <rect x="11" y="26" width="10" height="5" rx="1" fill="currentColor" opacity="0.15"/>
-              <!-- 과부하 경고 (우측 상단) -->
-              <path d="M52 10l5 9h-10z" fill="currentColor" opacity="0.12"/>
-              <path d="M52 10l5 9h-10z"/>
-              <line x1="52" y1="13" x2="52" y2="16" stroke-width="2"/>
-              <circle cx="52" cy="17.5" r="0.5" fill="currentColor"/>
-              <!-- 수치 데이터 -->
-              <line x1="46" y1="32" x2="58" y2="32" stroke-width="1.5" opacity="0.5"/>
-              <line x1="46" y1="38" x2="54" y2="38" stroke-width="1.5" opacity="0.4"/>
-              <line x1="46" y1="44" x2="56" y2="44" stroke-width="1.5" opacity="0.5"/>
-              <!-- 상태 점 -->
-              <circle cx="44" cy="32" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="44" cy="38" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="44" cy="44" r="1.5" fill="currentColor" opacity="0.5"/>
-            </svg>
-
-            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
-              <circle cx="24" cy="24" r="4" fill="currentColor"/>
-            </svg> -->
           </div>
           <!-- crane + wave, barbell, scales -->
           <h3 class="feature-title">지능형 하중 및 과부하 경고 시스템</h3>
@@ -377,59 +274,17 @@
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 센서 본체 (좌측) -->
-              <rect x="6" y="24" width="10" height="16" rx="2"/>
-              <circle cx="11" cy="32" r="2" fill="currentColor" opacity="0.3"/>
-              <!-- 감지 파동 (동심 호) -->
-              <path d="M20 26a8 8 0 0 1 0 12" opacity="0.3"/>
-              <path d="M24 22a14 14 0 0 1 0 20" opacity="0.45"/>
-              <path d="M28 18a20 20 0 0 1 0 28" opacity="0.6"/>
-              <!-- 안전거리 표시선 -->
-              <line x1="36" y1="14" x2="36" y2="50" stroke-dasharray="3 2" opacity="0.35"/>
-              <!-- 장애물 (우측 블록) -->
-              <rect x="42" y="22" width="14" height="20" rx="2" fill="currentColor" opacity="0.1"/>
-              <rect x="42" y="22" width="14" height="20" rx="2"/>
-              <!-- 차단 표시 (X) -->
-              <line x1="46" y1="28" x2="52" y2="36" stroke-width="2" opacity="0.5"/>
-              <line x1="52" y1="28" x2="46" y2="36" stroke-width="2" opacity="0.5"/>
-              <!-- 경고 표시 -->
-              <circle cx="52" cy="12" r="5" fill="currentColor" opacity="0.15"/>
-              <line x1="52" y1="10" x2="52" y2="13" stroke-width="2"/>
-              <circle cx="52" cy="15" r="0.5" fill="currentColor"/>
-              <!-- 거리 수치 -->
-              <line x1="34" y1="54" x2="44" y2="54" stroke-width="1.5" opacity="0.4"/>
-              <circle cx="32" cy="54" r="1.5" fill="currentColor" opacity="0.5"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M38.3333 25.5926C38.3333 16.8992 31.286 9.85185 22.5926 9.85185C13.8992 9.85185 6.85185 16.8992 6.85185 25.5926C6.85185 34.286 13.8992 41.3333 22.5926 41.3333C23.104 41.3333 23.5185 41.7479 23.5185 42.2593C23.5185 42.7706 23.104 43.1852 22.5926 43.1852C12.8765 43.1852 5 35.3087 5 25.5926C5 15.8765 12.8765 8 22.5926 8C32.3087 8 40.1852 15.8765 40.1852 25.5926C40.1852 28.4986 39.4798 31.2426 38.2303 33.6601C37.9954 34.1143 37.4367 34.2927 36.9824 34.0579C36.5282 33.8231 36.3497 33.2644 36.5846 32.8101C37.7017 30.6491 38.3333 28.196 38.3333 25.5926Z" fill="black"/>
+              <path d="M53.1482 38.5545C53.1482 33.49 50.02 29.1534 45.5871 27.3765C45.1129 27.1863 44.8821 26.6482 45.0716 26.1739C45.2619 25.6992 45.8014 25.4682 46.2761 25.6585C51.3874 27.7073 55 32.7077 55 38.5545C55 46.2251 48.7818 52.4434 41.1111 52.4434C35.2643 52.4434 30.2639 48.8307 28.2151 43.7194C28.0248 43.2448 28.2558 42.7053 28.7305 42.515C29.2048 42.3255 29.7429 42.5562 29.9331 43.0304C31.71 47.4634 36.0466 50.5915 41.1111 50.5915C47.759 50.5915 53.1482 45.2024 53.1482 38.5545Z" fill="black"/>
+              <path d="M37.4822 33.1286C37.9262 33.3812 38.0814 33.9465 37.8294 34.3909C37.577 34.8353 37.0117 34.9919 36.5672 34.7399L25.1578 28.2601C25.6051 27.8302 25.9453 27.291 26.1326 26.6831L37.4822 33.1286ZM17.3762 22.7767C17.6287 22.3323 18.1939 22.1773 18.6385 22.4295L19.8447 23.1149C19.4317 23.5731 19.1312 24.1334 18.9875 24.7552L17.7252 24.039C17.2808 23.7866 17.1243 23.2212 17.3762 22.7767Z" fill="var(--color-accent-primary)"/>
+              <path d="M38.9096 41.5288C39.4027 41.8945 39.9876 42.1398 40.6259 42.2233L40.1213 43.52C39.9358 43.996 39.4002 44.2328 38.9241 44.048C38.4477 43.8626 38.2109 43.3254 38.396 42.849L38.9096 41.5288ZM44.8939 26.1639C45.0796 25.6876 45.6166 25.4521 46.093 25.6376C46.5685 25.8235 46.8025 26.3588 46.6174 26.8348L43.2337 35.5228C42.7328 35.1715 42.1418 34.9407 41.5012 34.8736L44.8939 26.1639Z" fill="var(--color-accent-primary)"/>
+              <path d="M42.0371 18.1843V14.4806C42.0371 13.9692 42.4517 13.5547 42.963 13.5547C43.4744 13.5547 43.889 13.9692 43.889 14.4806V18.1843C43.889 18.6957 43.4744 19.1102 42.963 19.1102C42.4517 19.1102 42.0371 18.6957 42.0371 18.1843Z" fill="black"/>
+              <path d="M47.7866 18.7032L50.0464 15.7688C50.3584 15.3636 50.9398 15.2881 51.3449 15.6001C51.7501 15.9121 51.8256 16.4935 51.5136 16.8987L49.2538 19.8331C48.9418 20.2382 48.3604 20.3137 47.9552 20.0017C47.5501 19.6897 47.4746 19.1083 47.7866 18.7032Z" fill="black"/>
+              <path d="M50.3704 22.8145L54.0741 22.8145C54.5854 22.8145 55 23.229 55 23.7404C55 24.2518 54.5854 24.6663 54.0741 24.6663L50.3704 24.6663C49.859 24.6663 49.4444 24.2518 49.4444 23.7404C49.4444 23.229 49.859 22.8145 50.3704 22.8145Z" fill="black"/>
+              <path d="M42.9625 38.555C42.9625 39.5777 42.1334 40.4068 41.1106 40.4068C40.0879 40.4068 39.2588 39.5777 39.2588 38.555C39.2588 37.5322 40.0879 36.7031 41.1106 36.7031C42.1334 36.7031 42.9625 37.5322 42.9625 38.555Z" fill="var(--color-accent-primary)"/>
+              <path d="M24.4449 25.5921C24.4449 26.6148 23.6158 27.4439 22.5931 27.4439C21.5703 27.4439 20.7412 26.6148 20.7412 25.5921C20.7412 24.5693 21.5703 23.7402 22.5931 23.7402C23.6158 23.7402 24.4449 24.5693 24.4449 25.5921Z" fill="var(--color-accent-primary)"/>
             </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 레이더 원 -->
-              <circle cx="24" cy="32" r="18" opacity="0.15"/>
-              <circle cx="24" cy="32" r="12" opacity="0.25"/>
-              <circle cx="24" cy="32" r="6" opacity="0.35"/>
-              <!-- 레이더 중심 -->
-              <circle cx="24" cy="32" r="2" fill="currentColor" opacity="0.5"/>
-              <!-- 레이더 스윕 라인 -->
-              <line x1="24" y1="32" x2="38" y2="22" stroke-width="1.5" opacity="0.5"/>
-              <!-- 감지된 장애물 점 -->
-              <circle cx="34" cy="26" r="2.5" fill="currentColor" opacity="0.4"/>
-              <circle cx="30" cy="40" r="2" fill="currentColor" opacity="0.3"/>
-              <!-- 자동 정지 제어 (우측) -->
-              <circle cx="52" cy="20" r="8"/>
-              <rect x="48" y="18" width="8" height="4" rx="0.5" fill="currentColor" opacity="0.4"/>
-              <!-- 상태 데이터 -->
-              <line x1="46" y1="36" x2="58" y2="36" stroke-width="1.5" opacity="0.5"/>
-              <line x1="46" y1="42" x2="54" y2="42" stroke-width="1.5" opacity="0.4"/>
-              <line x1="46" y1="48" x2="56" y2="48" stroke-width="1.5" opacity="0.5"/>
-              <!-- 상태 점 -->
-              <circle cx="44" cy="36" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="44" cy="42" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="44" cy="48" r="1.5" fill="currentColor" opacity="0.5"/>
-            </svg>
-            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="12" width="36" height="24" rx="4" stroke="currentColor" stroke-width="2"/>
-              <path d="M24 18V30M18 24H30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg> -->
           </div>
           <!-- crane + box, radar, broadcast, prohibit, wall -->
           <h3 class="feature-title">고성능 충돌 방지 및 장애물 감지</h3>
@@ -438,70 +293,11 @@
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 관제 모니터 -->
-              <rect x="12" y="8" width="28" height="20" rx="2"/>
-              <line x1="22" y1="28" x2="22" y2="34"/>
-              <line x1="30" y1="28" x2="30" y2="34"/>
-              <line x1="16" y1="34" x2="36" y2="34"/>
-              <!-- 모니터 내 차트 -->
-              <polyline points="17,22 21,18 25,20 29,14 33,17 36,15" stroke-width="1.5" opacity="0.5"/>
-              <!-- 네트워크 연결선 (모니터 → 노드들) -->
-              <line x1="26" y1="38" x2="12" y2="48" stroke-dasharray="2 2" opacity="0.35"/>
-              <line x1="26" y1="38" x2="26" y2="50" stroke-dasharray="2 2" opacity="0.35"/>
-              <line x1="26" y1="38" x2="40" y2="48" stroke-dasharray="2 2" opacity="0.35"/>
-              <!-- 연동 노드 (현장 장비들) -->
-              <circle cx="12" cy="50" r="3" fill="currentColor" opacity="0.15"/>
-              <circle cx="12" cy="50" r="3"/>
-              <circle cx="26" cy="52" r="3" fill="currentColor" opacity="0.15"/>
-              <circle cx="26" cy="52" r="3"/>
-              <circle cx="40" cy="50" r="3" fill="currentColor" opacity="0.15"/>
-              <circle cx="40" cy="50" r="3"/>
-              <!-- 데이터 분석 패널 (우측) -->
-              <rect x="46" y="10" width="12" height="24" rx="2"/>
-              <line x1="48" y1="16" x2="56" y2="16" stroke-width="1.5" opacity="0.4"/>
-              <line x1="48" y1="22" x2="54" y2="22" stroke-width="1.5" opacity="0.4"/>
-              <line x1="48" y1="28" x2="56" y2="28" stroke-width="1.5" opacity="0.4"/>
-              <!-- 상태 점 -->
-              <circle cx="46" cy="16" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="46" cy="22" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="46" cy="28" r="1.5" fill="currentColor" opacity="0.5"/>
-              <!-- 실시간 표시 -->
-              <circle cx="54" cy="42" r="5" fill="currentColor" opacity="0.15"/>
-              <polyline points="51,42 53,44 57,40" stroke-width="2"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M49.2308 43.5385V45.4615H10.7692V43.5385H49.2308ZM53.0769 39.6923V12.7692C53.0769 10.6451 51.3549 8.92308 49.2308 8.92308H10.7692C8.64506 8.92308 6.92308 10.6451 6.92308 12.7692V39.6923C6.92308 41.8165 8.64506 43.5385 10.7692 43.5385V45.4615C7.68249 45.4615 5.16195 43.0374 5.00751 39.989L5 39.6923V12.7692C5 9.58297 7.58297 7 10.7692 7H49.2308L49.5275 7.00751C52.5759 7.16195 55 9.68249 55 12.7692V39.6923C55 42.779 52.5759 45.2996 49.5275 45.454L49.2308 45.4615V43.5385C51.3549 43.5385 53.0769 41.8165 53.0769 39.6923Z" fill="black"/>
+              <path d="M25.204 17.5762C25.5471 17.5804 25.8621 17.7674 26.0303 18.0664L33.6926 31.6894L35.8373 26.262L35.9011 26.1305C36.0715 25.8383 36.3857 25.6535 36.7312 25.6535H43.462C43.993 25.6535 44.4235 26.084 44.4235 26.6151C44.4233 27.1459 43.9929 27.5766 43.462 27.5766H37.3848L34.7405 34.2755C34.6043 34.6204 34.2823 34.8567 33.9123 34.8821C33.5423 34.9073 33.1909 34.717 33.009 34.3938L25.1683 20.4552L21.2114 27.1071C21.038 27.3981 20.7239 27.5766 20.3851 27.5766H14.6158C14.0849 27.5766 13.6545 27.1459 13.6543 26.6151C13.6543 26.084 14.0848 25.6535 14.6158 25.6535H19.8386L24.3664 18.0457L24.4397 17.9406C24.623 17.7093 24.9043 17.5727 25.204 17.5762Z" fill="var(--color-accent-primary)"/>
+              <path d="M39.6142 50.2695C40.1452 50.2695 40.5757 50.7 40.5757 51.2311C40.5757 51.7621 40.1452 52.1926 39.6142 52.1926H20.3834C19.8524 52.1926 19.4219 51.7621 19.4219 51.2311C19.4219 50.7 19.8524 50.2695 20.3834 50.2695H39.6142Z" fill="black"/>
             </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 대시보드 프레임 -->
-              <rect x="6" y="8" width="52" height="36" rx="3"/>
-              <!-- 분할선 -->
-              <line x1="32" y1="12" x2="32" y2="40" stroke-width="1" opacity="0.2"/>
-              <line x1="10" y1="26" x2="54" y2="26" stroke-width="1" opacity="0.2"/>
-              <!-- 좌상: 꺾은선 그래프 -->
-              <polyline points="12,22 16,18 20,20 24,14 28,17" stroke-width="1.5" opacity="0.6"/>
-              <!-- 우상: 바 차트 -->
-              <line x1="36" y1="22" x2="36" y2="16" stroke-width="2.5" opacity="0.4"/>
-              <line x1="40" y1="22" x2="40" y2="12" stroke-width="2.5" opacity="0.6"/>
-              <line x1="44" y1="22" x2="44" y2="18" stroke-width="2.5" opacity="0.4"/>
-              <line x1="48" y1="22" x2="48" y2="14" stroke-width="2.5" opacity="0.5"/>
-              <!-- 좌하: 데이터 리스트 -->
-              <circle cx="12" cy="30" r="1" fill="currentColor" opacity="0.4"/>
-              <line x1="15" y1="30" x2="28" y2="30" stroke-width="1" opacity="0.4"/>
-              <circle cx="12" cy="35" r="1" fill="currentColor" opacity="0.4"/>
-              <line x1="15" y1="35" x2="26" y2="35" stroke-width="1" opacity="0.4"/>
-              <!-- 우하: 원형 게이지 -->
-              <circle cx="44" cy="33" r="6" opacity="0.3"/>
-              <path d="M44 27a6 6 0 0 1 5 9" stroke-width="2" opacity="0.6"/>
-              <!-- 연동 화살표 (하단) -->
-              <line x1="24" y1="44" x2="24" y2="52" stroke-dasharray="2 2" opacity="0.35"/>
-              <line x1="40" y1="44" x2="40" y2="52" stroke-dasharray="2 2" opacity="0.35"/>
-              <polyline points="22,50 24,54 26,50" stroke-width="1.5" opacity="0.4"/>
-              <polyline points="38,50 40,54 42,50" stroke-width="1.5" opacity="0.4"/>
-            </svg>
-            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 36L24 12L36 36H12Z" stroke="currentColor" stroke-width="2"/>
-              <path d="M24 22V28M24 32V34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg> -->
           </div>
           <!-- monitor + wave -->
           <h3 class="feature-title">통합 관제 연동 및 데이터 분석</h3>
@@ -585,36 +381,43 @@
   <section class="cases-section">
     <div class="container">
       <h2 class="cases-title">주요 시공사례</h2>
-      <div class="cases-grid">
-        <div class="case-item fade-in">
-          <figure class="case-image-container">
-            <img src="../../images/solutions/s_03_01.jpg" alt="프로젝트 1" class="case-image">
-          </figure>
-          <div class="case-content">
-            <h3 class="case-title">하방 카메라 설치</h3>
-            <p class="case-description">ㅇㅇ현장 타워크레인 하방 카메라 설치</p>
+      <div class="cases-slider-wrap">
+        <div class="swiper cases-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="case-item">
+                <figure class="case-image-container">
+                  <img src="../../images/solutions/s_03_01.jpg" alt="프로젝트 1" class="case-image" />
+                </figure>
+                <div class="case-content">
+                  <h3 class="case-title">하방 카메라 설치</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="case-item">
+                <figure class="case-image-container">
+                  <img src="../../images/solutions/s_03_02.jpg" alt="프로젝트 2" class="case-image" />
+                </figure>
+                <div class="case-content">
+                  <h3 class="case-title">하방 카메라 설치</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="case-item">
+                <figure class="case-image-container">
+                  <img src="../../images/solutions/s_03_03.jpg" alt="프로젝트 3" class="case-image" />
+                </figure>
+                <div class="case-content">
+                  <h3 class="case-title">풍향 풍속 센서 설치</h3>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="case-item fade-in">
-          <figure class="case-image-container">
-            <img src="../../images/solutions/s_03_02.jpg" alt="프로젝트 2" class="case-image">
-          </figure>
-          <div class="case-content">
-            <h3 class="case-title">하방 카메라 설치</h3>
-            <p class="case-description">ㅇㅇ현장 타워크레인 후크 하방카메라 설치</p>
-          </div>
-        </div>
-
-        <div class="case-item fade-in">
-          <figure class="case-image-container">
-            <img src="../../images/solutions/s_03_03.jpg" alt="프로젝트 3" class="case-image">
-          </figure>
-          <div class="case-content">
-            <h3 class="case-title">풍향 풍속 센서 설치</h3>
-            <p class="case-description">ㅇㅇ현장 풍향 풍속 센서 설치</p>
-          </div>
-        </div>
+        <button class="cases-swiper-prev" aria-label="이전 시공사례"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="cases-swiper-next" aria-label="다음 시공사례"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
   </section>
@@ -694,6 +497,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../../js/utils.js"></script>
   <script src="../../js/components.js"></script>
   <script src="../../js/main.js"></script>

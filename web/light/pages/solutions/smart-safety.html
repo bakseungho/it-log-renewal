@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="../../css/header.css">
   <link rel="stylesheet" href="../../css/footer.css">
   <link rel="stylesheet" href="../../css/pages/subpage.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
   <!-- Header -->
@@ -242,9 +243,10 @@
       <div class="overview-features">
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="6" width="36" height="36" rx="6" stroke="currentColor" stroke-width="2"/>
-              <path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M44.6667 24.9926C44.6667 16.6632 38.1865 10.0445 30.3556 10.0445C22.5246 10.0445 16.0444 16.6632 16.0444 24.9926C16.0447 26.8428 16.8834 29.4088 18.3844 32.4078C19.8548 35.3456 21.8364 38.4592 23.8509 41.3283C25.8604 44.1904 27.8737 46.7715 29.3872 48.6377C29.7392 49.0716 30.065 49.4654 30.3556 49.8156C30.6461 49.4654 30.9719 49.0716 31.3239 48.6377C32.8374 46.7715 34.8507 44.1904 36.8602 41.3283C38.8747 38.4592 40.8563 35.3456 42.3267 32.4078C43.8277 29.4088 44.6664 26.8428 44.6667 24.9926ZM46.6991 25.4378C46.2044 34.9521 30.3558 52.9778 30.3556 52.9782C30.3545 52.9769 14.5067 34.9519 14.012 25.4378L14 24.9926C14 15.6083 21.3226 8 30.3556 8C39.3885 8 46.7111 15.6083 46.7111 24.9926L46.6991 25.4378Z" fill="black"/>
+              <path d="M34.4439 24.358C34.4439 22.0997 32.6132 20.2691 30.355 20.2691C28.0968 20.2691 26.2661 22.0997 26.2661 24.358C26.2661 26.6162 28.0968 28.4469 30.355 28.4469V30.4914C26.9677 30.4914 24.2217 27.7454 24.2217 24.358C24.2217 20.9706 26.9677 18.2246 30.355 18.2246C33.7424 18.2246 36.4883 20.9706 36.4883 24.358C36.4883 27.7454 33.7424 30.4914 30.355 30.4914V28.4469C32.6132 28.4469 34.4439 26.6162 34.4439 24.358Z" fill="var(--color-accent-primary)"/>
+              <path d="M38.5321 51.9551C39.0966 51.9551 39.5543 52.4127 39.5543 52.9773C39.5543 53.5419 39.0966 53.9995 38.5321 53.9995H22.1765C21.612 53.9995 21.1543 53.5419 21.1543 52.9773C21.1543 52.4127 21.612 51.9551 22.1765 51.9551H38.5321Z" fill="black"/>
             </svg>
           </div>
           <!-- gps, location -->
@@ -254,9 +256,13 @@
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
-              <circle cx="24" cy="24" r="4" fill="currentColor"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M30.5713 14.8163C30.5713 15.3573 30.1327 15.7959 29.5917 15.7959C29.0507 15.7959 28.6121 15.3573 28.6121 14.8163L28.6121 6.97959C28.6121 6.43858 29.0507 6 29.5917 6C30.1327 6 30.5713 6.43858 30.5713 6.97959L30.5713 14.8163Z" fill="var(--color-accent-primary)"/>
+              <path d="M42.0394 19.0915C41.6568 19.4741 41.0366 19.4741 40.654 19.0915C40.2714 18.709 40.2714 18.0887 40.654 17.7062L46.1954 12.1647C46.578 11.7822 47.1982 11.7822 47.5808 12.1647C47.9633 12.5473 47.9633 13.1675 47.5808 13.5501L42.0394 19.0915Z" fill="var(--color-accent-primary)"/>
+              <path d="M16.8083 19.0915C17.1909 19.4741 17.8111 19.4741 18.1937 19.0915C18.5762 18.709 18.5762 18.0887 18.1937 17.7062L12.6522 12.1647C12.2697 11.7822 11.6494 11.7822 11.2669 12.1647C10.8843 12.5473 10.8843 13.1675 11.2669 13.5501L16.8083 19.0915Z" fill="var(--color-accent-primary)"/>
+              <path d="M41.3473 32.4487C41.3473 25.9565 36.0844 20.6936 29.5922 20.6936C23.1001 20.6936 17.8371 25.9565 17.8371 32.4487V42.2446H41.3473V32.4487ZM43.3065 44.2038H15.8779V32.4487C15.8779 24.8745 22.018 18.7344 29.5922 18.7344C37.1664 18.7344 43.3065 24.8745 43.3065 32.4487V44.2038Z" fill="black"/>
+              <path d="M45.2653 52.0401V53.9992H13.9184V52.0401H45.2653ZM47.2245 50.0809V46.1625C47.2245 45.0805 46.3473 44.2033 45.2653 44.2033H13.9184C12.8363 44.2033 11.9592 45.0805 11.9592 46.1625V50.0809C11.9592 51.1629 12.8363 52.0401 13.9184 52.0401V53.9992C11.8893 53.9992 10.2214 52.4569 10.021 50.4807L10 50.0809V46.1625C10 43.9985 11.7543 42.2441 13.9184 42.2441H45.2653L45.6652 42.2652C47.6414 42.4655 49.1837 44.1335 49.1837 46.1625V50.0809C49.1837 52.1099 47.6414 53.7778 45.6652 53.9782L45.2653 53.9992V52.0401C46.3473 52.0401 47.2245 51.1629 47.2245 50.0809Z" fill="black"/>
+              <path d="M35.4694 30.49C35.4694 28.1867 33.0689 25.592 29.5919 25.592C29.0509 25.592 28.6123 25.1534 28.6123 24.6124C28.6123 24.0714 29.0509 23.6328 29.5919 23.6328C33.9516 23.6328 37.4286 26.9156 37.4286 30.49C37.4286 31.031 36.9901 31.4695 36.449 31.4695C35.908 31.4695 35.4694 31.031 35.4694 30.49Z" fill="black"/>
             </svg>
           </div>
           <!-- phone -->
@@ -266,9 +272,15 @@
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="12" width="36" height="24" rx="4" stroke="currentColor" stroke-width="2"/>
-              <path d="M24 18V30M18 24H30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M50 41.0006V43.0007H10V41.0006H50ZM52 39.0006V15.0001C52 13.8955 51.1046 13 50 13H10C8.89543 13 8 13.8955 8 15.0001V39.0006C8 40.1052 8.89543 41.0006 10 41.0006V43.0007L9.5918 42.9792C7.57445 42.7747 6 41.072 6 39.0006V15.0001C6 12.7909 7.79086 11 10 11H50C52.2091 11 54 12.7909 54 15.0001V39.0006C54 41.072 52.4256 42.7747 50.4082 42.9792L50 43.0007V41.0006C51.1046 41.0006 52 40.1052 52 39.0006Z" fill="black"/>
+              <path d="M20.8643 50.4272C20.5881 50.9054 19.9765 51.0692 19.4982 50.7932C19.02 50.5171 18.8561 49.9055 19.1322 49.4272L23.1322 42.4988C23.4084 42.0205 24.0199 41.8567 24.4982 42.1328C24.9765 42.409 25.1404 43.0206 24.8643 43.4989L20.8643 50.4272Z" fill="black"/>
+              <path d="M39.1328 50.4272C39.4089 50.9054 40.0206 51.0692 40.4988 50.7932C40.9771 50.5171 41.141 49.9055 40.8649 49.4272L36.8649 42.4988C36.5887 42.0205 35.9771 41.8567 35.4988 42.1328C35.0206 42.409 34.8567 43.0206 35.1328 43.4989L39.1328 50.4272Z" fill="black"/>
+              <path d="M46 18C46.5523 18 47 18.4477 47 19C47 19.5523 46.5523 20 46 20H32C31.4477 20 31 19.5523 31 19C31 18.4477 31.4477 18 32 18H46Z" fill="black"/>
+              <path d="M46 26C46.5523 26 47 26.4477 47 27C47 27.5523 46.5523 28 46 28H32C31.4477 28 31 27.5523 31 27C31 26.4477 31.4477 26 32 26H46Z" fill="black"/>
+              <path d="M46 34.002C46.5523 34.002 47 34.4497 47 35.002C47 35.5543 46.5523 36.002 46 36.002L14 36.002C13.4477 36.002 13 35.5543 13 35.002C13 34.4497 13.4477 34.002 14 34.002L46 34.002Z" fill="black"/>
+              <path d="M24.2679 18.3197C24.6436 17.915 25.2752 17.8913 25.68 18.2669C26.0846 18.6427 26.1083 19.2743 25.7327 19.6791L19.2327 26.6792C18.8763 27.063 18.2842 27.108 17.8753 26.7808L13.3753 23.1811C12.9441 22.8361 12.8742 22.2061 13.219 21.7748C13.564 21.3435 14.194 21.2735 14.6253 21.6186L18.3987 24.6382L24.2679 18.3197Z" fill="var(--color-accent-primary)"/>
+              <path d="M29 11.0001V9.00002C29 8.44772 29.4477 8 30 8C30.5523 8 31 8.44772 31 9.00002V11.0001C31 11.5524 30.5523 12.0001 30 12.0001C29.4477 12.0001 29 11.5524 29 11.0001Z" fill="black"/>
             </svg>
           </div>
           <!-- safe -->
@@ -278,9 +290,12 @@
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 36L24 12L36 36H12Z" stroke="currentColor" stroke-width="2"/>
-              <path d="M24 22V28M24 32V34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M49.2308 43.5384V45.4614H10.7692V43.5384H49.2308ZM53.0769 39.6922V12.7692C53.0769 10.645 51.3549 8.92307 49.2308 8.92307H10.7692C8.64506 8.92307 6.92308 10.645 6.92308 12.7692V39.6922C6.92308 41.8164 8.64506 43.5384 10.7692 43.5384V45.4614C7.68249 45.4614 5.16195 43.0373 5.00751 39.9889L5 39.6922V12.7692C5 9.58297 7.58297 7 10.7692 7H49.2308L49.5275 7.00751C52.5759 7.16195 55 9.68248 55 12.7692V39.6922C55 42.7789 52.5759 45.2995 49.5275 45.4539L49.2308 45.4614V43.5384C51.3549 43.5384 53.0769 41.8164 53.0769 39.6922Z" fill="black"/>
+              <path d="M39.6152 50.2676C40.1462 50.2676 40.5767 50.6981 40.5767 51.2291C40.5767 51.7602 40.1462 52.1906 39.6152 52.1906H20.3844C19.8533 52.1906 19.4229 51.7602 19.4229 51.2291C19.4229 50.6981 19.8533 50.2676 20.3844 50.2676H39.6152Z" fill="black"/>
+              <path d="M40.66 30.6465C41.386 28.8936 41.6685 26.989 41.4825 25.1008C41.2966 23.2128 40.649 21.3992 39.5951 19.8217C38.5409 18.244 37.1126 16.9489 35.4391 16.0544C33.7659 15.1602 31.8976 14.6929 30.0004 14.6929L30.0004 26.2313L21.8424 34.3894L22.3588 34.8776C23.4215 35.8168 24.6485 36.5523 25.9777 37.0467L26.6501 37.2721C28.4659 37.8229 30.3911 37.9183 32.2521 37.5482C33.8803 37.2242 35.4163 36.5527 36.7575 35.5838L37.3209 35.1499C38.604 34.0967 39.6429 32.7811 40.3689 31.2944L40.66 30.6465ZM39.5689 25.2886C39.7238 26.8621 39.4884 28.4495 38.8834 29.9103C38.2783 31.3712 37.3225 32.6613 36.1002 33.6644C34.8779 34.6674 33.4273 35.3542 31.8765 35.6626C30.3259 35.9711 28.7227 35.8924 27.2097 35.4335C26.3179 35.163 25.4745 34.7622 24.7026 34.2523L31.9235 27.0276L31.9235 16.815C32.8306 17.0003 33.7114 17.3125 34.5339 17.7522C35.9278 18.4974 37.1168 19.5743 37.9951 20.8884C38.8735 22.2031 39.4138 23.7151 39.5689 25.2886Z" fill="black"/>
+              <path d="M27.2865 14.7217C25.2265 14.8634 23.2413 15.5557 21.5398 16.7256L20.9182 17.1857C19.5069 18.3023 18.372 19.735 17.611 21.3736L17.3105 22.0854C16.7558 23.5251 16.4948 25.0617 16.5443 26.6038L16.595 27.3738C16.7991 29.4285 17.5507 31.3915 18.7716 33.0566L28.0771 26.2339L27.2865 14.7217ZM19.3444 30.2547C18.8996 29.2885 18.6147 28.2515 18.5087 27.1841C18.3387 25.472 18.6312 23.7455 19.3557 22.1849C20.0804 20.6241 21.2111 19.2856 22.6291 18.3106C23.5128 17.7029 24.4886 17.2514 25.5137 16.9678L26.0865 25.3099L19.3444 30.2547Z" fill="var(--color-accent-primary)"/>
+              <path d="M29.0391 51.2313V44.5006C29.0391 43.9696 29.4696 43.5391 30.0006 43.5391C30.5316 43.5391 30.9621 43.9696 30.9621 44.5006V51.2313C30.9621 51.7624 30.5316 52.1929 30.0006 52.1929C29.4696 52.1929 29.0391 51.7624 29.0391 51.2313Z" fill="black"/>
             </svg>
           </div>
           <!-- monitor + pulse -->
@@ -332,39 +347,53 @@
   <section class="cases-section">
     <div class="container">
       <h2 class="cases-title">주요 시공사례</h2>
-      <div class="cases-grid">
-        <div class="case-item fade-in">
-          <figure class="case-image-container">
-            <img src="../../images/common/no_image.png" alt="프로젝트 1" class="case-image">
-          </figure>
-          <div class="case-content">
-            <h3 class="case-title">○○○ 건설 현장</h3>
-            <p class="case-description">대규모 건설 현장<br>통합 안전 플랫폼 구축</p>
-            <p class="case-meta">2024년 완공</p>
+      <div class="cases-slider-wrap">
+        <div class="swiper cases-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="case-item">
+                <figure class="case-image-container">
+                  <img src="../../images/solutions/s_02_01.jpg" alt="프로젝트 1" class="case-image">
+                </figure>
+                <div class="case-content">
+                  <h3 class="case-title">터널 근로자 비콘 시스템 설치</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="case-item">
+                <figure class="case-image-container">
+                  <img src="../../images/solutions/s_02_02.jpg" alt="프로젝트 2" class="case-image">
+                </figure>
+                <div class="case-content">
+                  <h3 class="case-title">비상통화 설치</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="case-item">
+                <figure class="case-image-container">
+                  <img src="../../images/solutions/s_02_03.jpg" alt="프로젝트 3" class="case-image">
+                </figure>
+                <div class="case-content">
+                  <h3 class="case-title">중장비 충돌방지 시스템 설치</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="case-item">
+                <figure class="case-image-container">
+                  <img src="../../images/solutions/s_02_04.jpg" alt="프로젝트 4" class="case-image">
+                </figure>
+                <div class="case-content">
+                  <h3 class="case-title">터널 근로자 비콘 시스템 설치</h3>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="case-item fade-in">
-          <figure class="case-image-container">
-            <img src="../../images/common/no_image.png" alt="프로젝트 2" class="case-image">
-          </figure>
-          <div class="case-content">
-            <h3 class="case-title">△△△ 산업 단지</h3>
-            <p class="case-description">산업 단지 안전 관리<br>근로자 위치 추적 시스템</p>
-            <p class="case-meta">2024년 진행 중</p>
-          </div>
-        </div>
-
-        <div class="case-item fade-in">
-          <figure class="case-image-container">
-            <img src="../../images/common/no_image.png" alt="프로젝트 3" class="case-image">
-          </figure>
-          <div class="case-content">
-            <h3 class="case-title">□□□ 복합 시설</h3>
-            <p class="case-description">복합 시설 건설<br>통합 안전 모니터링</p>
-            <p class="case-meta">2023년 완공</p>
-          </div>
-        </div>
+        <button class="cases-swiper-prev" aria-label="이전 시공사례"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="cases-swiper-next" aria-label="다음 시공사례"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
   </section>
@@ -444,6 +473,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../../js/utils.js"></script>
   <script src="../../js/components.js"></script>
   <script src="../../js/main.js"></script>

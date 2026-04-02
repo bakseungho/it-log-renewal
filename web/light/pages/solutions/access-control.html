@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="../../css/header.css">
   <link rel="stylesheet" href="../../css/footer.css">
   <link rel="stylesheet" href="../../css/pages/subpage.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
   <!-- Header -->
@@ -240,64 +241,17 @@
       <div class="overview-features">
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 스캔 프레임 모서리 -->
-              <path d="M10 22V14h8"/>
-              <path d="M46 14h8v8"/>
-              <path d="M54 42v8h-8"/>
-              <path d="M18 50h-8v-8"/>
-              <!-- 얼굴 윤곽 -->
-              <ellipse cx="32" cy="30" rx="10" ry="13"/>
-              <!-- 눈 -->
-              <circle cx="28" cy="27" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="36" cy="27" r="1.5" fill="currentColor" opacity="0.5"/>
-              <!-- 입 -->
-              <path d="M29 35a4 4 0 0 0 6 0" stroke-width="1.5"/>
-              <!-- AI 스캔 라인 -->
-              <line x1="18" y1="32" x2="46" y2="32" stroke-dasharray="3 2" opacity="0.4"/>
-              <!-- AI 인식 포인트 -->
-              <circle cx="22" cy="24" r="1" fill="currentColor" opacity="0.3"/>
-              <circle cx="42" cy="24" r="1" fill="currentColor" opacity="0.3"/>
-              <circle cx="22" cy="36" r="1" fill="currentColor" opacity="0.3"/>
-              <circle cx="42" cy="36" r="1" fill="currentColor" opacity="0.3"/>
-              <!-- 인식 완료 체크 -->
-              <circle cx="50" cy="48" r="6" fill="currentColor" opacity="0.15"/>
-              <polyline points="47,48 49,50 53,46" stroke-width="2"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M43 30C43 22.8203 37.1797 17 30 17C22.8203 17 17 22.8203 17 30C17 37.1797 22.8203 43 30 43C30.5523 43 31 43.4477 31 44C31 44.5523 30.5523 45 30 45C21.7157 45 15 38.2843 15 30C15 21.7157 21.7157 15 30 15C38.2843 15 45 21.7157 45 30C45 30.5523 44.5523 31 44 31C43.4477 31 43 30.5523 43 30Z" fill="black"/>
+              <path d="M36 28C36 29.1046 35.1046 30 34 30C32.8954 30 32 29.1046 32 28C32 26.8954 32.8954 26 34 26C35.1046 26 36 26.8954 36 28Z" fill="black"/>
+              <path d="M28 28C28 29.1046 27.1046 30 26 30C24.8954 30 24 29.1046 24 28C24 26.8954 24.8954 26 26 26C27.1046 26 28 26.8954 28 28Z" fill="black"/>
+              <path d="M33.1797 33.4277C33.4955 32.975 34.1193 32.8641 34.5723 33.1797C35.025 33.4955 35.1359 34.1193 34.8203 34.5723C33.7884 36.0531 31.9976 37 30 37C28.0025 37 26.2116 36.0531 25.1797 34.5723C24.8641 34.1193 24.975 33.4955 25.4277 33.1797C25.8807 32.8641 26.5045 32.975 26.8203 33.4277C27.4631 34.3502 28.6294 35 30 35C31.3706 35 32.537 34.3502 33.1797 33.4277Z" fill="black"/>
+              <path d="M5 22V16C5 12.134 8.13401 9 12 9H18C18.5523 9 19 9.44772 19 10C19 10.5523 18.5523 11 18 11H12C9.23858 11 7 13.2386 7 16V22C7 22.5523 6.55228 23 6 23C5.44772 23 5 22.5523 5 22Z" fill="black"/>
+              <path d="M55 22V16C55 12.134 51.866 9 48 9H42C41.4477 9 41 9.44772 41 10C41 10.5523 41.4477 11 42 11H48C50.7614 11 53 13.2386 53 16V22C53 22.5523 53.4477 23 54 23C54.5523 23 55 22.5523 55 22Z" fill="black"/>
+              <path d="M5 38V44C5 47.866 8.13401 51 12 51H18C18.5523 51 19 50.5523 19 50C19 49.4477 18.5523 49 18 49H12C9.23858 49 7 46.7614 7 44V38C7 37.4477 6.55228 37 6 37C5.44772 37 5 37.4477 5 38Z" fill="black"/>
+              <path d="M55 38V44C55 47.866 51.866 51 48 51H42C41.4477 51 41 50.5523 41 50C41 49.4477 41.4477 49 42 49H48C50.7614 49 53 46.7614 53 44V38C53 37.4477 53.4477 37 54 37C54.5523 37 55 37.4477 55 38Z" fill="black"/>
+              <path d="M46.2679 35.3197C46.6436 34.915 47.2752 34.8913 47.68 35.2669C48.0846 35.6427 48.1083 36.2743 47.7327 36.679L41.2327 43.679C40.8763 44.0628 40.2842 44.1078 39.8753 43.7806L35.3753 40.181C34.9441 39.836 34.8742 39.206 35.219 38.7747C35.564 38.3435 36.194 38.2735 36.6253 38.6185L40.3987 41.638L46.2679 35.3197Z" fill="var(--color-accent-primary)"/>
             </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 얼굴 -->
-              <circle cx="22" cy="28" r="12"/>
-              <!-- 눈 -->
-              <circle cx="18" cy="26" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="26" cy="26" r="1.5" fill="currentColor" opacity="0.5"/>
-              <!-- 코 -->
-              <line x1="22" y1="28" x2="22" y2="31"/>
-              <!-- 입 -->
-              <path d="M19 34a4 3 0 0 0 6 0" stroke-width="1.5"/>
-              <!-- 연결선 (딥러닝 분석) -->
-              <line x1="34" y1="22" x2="42" y2="16" opacity="0.4"/>
-              <line x1="34" y1="28" x2="42" y2="28" opacity="0.4"/>
-              <line x1="34" y1="34" x2="42" y2="40" opacity="0.4"/>
-              <!-- 뉴럴넷 노드 Layer 1 -->
-              <circle cx="44" cy="16" r="2.5"/>
-              <circle cx="44" cy="28" r="2.5"/>
-              <circle cx="44" cy="40" r="2.5"/>
-              <!-- 뉴럴넷 연결 -->
-              <line x1="47" y1="17" x2="53" y2="22" opacity="0.3"/>
-              <line x1="47" y1="28" x2="53" y2="22" opacity="0.3"/>
-              <line x1="47" y1="28" x2="53" y2="34" opacity="0.3"/>
-              <line x1="47" y1="39" x2="53" y2="34" opacity="0.3"/>
-              <!-- 뉴럴넷 노드 Layer 2 (출력) -->
-              <circle cx="55" cy="22" r="2.5"/>
-              <circle cx="55" cy="34" r="2.5"/>
-              <!-- AI 라벨 -->
-              <text x="55" y="48" text-anchor="middle" font-size="7" font-weight="bold" fill="currentColor" stroke="none">AI</text>
-            </svg>
-            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="6" width="36" height="36" rx="6" stroke="currentColor" stroke-width="2"/>
-              <path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg> -->
           </div>
           <!-- face-mask, user-focus, scan -->
           <h3 class="feature-title">AI 딥러닝 기반 안면인식 시스템</h3>
@@ -306,58 +260,14 @@
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 스캔 게이트 -->
-              <path d="M14 10v44"/>
-              <path d="M50 10v44"/>
-              <path d="M14 10h36"/>
-              <!-- 사람 (출입자) -->
-              <circle cx="32" cy="22" r="5"/>
-              <line x1="32" y1="27" x2="32" y2="40"/>
-              <line x1="32" y1="32" x2="24" y2="36"/>
-              <line x1="32" y1="32" x2="40" y2="36"/>
-              <line x1="32" y1="40" x2="26" y2="50"/>
-              <line x1="32" y1="40" x2="38" y2="50"/>
-              <!-- 정밀 스캔 라인들 -->
-              <line x1="18" y1="20" x2="46" y2="20" stroke-dasharray="2 2" opacity="0.25"/>
-              <line x1="18" y1="28" x2="46" y2="28" stroke-dasharray="2 2" opacity="0.35"/>
-              <line x1="18" y1="36" x2="46" y2="36" stroke-dasharray="2 2" opacity="0.35"/>
-              <line x1="18" y1="44" x2="46" y2="44" stroke-dasharray="2 2" opacity="0.25"/>
-              <!-- 상태 표시 (체크) -->
-              <circle cx="52" cy="16" r="5" fill="currentColor" opacity="0.15"/>
-              <polyline points="49,16 51,18 55,14" stroke-width="2"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M33.2502 43.4167C33.2502 40.9101 32.0488 38.6851 30.1824 37.283L29.4168 36.7083V12.75C29.4168 10.6329 27.7006 8.91667 25.5834 8.91667C23.4663 8.91667 21.7501 10.6329 21.7501 12.75V36.7083L20.9845 37.283C19.1181 38.6851 17.9167 40.9101 17.9167 43.4167C17.9167 47.6508 21.3492 51.0833 25.5834 51.0833V53C20.2907 53 16 48.7094 16 43.4167C16 40.2815 17.5059 37.4984 19.8334 35.75V12.75C19.8334 9.57436 22.4078 7 25.5834 7C28.7591 7 31.3335 9.57436 31.3335 12.75V35.75C33.661 37.4984 35.1669 40.2815 35.1669 43.4167C35.1669 48.7094 30.8762 53 25.5834 53V51.0833C29.8177 51.0833 33.2502 47.6508 33.2502 43.4167Z" fill="black"/>
+              <path d="M29.4168 43.4173C29.4168 45.5344 27.7005 47.2507 25.5834 47.2507C23.4663 47.2507 21.75 45.5344 21.75 43.4173C21.75 41.3002 23.4663 39.584 25.5834 39.584C27.7005 39.584 29.4168 41.3002 29.4168 43.4173Z" fill="var(--color-accent-primary)"/>
+              <path d="M42.8331 15.625C43.3624 15.625 43.7915 16.0541 43.7915 16.5833C43.7915 17.1126 43.3624 17.5417 42.8331 17.5417H35.1664C34.6371 17.5417 34.208 17.1126 34.208 16.5833C34.208 16.0541 34.6371 15.625 35.1664 15.625H42.8331Z" fill="black"/>
+              <path d="M42.8331 23.291C43.3624 23.291 43.7915 23.7201 43.7915 24.2493C43.7915 24.7786 43.3624 25.2077 42.8331 25.2077H35.1664C34.6371 25.2077 34.208 24.7786 34.208 24.2493C34.208 23.7201 34.6371 23.291 35.1664 23.291H42.8331Z" fill="black"/>
+              <path d="M42.8331 30.959C43.3624 30.959 43.7915 31.388 43.7915 31.9173C43.7915 32.4466 43.3624 32.8757 42.8331 32.8757H35.1664C34.6371 32.8757 34.208 32.4466 34.208 31.9173C34.208 31.388 34.6371 30.959 35.1664 30.959H42.8331Z" fill="black"/>
+              <path d="M24.625 13.7083C24.625 13.1791 25.0541 12.75 25.5833 12.75V12.75C26.1126 12.75 26.5417 13.1791 26.5417 13.7083V41.5H24.625V13.7083Z" fill="var(--color-accent-primary)"/>
             </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 스캔 프레임 -->
-              <path d="M10 18V10h8"/>
-              <path d="M38 10h8v8"/>
-              <path d="M46 46v8h-8"/>
-              <path d="M18 54h-8v-8"/>
-              <!-- 사람 실루엣 -->
-              <circle cx="28" cy="20" r="5"/>
-              <path d="M28 25v14"/>
-              <path d="M28 30l-7 5"/>
-              <path d="M28 30l7 5"/>
-              <path d="M28 39l-5 12"/>
-              <path d="M28 39l5 12"/>
-              <!-- 스캔 빔 (위→아래) -->
-              <line x1="14" y1="30" x2="42" y2="30" stroke-width="1.5" opacity="0.4" stroke-dasharray="3 2"/>
-              <!-- 상태 데이터 패널 -->
-              <line x1="48" y1="18" x2="58" y2="18" stroke-width="1.5" opacity="0.5"/>
-              <line x1="48" y1="24" x2="56" y2="24" stroke-width="1.5" opacity="0.4"/>
-              <line x1="48" y1="30" x2="58" y2="30" stroke-width="1.5" opacity="0.5"/>
-              <line x1="48" y1="36" x2="54" y2="36" stroke-width="1.5" opacity="0.4"/>
-              <!-- 상태 점 (정상/주의/경고) -->
-              <circle cx="46" cy="18" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="46" cy="24" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="46" cy="30" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="46" cy="36" r="1.5" fill="currentColor" opacity="0.5"/>
-            </svg>
-            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
-              <circle cx="24" cy="24" r="4" fill="currentColor"/>
-            </svg> -->
           </div>
           <!-- user-focus, scan, person, door -->
           <h3 class="feature-title">출입자 상태 기반 정밀 스캐닝</h3>
@@ -366,56 +276,17 @@
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 스캔 게이트 -->
-              <path d="M8 10v44"/>
-              <path d="M56 10v44"/>
-              <path d="M8 10h48"/>
-              <!-- 차량 본체 -->
-              <rect x="16" y="32" width="32" height="12" rx="3"/>
-              <path d="M22 32v-6a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v6"/>
-              <!-- 바퀴 -->
-              <circle cx="22" cy="46" r="3"/>
-              <circle cx="42" cy="46" r="3"/>
-              <!-- 번호판 -->
-              <rect x="27" y="36" width="10" height="5" rx="1"/>
-              <!-- 스캔 라인들 -->
-              <line x1="12" y1="20" x2="52" y2="20" stroke-dasharray="2 2" opacity="0.25"/>
-              <line x1="12" y1="30" x2="52" y2="30" stroke-dasharray="2 2" opacity="0.35"/>
-              <line x1="12" y1="40" x2="52" y2="40" stroke-dasharray="2 2" opacity="0.35"/>
-              <line x1="12" y1="50" x2="52" y2="50" stroke-dasharray="2 2" opacity="0.25"/>
-              <!-- 상태 표시 (체크) -->
-              <circle cx="52" cy="16" r="5" fill="currentColor" opacity="0.15"/>
-              <polyline points="49,16 51,18 55,14" stroke-width="2"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M5 22.5V16.7308C5 13.0135 8.01347 10 11.7308 10H17.5C18.031 10 18.4615 10.4305 18.4615 10.9615C18.4615 11.4926 18.031 11.9231 17.5 11.9231H11.7308C9.07555 11.9231 6.92308 14.0756 6.92308 16.7308V22.5C6.92308 23.031 6.49258 23.4615 5.96154 23.4615C5.4305 23.4615 5 23.031 5 22.5Z" fill="black"/>
+              <path d="M55 22.5V16.7308C55 13.0135 51.9865 10 48.2692 10H42.5C41.969 10 41.5385 10.4305 41.5385 10.9615C41.5385 11.4926 41.969 11.9231 42.5 11.9231H48.2692C50.9244 11.9231 53.0769 14.0756 53.0769 16.7308V22.5C53.0769 23.031 53.5074 23.4615 54.0385 23.4615C54.5695 23.4615 55 23.031 55 22.5Z" fill="black"/>
+              <path d="M5 37.8848V43.654C5 47.3713 8.01347 50.3848 11.7308 50.3848H17.5C18.031 50.3848 18.4615 49.9543 18.4615 49.4232C18.4615 48.8922 18.031 48.4617 17.5 48.4617H11.7308C9.07555 48.4617 6.92308 46.3092 6.92308 43.654V37.8848C6.92308 37.3537 6.49258 36.9232 5.96154 36.9232C5.4305 36.9232 5 37.3537 5 37.8848Z" fill="black"/>
+              <path d="M55 37.8848V43.654C55 47.3713 51.9865 50.3848 48.2692 50.3848H42.5C41.969 50.3848 41.5385 49.9543 41.5385 49.4232C41.5385 48.8922 41.969 48.4617 42.5 48.4617H48.2692C50.9244 48.4617 53.0769 46.3092 53.0769 43.654V37.8848C53.0769 37.3537 53.5074 36.9232 54.0385 36.9232C54.5695 36.9232 55 37.3537 55 37.8848Z" fill="black"/>
+              <path d="M45.3054 36.1264C44.6349 36.1264 44.0346 36.0124 43.5044 35.7846C42.9741 35.5567 42.5578 35.2368 42.2555 34.8249C41.9531 34.413 41.7954 33.9441 41.7822 33.4183H43.5044C43.5175 33.668 43.6051 33.8893 43.7673 34.0821C43.9294 34.275 44.1441 34.4239 44.4114 34.5291C44.6787 34.6299 44.9767 34.6803 45.3054 34.6803C45.6515 34.6803 45.9605 34.6211 46.2322 34.5028C46.5082 34.3845 46.7229 34.218 46.8763 34.0033C47.0297 33.7885 47.1064 33.541 47.1064 33.2605C47.1064 32.9757 47.0275 32.7237 46.8697 32.5046C46.712 32.2811 46.4841 32.1059 46.1861 31.9788C45.8882 31.8517 45.5376 31.7882 45.1345 31.7882H44.28V30.4736H45.1345C45.4675 30.4736 45.7633 30.4166 46.0218 30.3027C46.2847 30.1843 46.4863 30.02 46.6265 29.8097C46.7711 29.595 46.8434 29.3518 46.8434 29.0801C46.8434 28.8172 46.7799 28.5849 46.6528 28.3833C46.5301 28.1774 46.3527 28.0196 46.1204 27.9101C45.8926 27.7961 45.6253 27.7392 45.3185 27.7392C45.0205 27.7392 44.7423 27.794 44.4837 27.9035C44.2296 28.0087 44.0236 28.1599 43.8659 28.357C43.7125 28.5542 43.6314 28.7821 43.6227 29.0406H41.9794C41.9926 28.5192 42.1481 28.0547 42.4461 27.6472C42.7441 27.2353 43.145 26.9154 43.649 26.6875C44.1529 26.4596 44.7138 26.3457 45.3317 26.3457C45.9583 26.3457 46.5126 26.464 46.9946 26.7006C47.4767 26.9329 47.8491 27.2506 48.112 27.6537C48.375 28.0569 48.5042 28.5017 48.4998 28.9881C48.5042 29.3386 48.4341 29.6563 48.2895 29.9411C48.1449 30.2216 47.9411 30.456 47.6782 30.6445C47.4153 30.8329 47.1108 30.9643 46.7646 31.0388V31.1177C47.2072 31.1747 47.5862 31.3039 47.9017 31.5055C48.2172 31.7071 48.456 31.9656 48.6182 32.2811C48.7803 32.5966 48.8592 32.9538 48.8548 33.3525C48.8592 33.8828 48.708 34.3582 48.4013 34.7789C48.0989 35.1996 47.676 35.5304 47.1327 35.7714C46.5937 36.008 45.9846 36.1264 45.3054 36.1264Z" fill="var(--color-accent-primary)"/>
+              <path d="M33.7377 34.7592L37.1031 31.5121C37.4668 31.1484 37.7472 30.8504 37.9444 30.6182C38.146 30.3815 38.2994 30.1493 38.4045 29.9214C38.5097 29.6892 38.5623 29.4438 38.5623 29.1852C38.5623 28.896 38.49 28.6419 38.3454 28.4228C38.2051 28.2037 38.0101 28.035 37.7604 27.9167C37.515 27.7983 37.2389 27.7392 36.9322 27.7392C36.6079 27.7392 36.3231 27.8049 36.0777 27.9364C35.8367 28.0635 35.6504 28.2453 35.519 28.4819C35.3919 28.7186 35.3284 28.9968 35.3284 29.3167H33.6982C33.6982 28.7251 33.8341 28.2059 34.1058 27.7589C34.3818 27.3076 34.7653 26.9592 35.256 26.7138C35.7512 26.4684 36.3143 26.3457 36.9453 26.3457C37.5851 26.3457 38.1504 26.464 38.6412 26.7006C39.1363 26.9373 39.5197 27.2659 39.7914 27.6866C40.0675 28.1029 40.2055 28.5761 40.2055 29.1064C40.2011 29.4745 40.1288 29.8294 39.9886 30.1712C39.8484 30.5086 39.6074 30.8855 39.2656 31.3018C38.9238 31.718 38.4396 32.222 37.813 32.8136L36.1171 34.4962V34.562H40.3501V35.9949H33.7377V34.7592Z" fill="var(--color-accent-primary)"/>
+              <path d="M31.4232 35.9962H29.701V28.1481H29.6484L27.4268 29.5678V28.0035L29.7799 26.4785H31.4232V35.9962Z" fill="var(--color-accent-primary)"/>
+              <path d="M25.9282 31.9331H21.6426V30.5527H25.9282V31.9331Z" fill="var(--color-accent-primary)"/>
+              <path d="M11.7305 35.9962L15.0827 26.4785H17.1861L20.5515 35.9962H18.7242L17.9288 33.6431H14.3465L13.5578 35.9962H11.7305ZM17.4687 32.2628L16.1738 28.4241H16.095L14.8066 32.2628H17.4687Z" fill="var(--color-accent-primary)"/>
             </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 인식 프레임 (모서리) -->
-              <path d="M10 18V10h8"/>
-              <path d="M46 10h8v8"/>
-              <path d="M54 46v8h-8"/>
-              <path d="M18 54h-8v-8"/>
-              <!-- 번호판 -->
-              <rect x="16" y="24" width="28" height="16" rx="3"/>
-              <line x1="22" y1="30" x2="38" y2="30" stroke-width="1.5"/>
-              <line x1="24" y1="35" x2="36" y2="35" stroke-width="1" opacity="0.5"/>
-              <!-- 스캔 빔 -->
-              <line x1="14" y1="32" x2="46" y2="32" stroke-width="1.5" opacity="0.4" stroke-dasharray="3 2"/>
-              <!-- 상태 데이터 패널 -->
-              <line x1="50" y1="20" x2="60" y2="20" stroke-width="1.5" opacity="0.5"/>
-              <line x1="50" y1="26" x2="58" y2="26" stroke-width="1.5" opacity="0.4"/>
-              <line x1="50" y1="32" x2="60" y2="32" stroke-width="1.5" opacity="0.5"/>
-              <line x1="50" y1="38" x2="56" y2="38" stroke-width="1.5" opacity="0.4"/>
-              <!-- 상태 점 -->
-              <circle cx="48" cy="20" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="48" cy="26" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="48" cy="32" r="1.5" fill="currentColor" opacity="0.5"/>
-              <circle cx="48" cy="38" r="1.5" fill="currentColor" opacity="0.5"/>
-            </svg>
-            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="12" width="36" height="24" rx="4" stroke="currentColor" stroke-width="2"/>
-              <path d="M24 18V30M18 24H30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg> -->
           </div>
           <!-- car, license, scan, barcode, surveillance -->
           <h3 class="feature-title">차량 번호판 자동 인식 및 통합 관제 (LPR)</h3>
@@ -424,52 +295,13 @@
 
         <div class="feature-item fade-in">
           <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 문서 -->
-              <path d="M12 10h26l8 8v36H12z"/>
-              <path d="M38 10v8h8"/>
-              <!-- 기록 라인들 -->
-              <line x1="18" y1="26" x2="34" y2="26" stroke-width="1.5" opacity="0.4"/>
-              <line x1="18" y1="32" x2="30" y2="32" stroke-width="1.5" opacity="0.4"/>
-              <line x1="18" y1="38" x2="32" y2="38" stroke-width="1.5" opacity="0.4"/>
-              <!-- 실시간 분석 그래프 (우측 하단 오버레이) -->
-              <rect x="32" y="34" width="24" height="20" rx="2" fill="currentColor" opacity="0.08"/>
-              <rect x="32" y="34" width="24" height="20" rx="2"/>
-              <!-- 바 차트 -->
-              <line x1="38" y1="50" x2="38" y2="42" stroke-width="2.5" opacity="0.5"/>
-              <line x1="44" y1="50" x2="44" y2="38" stroke-width="2.5" opacity="0.7"/>
-              <line x1="50" y1="50" x2="50" y2="44" stroke-width="2.5" opacity="0.5"/>
-              <!-- 실시간 표시 (점멸 점) -->
-              <circle cx="52" cy="38" r="2" fill="currentColor" opacity="0.6"/>
-              <!-- 상태 표시 (체크) -->
-              <circle cx="52" cy="16" r="5" fill="currentColor" opacity="0.15"/>
-              <polyline points="49,16 51,18 55,14" stroke-width="2"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M42.6673 33.875C43.1966 33.875 43.6257 34.3041 43.6257 34.8333C43.6257 35.3626 43.1966 35.7917 42.6673 35.7917H19.6673C19.138 35.7917 18.709 35.3626 18.709 34.8333C18.709 34.3041 19.138 33.875 19.6673 33.875H42.6673Z" fill="var(--color-accent-primary)"/>
+              <path d="M36.9173 43.459C37.4466 43.459 37.8757 43.8881 37.8757 44.4173C37.8757 44.9466 37.4466 45.3757 36.9173 45.3757H19.6673C19.138 45.3757 18.709 44.9466 18.709 44.4173C18.709 43.8881 19.138 43.459 19.6673 43.459H36.9173Z" fill="var(--color-accent-primary)"/>
+              <path d="M27.334 24.293C27.8633 24.293 28.2923 24.722 28.2923 25.2513C28.2923 25.7806 27.8633 26.2097 27.334 26.2097H19.6673C19.138 26.2097 18.709 25.7806 18.709 25.2513C18.709 24.722 19.138 24.293 19.6673 24.293H27.334Z" fill="var(--color-accent-primary)"/>
+              <path d="M44.5833 11.832C47.759 11.832 50.3333 14.4064 50.3333 17.5821V48.2492C50.3333 51.3257 47.9173 53.8379 44.8791 53.9918L44.5833 53.9993H17.75L17.4543 53.9918C14.514 53.8429 12.1564 51.4853 12.0075 48.545L12 48.2492V17.5821C12 14.4064 14.5744 11.832 17.75 11.832H23.5C23.057 12.4218 22.6815 13.0646 22.3826 13.7487H17.75C15.6329 13.7487 13.9167 15.465 13.9167 17.5821V48.2492C13.9167 50.3664 15.6329 52.0826 17.75 52.0826H44.5833C46.7004 52.0826 48.4167 50.3664 48.4167 48.2492V17.5821C48.4167 15.465 46.7004 13.7487 44.5833 13.7487H39.9508C39.6518 13.0646 39.2763 12.4218 38.8333 11.832H44.5833Z" fill="black"/>
+              <path d="M31.1673 8C36.46 8 40.7507 12.2907 40.7507 17.5835H21.584C21.584 12.2907 25.8746 8 31.1673 8ZM31.1673 9.9167C27.595 9.9167 24.5932 12.36 23.7421 15.6668H38.5925C37.7415 12.36 34.7397 9.9167 31.1673 9.9167Z" fill="black"/>
             </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <!-- 클립보드 -->
-              <rect x="10" y="14" width="30" height="40" rx="3"/>
-              <rect x="20" y="10" width="10" height="8" rx="2"/>
-              <!-- 체크 기록들 -->
-              <circle cx="17" cy="28" r="1.5" fill="currentColor" opacity="0.5"/>
-              <line x1="22" y1="28" x2="34" y2="28" stroke-width="1.5" opacity="0.4"/>
-              <circle cx="17" cy="35" r="1.5" fill="currentColor" opacity="0.5"/>
-              <line x1="22" y1="35" x2="32" y2="35" stroke-width="1.5" opacity="0.4"/>
-              <circle cx="17" cy="42" r="1.5" fill="currentColor" opacity="0.5"/>
-              <line x1="22" y1="42" x2="34" y2="42" stroke-width="1.5" opacity="0.4"/>
-              <!-- 분석 패널 (우측) -->
-              <rect x="42" y="20" width="16" height="28" rx="2"/>
-              <!-- 꺾은선 그래프 -->
-              <polyline points="46,42 49,36 52,38 55,30 " stroke-width="1.5" opacity="0.6"/>
-              <!-- 상태 데이터 -->
-              <line x1="46" y1="26" x2="54" y2="26" stroke-width="1.5" opacity="0.4"/>
-              <!-- 연결선 (기록→분석) -->
-              <line x1="40" y1="34" x2="42" y2="34" stroke-dasharray="2 2" opacity="0.35"/>
-            </svg>
-            <!-- <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 36L24 12L36 36H12Z" stroke="currentColor" stroke-width="2"/>
-              <path d="M24 22V28M24 32V34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg> -->
           </div>
           <!-- file-chart, clipboard-text, chart-line-up, list-checks -->
           <h3 class="feature-title">실시간 출입 기록 및 자동 분석 리포트</h3>
@@ -558,36 +390,43 @@
   <section class="cases-section">
     <div class="container">
       <h2 class="cases-title">주요 시공사례</h2>
-      <div class="cases-grid">
-        <div class="case-item fade-in">
-          <figure class="case-image-container">
-            <img src="../../images/solutions/s_04_01.jpg" alt="프로젝트 1" class="case-image">
-          </figure>
-          <div class="case-content">
-            <h3 class="case-title">안면인식 출입통제 시스템 설치</h3>
-            <p class="case-description">ㅇㅇ현장 안면인식 출입통제 시스템 설치</p>
+      <div class="cases-slider-wrap">
+        <div class="swiper cases-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="case-item">
+                <figure class="case-image-container">
+                  <img src="../../images/solutions/s_04_01.jpg" alt="프로젝트 1" class="case-image" />
+                </figure>
+                <div class="case-content">
+                  <h3 class="case-title">안면인식 출입통제 시스템 설치</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="case-item">
+                <figure class="case-image-container">
+                  <img src="../../images/solutions/s_04_02.jpg" alt="프로젝트 2" class="case-image" />
+                </figure>
+                <div class="case-content">
+                  <h3 class="case-title">차량 통제 시스템 설치</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="case-item">
+                <figure class="case-image-container">
+                  <img src="../../images/solutions/s_04_03.jpg" alt="프로젝트 3" class="case-image" />
+                </figure>
+                <div class="case-content">
+                  <h3 class="case-title">안면인식 출입통제 시스템 설치</h3>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="case-item fade-in">
-          <figure class="case-image-container">
-            <img src="../../images/solutions/s_04_02.jpg" alt="프로젝트 2" class="case-image">
-          </figure>
-          <div class="case-content">
-            <h3 class="case-title">차량 통제 시스템 설치</h3>
-            <p class="case-description">ㅇㅇ현장 차량 통제 시스템 설치</p>
-          </div>
-        </div>
-
-        <div class="case-item fade-in">
-          <figure class="case-image-container">
-            <img src="../../images/solutions/s_04_03.jpg" alt="프로젝트 3" class="case-image">
-          </figure>
-          <div class="case-content">
-            <h3 class="case-title">안면인식 출입통제 시스템 설치</h3>
-            <p class="case-description">ㅇㅇ현장 안면인식 출입통제 시스템 설치</p>
-          </div>
-        </div>
+        <button class="cases-swiper-prev" aria-label="이전 시공사례"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="cases-swiper-next" aria-label="다음 시공사례"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </div>
   </section>
@@ -667,6 +506,7 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="../../js/utils.js"></script>
   <script src="../../js/components.js"></script>
   <script src="../../js/main.js"></script>

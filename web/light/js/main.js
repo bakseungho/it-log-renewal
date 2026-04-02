@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   initHeaderScroll();
   initHeroSlider();
+  initCasesSwiper();
   initScrollAnimations();
   initCounterAnimations();
   initCompanyCounterAnimations();
@@ -106,6 +107,29 @@ function initHeaderScroll() {
       header.classList.remove('scrolled');
       updateLogoColor(false);
     }
+  });
+}
+
+// Cases Swiper (Solution subpages)
+function initCasesSwiper() {
+  const el = document.querySelector('.cases-swiper');
+  if (!el || typeof Swiper === 'undefined') return;
+
+  const isTouchDevice = window.matchMedia('(max-width: 1023px)').matches;
+
+  new Swiper('.cases-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    navigation: isTouchDevice ? false : {
+      prevEl: '.cases-swiper-prev',
+      nextEl: '.cases-swiper-next',
+    },
+    loop: false,
+    freeMode: isTouchDevice,
+    breakpoints: {
+      768: { slidesPerView: 2, spaceBetween: 24 },
+      1024: { slidesPerView: 3, spaceBetween: 32 },
+    },
   });
 }
 
@@ -201,15 +225,28 @@ function initHeroSlider() {
           const activeSlide = this.slides[this.activeIndex];
           showSlideContent(activeSlide);
           
-          // 배경 이미지 줌 아웃 효과 - 먼저 리셋 후 애니메이션
+          // 비활성 슬라이드 배경을 확대 상태로 리셋 (전환 완료 후이므로 안 보임)
+          this.slides.forEach((slide, i) => {
+            if (i !== this.activeIndex) {
+              const bg = slide.querySelector('.hero-background');
+              if (bg) {
+                bg.style.transition = 'none';
+                bg.style.transform = 'scale(1.1)';
+              }
+            }
+          });
+
+          // 활성 슬라이드 배경 줌 아웃
           const bgImage = activeSlide.querySelector('.hero-background');
           if (bgImage) {
             bgImage.style.transition = 'none';
             bgImage.style.transform = 'scale(1.1)';
-            // 강제 리플로우 후 애니메이션 시작
-            bgImage.offsetHeight;
-            bgImage.style.transition = 'transform 5s ease-out';
-            bgImage.style.transform = 'scale(1.0)';
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                bgImage.style.transition = 'transform 5s ease-out';
+                bgImage.style.transform = 'scale(1.0)';
+              });
+            });
           }
         }
       }
@@ -479,10 +516,9 @@ function initScrollAnimations() {
     });
   }
 
-  // Project Cards - CSS only, no GSAP animation
+  // Project Cards - subpage uses scroll animation
   const projectCards = document.querySelectorAll('.card-project');
-  if (projectCards.length > 0) {
-    // Just make them visible, no animation
+  if (projectCards.length > 0 && !window.location.pathname.includes('/projects/')) {
     projectCards.forEach(card => {
       card.style.opacity = '1';
       card.style.visibility = 'visible';
@@ -517,7 +553,8 @@ function initSubpageScrollAnimations() {
 
   // 이용약관, 개인정보처리방침, 메인페이지에서는 애니메이션 제외
   const path = window.location.pathname;
-  if (path.includes('terms.html') || path.includes('privacy.html') || path.endsWith('/') || path.endsWith('/index.html') || path === '') return;
+  const isMainIndex = path.endsWith('/index.html') && !path.includes('/pages/');
+  if (path.includes('terms.html') || path.includes('privacy.html') || path.endsWith('/') || isMainIndex || path === '') return;
 
   // 섹션 컨테이너 셀렉터 (트리거 단위)
   const sectionSelectors = [
@@ -1165,10 +1202,10 @@ function updateActiveTab(year) {
     const tabYear = parseInt(tab.getAttribute('data-year'));
     
     // 연도 범위에 따라 탭 활성화
-    // 2025 ~ 2021: 현재~ 탭
+    // 2021 이상: 현재~ 탭
     // 2020 ~ 2016: 2020~ 탭
     // 2015 이하: 2015~ 탭
-    if (year >= 2021 && tabYear === 2025) {
+    if (year >= 2021 && tabYear === 2026) {
       tab.classList.add('active');
     } else if (year >= 2016 && year <= 2020 && tabYear === 2020) {
       tab.classList.add('active');
