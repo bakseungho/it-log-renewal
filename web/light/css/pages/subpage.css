@@ -230,7 +230,6 @@
   display: flex;
   justify-content: space-between;
   gap: 44px;
-  padding-bottom: 80px;
 }
 
 .company-section .company-content-inner .company-img-cont {
@@ -303,7 +302,7 @@
   justify-content: space-between;
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 16px;
-  gap: 64px;
+  gap: 40px;
   padding: 24px;
   background: rgba(0, 0, 0, 0.03);
 }
