@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initHeroSlider();
   initCasesSwiper();
+  initProjectsSwiper();
   initScrollAnimations();
   initCounterAnimations();
   initCompanyCounterAnimations();
@@ -110,25 +111,71 @@ function initHeaderScroll() {
   });
 }
 
+// Projects Swiper (Main page)
+function initProjectsSwiper() {
+  const el = document.querySelector('.projects-swiper');
+  if (!el || typeof Swiper === 'undefined') return;
+
+  const mobilePadding = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--section-padding-x')) || 20;
+
+  new Swiper('.projects-swiper', {
+    slidesPerView: 1.2,
+    spaceBetween: 16,
+    slidesOffsetBefore: mobilePadding,
+    slidesOffsetAfter: mobilePadding,
+    loop: false,
+    freeMode: {
+      enabled: true,
+      momentum: true,
+      momentumRatio: 0.8,
+      momentumBounceRatio: 0.6,
+    },
+    touchStartPreventDefault: false,
+    touchMoveStopPropagation: false,
+    threshold: 5,
+    touchReleaseOnEdges: true,
+    passiveListeners: true,
+    cssMode: false,
+    breakpoints: {
+      769: { slidesPerView: 1.8, spaceBetween: 24, slidesOffsetBefore: mobilePadding, slidesOffsetAfter: mobilePadding },
+      1025: { slidesPerView: 3, spaceBetween: 32, slidesOffsetBefore: 0, slidesOffsetAfter: 0, freeMode: { enabled: false } },
+    },
+  });
+}
+
 // Cases Swiper (Solution subpages)
 function initCasesSwiper() {
   const el = document.querySelector('.cases-swiper');
   if (!el || typeof Swiper === 'undefined') return;
 
-  const isTouchDevice = window.matchMedia('(max-width: 1023px)').matches;
+  const isTouchDevice = window.matchMedia('(max-width: 1024px)').matches;
+  const mobilePadding = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--section-padding-x')) || 20;
 
   new Swiper('.cases-swiper', {
-    slidesPerView: 1,
+    slidesPerView: 1.2,
     spaceBetween: 16,
+    slidesOffsetBefore: mobilePadding,
+    slidesOffsetAfter: mobilePadding,
     navigation: isTouchDevice ? false : {
       prevEl: '.cases-swiper-prev',
       nextEl: '.cases-swiper-next',
     },
     loop: false,
-    freeMode: isTouchDevice,
+    freeMode: isTouchDevice ? {
+      enabled: true,
+      momentum: true,
+      momentumRatio: 0.8,
+      momentumBounceRatio: 0.6,
+    } : false,
+    touchStartPreventDefault: false,
+    touchMoveStopPropagation: false,
+    threshold: 5,
+    touchReleaseOnEdges: true,
+    passiveListeners: true,
+    cssMode: false,
     breakpoints: {
-      768: { slidesPerView: 2, spaceBetween: 24 },
-      1024: { slidesPerView: 3, spaceBetween: 32 },
+      769: { slidesPerView: 1.8, spaceBetween: 24, slidesOffsetBefore: mobilePadding, slidesOffsetAfter: mobilePadding },
+      1025: { slidesPerView: 3, spaceBetween: 32, slidesOffsetBefore: 0, slidesOffsetAfter: 0 },
     },
   });
 }
@@ -213,8 +260,29 @@ function initHeroSlider() {
           if (!isPaused) {
             startProgress(6000, this);
           }
+          // 안전장치: transitionEnd가 스킵될 경우를 대비해 일정 시간 후 강제 표시
+          const swiperRef = this;
+          if (swiperRef._fallbackTimer) clearTimeout(swiperRef._fallbackTimer);
+          swiperRef._fallbackTimer = setTimeout(() => {
+            const activeSlide = swiperRef.slides[swiperRef.activeIndex];
+            if (activeSlide) {
+              const content = activeSlide.querySelector('.hero-content');
+              if (content) {
+                const els = content.querySelectorAll('.hero-subtitle, .hero-title, .hero-description, .hero-actions');
+                const needsShow = Array.from(els).some(el => el.style.opacity === '0');
+                if (needsShow) {
+                  swiperRef._contentTimers = showSlideContent(activeSlide);
+                }
+              }
+            }
+          }, 1200);
         },
         slideChangeTransitionStart: function() {
+          // 진행 중인 콘텐츠 애니메이션 타이머 취소
+          if (this._contentTimers) {
+            this._contentTimers.forEach(t => clearTimeout(t));
+          }
+          this._contentTimers = [];
           // 모든 슬라이드의 콘텐츠 요소 숨김
           this.slides.forEach(slide => {
             hideSlideContent(slide);
@@ -223,9 +291,9 @@ function initHeroSlider() {
         slideChangeTransitionEnd: function() {
           // 활성 슬라이드의 콘텐츠만 표시
           const activeSlide = this.slides[this.activeIndex];
-          showSlideContent(activeSlide);
+          this._contentTimers = showSlideContent(activeSlide);
           
-          // 비활성 슬라이드 배경을 확대 상태로 리셋 (전환 완료 후이므로 안 보임)
+          // 비활성 슬라이드 배경을 확대 상태로 리셋
           this.slides.forEach((slide, i) => {
             if (i !== this.activeIndex) {
               const bg = slide.querySelector('.hero-background');
@@ -247,6 +315,20 @@ function initHeroSlider() {
                 bgImage.style.transform = 'scale(1.0)';
               });
             });
+          }
+        },
+        transitionStart: function() {
+          // 빠른 스와이핑 시 transitionEnd가 스킵될 수 있으므로 안전장치
+          this._transitionPending = true;
+        },
+        transitionEnd: function() {
+          this._transitionPending = false;
+        },
+        beforeSlideChangeStart: function() {
+          // 이전 전환이 끝나지 않은 상태에서 새 전환 시작 시 강제로 콘텐츠 표시
+          if (this._transitionPending) {
+            const activeSlide = this.slides[this.activeIndex];
+            showSlideContent(activeSlide);
           }
         }
       }
@@ -404,8 +486,9 @@ function initHeroSlider() {
     
     // 슬라이드 콘텐츠 표시 함수
     function showSlideContent(slide) {
+      const timers = [];
       const content = slide.querySelector('.hero-content');
-      if (!content) return;
+      if (!content) return timers;
       
       const subtitle = content.querySelector('.hero-subtitle');
       const title = content.querySelector('.hero-title');
@@ -415,37 +498,39 @@ function initHeroSlider() {
       // 배경 이미지는 slideChangeTransitionEnd에서 처리
       
       // 순차적으로 요소 표시 (더 빠른 타이밍)
-      setTimeout(() => {
+      timers.push(setTimeout(() => {
         if (subtitle) {
           subtitle.style.transition = 'all 0.5s ease-out';
           subtitle.style.opacity = '1';
           subtitle.style.transform = 'translateY(0)';
         }
-      }, 100);
+      }, 100));
       
-      setTimeout(() => {
+      timers.push(setTimeout(() => {
         if (title) {
           title.style.transition = 'all 0.5s ease-out';
           title.style.opacity = '1';
           title.style.transform = 'translateY(0)';
         }
-      }, 250);
+      }, 250));
       
-      setTimeout(() => {
+      timers.push(setTimeout(() => {
         if (description) {
           description.style.transition = 'all 0.5s ease-out';
           description.style.opacity = '1';
           description.style.transform = 'translateY(0)';
         }
-      }, 400);
+      }, 400));
       
-      setTimeout(() => {
+      timers.push(setTimeout(() => {
         if (actions) {
           actions.style.transition = 'all 0.5s ease-out';
           actions.style.opacity = '1';
           actions.style.transform = 'translateY(0)';
         }
-      }, 550);
+      }, 550));
+
+      return timers;
     }
   } catch (error) {
     console.error('Swiper initialization error:', error);
@@ -683,6 +768,7 @@ function initSubpageScrollAnimations() {
             duration: 0.7,
             delay: delay,
             ease: 'power2.out',
+            onComplete: () => { gsap.set(target.el, { clearProps: 'transform' }); }
           });
           delay += 0.18;
         });
@@ -706,6 +792,7 @@ function initSubpageScrollAnimations() {
             opacity: 1, y: 0,
             duration: 0.7,
             ease: 'power2.out',
+            onComplete: () => { gsap.set(block, { clearProps: 'transform' }); }
           });
         }
       });
@@ -726,7 +813,7 @@ function initSubpageScrollAnimations() {
         onEnter: () => {
           let delay = 0;
           techHeaderEls.forEach(el => {
-            gsap.to(el, { opacity: 1, y: 0, duration: 0.7, delay: delay, ease: 'power2.out' });
+            gsap.to(el, { opacity: 1, y: 0, duration: 0.7, delay: delay, ease: 'power2.out', onComplete: () => { gsap.set(el, { clearProps: 'transform' }); } });
             delay += 0.18;
           });
         }
@@ -740,9 +827,11 @@ function initSubpageScrollAnimations() {
       const content = item.querySelector('.tech-content-cont');
       const isRight = item.classList.contains('tech-item-right');
 
+      const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+
       // 초기 숨김
       if (figure) gsap.set(figure, { opacity: 0, y: 30 });
-      if (content) gsap.set(content, { opacity: 0, x: isRight ? -50 : 50 });
+      if (content) gsap.set(content, isMobile ? { opacity: 0, y: 30 } : { opacity: 0, x: isRight ? -50 : 50 });
 
       ScrollTrigger.create({
         trigger: item,
@@ -750,10 +839,13 @@ function initSubpageScrollAnimations() {
         once: true,
         onEnter: () => {
           if (figure) {
-            gsap.to(figure, { opacity: 1, y: 0, duration: 1.8, ease: 'power2.out' });
+            gsap.to(figure, { opacity: 1, y: 0, duration: 1.8, ease: 'power2.out', onComplete: () => { gsap.set(figure, { clearProps: 'transform' }); } });
           }
           if (content) {
-            gsap.to(content, { opacity: 1, x: 0, duration: 0.9, delay: 0.6, ease: 'power2.out' });
+            gsap.to(content, isMobile
+              ? { opacity: 1, y: 0, duration: 0.9, delay: 0.3, ease: 'power2.out', onComplete: () => { gsap.set(content, { clearProps: 'transform' }); } }
+              : { opacity: 1, x: 0, duration: 0.9, delay: 0.6, ease: 'power2.out', onComplete: () => { gsap.set(content, { clearProps: 'transform' }); } }
+            );
           }
         }
       });
@@ -998,23 +1090,7 @@ function initCardHoverEffects() {
   if (statCards.length === 0) return;
   
   statCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-      gsap.to(this, {
-        y: -8,
-        duration: 0.4,
-        ease: 'power2.out',
-        overwrite: 'auto'
-      });
-    });
-
-    card.addEventListener('mouseleave', function() {
-      gsap.to(this, {
-        y: 0,
-        duration: 0.4,
-        ease: 'power2.out',
-        overwrite: 'auto'
-      });
-    });
+    card.style.pointerEvents = 'auto';
   });
 }
 

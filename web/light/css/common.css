@@ -50,7 +50,7 @@ body.page-loaded {
 /* Section Header */
 .section-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 48px;
 }
 
 .section-tag {
@@ -273,7 +273,7 @@ h4, .h4 {
 }
 
 /* Responsive */
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -283,7 +283,7 @@ h4, .h4 {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .grid-2,
   .grid-3,
   .grid-4 {
@@ -295,7 +295,7 @@ h4, .h4 {
   }
 
   .section-title {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .section-description {
@@ -316,7 +316,7 @@ h4, .h4 {
   width: 50px;
   height: 50px;
   background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-line-regular);
   border-radius: 50%;
   color: var(--color-text-secondary);
   cursor: pointer;

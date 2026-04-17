@@ -73,6 +73,7 @@
 }
 
 .footer-details p {
+  flex-wrap: wrap;
   font-size: 13px;
   color: var(--color-text-tertiary);
   margin: 0;
@@ -111,8 +112,7 @@
 .footer-sitemap-title {
   font-size: 1rem;
   font-weight: 600;
-  color: #1a1a1a;
-  margin: 0 0 8px 0;
+  color: var(--color-text-primary);
   padding-bottom: 8px;
   border-bottom: 2px solid var(--primary-color);
 }
@@ -127,7 +127,7 @@
 }
 
 .footer-sitemap-link:hover {
-  color: #1a1a1a;
+  color: var(--color-accent-primary);
 }
 
 /* Responsive */
@@ -146,11 +146,11 @@
 
 @media (max-width: 768px) {
   .footer {
-    padding: 40px 0 20px;
+    padding: 40px 0;
   }
 
   .footer-logo {
-    width: 120px;
+    width: 80px;
   }
   
   .footer-sitemap {
@@ -160,5 +160,9 @@
   
   .footer-policy-links {
     flex-wrap: wrap;
+  }
+
+  .footer-contact-info {
+    display: flex;
   }
 }

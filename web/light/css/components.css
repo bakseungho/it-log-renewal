@@ -140,7 +140,7 @@
 .card-project {
   background: var(--color-bg-light);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-line-regular);
   overflow: hidden;
   transition: transform 0.4s var(--ease-smooth), box-shadow 0.4s var(--ease-smooth);
   transform: translateY(0);
@@ -180,6 +180,7 @@
   font-size: var(--font-size-h5);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
+  line-height: 1.4;
 }
 
 .card-project .meta {
@@ -193,7 +194,7 @@
   padding: 40px 24px;
   background: var(--color-bg-light);
   border-radius: var(--radius-lg);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
 }
 
 /* .card-stat:hover {
@@ -211,12 +212,13 @@
 
 .card-stat .label {
   font-size: var(--font-size-h5);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
+  font-weight: 500;
+  color: var(--color-text-tertiary);
   margin-bottom: 8px;
 }
 
 .card-stat .description {
+  display: none;
   font-size: var(--font-size-body-md);
   color: var(--color-text-secondary);
 }
@@ -266,7 +268,7 @@
 
 .input-textarea {
   min-height: 120px;
-  resize: vertical;
+  resize: none;
 }
 
 .input-checkbox {
@@ -391,13 +393,193 @@
 }
 
 /* Responsive */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .btn {
     width: 100%;
     padding: 16px 24px;
   }
   
   .card-stat .number {
-    font-size: 2.5rem;
+    font-size: 32px;
+  }
+
+  .card-stat .label {
+    font-size: 16px;
+  }
+}
+
+/* Contact Modal */
+.contact-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+.contact-modal-overlay.active {
+  display: flex;
+}
+.contact-modal {
+  background: #fff;
+  border-radius: var(--radius-lg, 12px);
+  width: 90%;
+  height: 80vh;
+  max-width: 520px;
+  max-height: 1000px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+.contact-modal-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--color-text-tertiary);
+  line-height: 1;
+}
+.contact-modal-close:hover {
+  color: #000;
+}
+.contact-modal-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary, #1a1a1a);
+}
+.contact-modal-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.contact-modal-form .contact-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 24px 24px;
+}
+
+.contact-modal-form .contact-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: calc(80vh - 200px);
+  padding: 0 24px 16px;
+  overflow-y: auto;
+}
+
+.contact-modal-form .contact-modal-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 24px 28px;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;  
+}
+
+.contact-modal-field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--color-text-primary, #333);
+}
+.contact-modal-field .required {
+  color: #e53e3e;
+}
+.contact-modal-field input,
+.contact-modal-field textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  resize: none;
+}
+.contact-modal-field input:focus,
+.contact-modal-field textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-primary, #0066ff);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+.contact-modal-submit {
+  width: 100%;
+}
+
+/* Contact Modal - Product Checkbox Group */
+.contact-product-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 32px;
+}
+.contact-modal-field .contact-product-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 400;
+}
+.contact-product-item input[type="checkbox"] {
+  width: auto;
+}
+
+/* Contact Modal - Agreement */
+.contact-modal-agree label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.contact-modal-agree a {
+  color: var(--color-accent-primary, #0066ff);
+  text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+  .card-project .content {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-modal {
+    width: 100%;
+    height: 100%;
+    max-width: inherit;
+    max-height: inherit;
+    border-radius: 0;
+  }
+
+  .contact-modal-form .contact-modal-header {
+    padding: 20px;
+  }
+
+  .contact-modal-form .contact-modal-content {
+    height: calc(100% - 124px);
+    padding: 0 20px 16px;
+  }
+
+  .contact-modal-form .contact-modal-footer {
+    padding: 0;
+  }
+
+  .contact-modal-form .contact-modal-footer button {
+    border-radius: 0;
+  }
+
+  .contact-modal-form .contact-modal-footer button:hover {
+    transform: inherit;
+  }
+
+  .card-project .img_cont {
+    height: 45vw;
   }
 }

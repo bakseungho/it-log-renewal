@@ -1,0 +1,59 @@
+
+.test-body .overview-section {
+  padding-top: 0;
+}
+
+.test-body .overview-subtitle {
+  font-size: 32px !important;
+  font-weight: 400;
+}
+
+.test-body .overview-text {
+  font-size: 20px;
+}
+
+.test-body .feature-title {
+  font-size: 24px;
+}
+
+.test-body .feature-description {
+  font-size: 18px;
+}
+
+.test-body .contact-section {
+  position: relative;
+  background: url('../../images/common/contact-bg.png') no-repeat center center;
+  background-size: cover;
+}
+
+.test-body .contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.test-body .contact-section .container {
+  position: relative;
+  z-index: 20;
+}
+
+.test-body .contact-section .container .contact-title {
+  color: #fff;
+}
+
+.test-body .contact-section .container .contact-description {
+  color: var(--color-text-placeholder);
+}
+
+.overview-subtitle {
+  font-size: 24px !important;
+}
+
+footer {
+  background: #fff !important;
+}

@@ -71,7 +71,7 @@ def fix_light_theme_colors():
         # Replace shadow
         content = re.sub(
             r'box-shadow: 0 2px 16px rgba\(0, 0, 0, 0\.5\);',
-            'box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);',
+            'box-shadow: 0 2px 16px var(--color-line-regular);',
             content
         )
         
@@ -103,7 +103,7 @@ def fix_light_theme_colors():
         # Replace border
         content = re.sub(
             r'border-top: 1px solid rgba\(255, 255, 255, 0\.1\);',
-            'border-top: 1px solid rgba(0, 0, 0, 0.1);',
+            'border-top: 1px solid var(--color-line-regular);',
             content
         )
         

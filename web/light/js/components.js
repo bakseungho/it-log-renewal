@@ -28,9 +28,13 @@ class HeaderNav {
         this.header.classList.remove('scrolled');
       }
       
-      // Hide/show header on scroll
-      if (currentScroll > lastScroll && currentScroll > 300) {
-        this.header.style.transform = 'translateY(-100%)';
+      // Hide/show header on scroll (desktop only)
+      if (window.innerWidth > 1024) {
+        if (currentScroll > lastScroll && currentScroll > 300) {
+          this.header.style.transform = 'translateY(-100%)';
+        } else {
+          this.header.style.transform = 'translateY(0)';
+        }
       } else {
         this.header.style.transform = 'translateY(0)';
       }
@@ -414,3 +418,94 @@ document.addEventListener('DOMContentLoaded', () => {
   // Lazy load images
   lazyLoadImages();
 });
+
+// Contact Modal (EmailJS)
+(function() {
+  const modal = document.getElementById("contactModal");
+  if (!modal) return;
+
+  const EMAILJS_SERVICE_ID = "service_hht46kd";
+  const EMAILJS_TEMPLATE_ID = "template_rnlk7nv";
+  const EMAILJS_PUBLIC_KEY = "8xrQzPTr586eRu7cW";
+
+  if (typeof emailjs !== "undefined") emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  const form = document.getElementById("contactForm");
+  const submitBtn = document.getElementById("contactSubmitBtn");
+  const closeBtn = document.getElementById("contactModalClose");
+
+  function openModal() {
+    modal.classList.add("active");
+  }
+  function closeModal() {
+    modal.classList.remove("active");
+  }
+
+  const setPhoneNumber = (phone) => {
+    if (!phone || phone === '') return '';
+    // 하이픈이나 다른 문자들이 있는 경우 제거
+    const phoneNumber = phone.replaceAll('-', '').replace(/\D/g, '');
+    return phoneNumber.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
+  };
+
+  document.querySelectorAll("#openContactModal, .open-contact-modal").forEach(function(btn) {
+    btn.addEventListener("click", function(e) { e.preventDefault(); openModal(); });
+  });
+  closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", function(e) { if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && modal.classList.contains("active")) closeModal();
+  });
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = "전송 중...";
+
+    if(!form.phone.value.match(/^01[0-9]?[0-9]{4}?[0-9]{4}$/)) {
+      alert("올바른 휴대폰 번호를 입력해주세요.");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "문의하기";
+      return;
+    }
+
+    var checked = form.querySelectorAll('input[name="product"]:checked');
+    if (checked.length === 0) {
+      alert("제품을 1개 이상 선택해주세요.");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "문의하기";
+      return;
+    }
+    var products = [];
+    checked.forEach(function(productItem) {
+      products.push(productItem.value);
+    });
+
+    const productsSet = products.map((item, idx) => {
+      return `${idx + 1}. ${item}`;
+    });
+
+    const emailFromData = {
+      title: form.subject.value,
+      company: form.company.value,
+      name: form.name.value,
+      phone: setPhoneNumber(form.phone.value),
+      email: form.email.value,
+      message: form.message.value,
+      product: productsSet.join('\n'),
+    };
+
+    
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, Object.assign(emailFromData))
+      .then(function() {
+        alert("문의가 성공적으로 전송되었습니다.");
+        form.reset();
+        closeModal();
+      }, function() {
+        alert("문의 전송에 실패했습니다.\nok@it-log.co.kr 로 직접 메일을 보내주세요.");
+      }).finally(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "문의하기";
+      });
+    });
+})();

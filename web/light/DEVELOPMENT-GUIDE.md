@@ -1,4 +1,4 @@
-# Template3 개발 가이드
+# 개발 가이드
 
 ## 목차
 1. [시작하기](#시작하기)
@@ -25,7 +25,7 @@
 
 1. **프로젝트 클론**
 ```bash
-cd web/template3
+cd web/light
 ```
 
 2. **Live Server 실행**
@@ -43,14 +43,14 @@ http://localhost:8000
 
 ### 디렉토리 구조
 ```
-web/template3/
+web/light/
 ├── index.html              # 메인 페이지
 ├── about/                  # 회사소개 페이지들
 ├── solutions/              # 솔루션 페이지들
 ├── support/                # 고객지원 페이지들
 ├── css/                    # 스타일시트
 │   ├── reset.css          # CSS 리셋
-│   ├── variables.css      # CSS 변수 (다크 테마)
+│   ├── variables.css      # CSS 변수 (라이트 테마)
 │   ├── common.css         # 공통 스타일
 │   ├── components.css     # 컴포넌트 스타일
 │   ├── header.css         # 헤더 스타일
@@ -88,17 +88,17 @@ web/template3/
 
 #### 컬러
 ```css
-/* 다크 배경 */
-background: var(--color-bg-primary);      /* #0a0a0a */
-background: var(--color-bg-light);    /* #1a1a1a */
+/* 배경 */
+background: var(--color-bg-primary);      /* #ffffff */
+background: var(--color-bg-light);    /* #F7F7FB */
 
-/* 포인트 컬러 */
-color: var(--color-accent-gold);          /* #d4af37 */
-color: var(--color-accent-cyan);          /* #00d9ff */
+/* Primary 컬러 */
+color: var(--color-accent-primary);        /* #0066FF */
+color: var(--color-accent-secondary);      /* #00A8E8 */
 
 /* 텍스트 */
-color: var(--color-text-primary);         /* #ffffff */
-color: var(--color-text-secondary);       /* #a0a0a0 */
+color: var(--color-text-primary);         /* #1a1a1a */
+color: var(--color-text-secondary);       /* #505050 */
 ```
 
 #### 타이포그래피
@@ -469,7 +469,7 @@ gsap.to('.counter', {
 CSS 변수가 자동으로 조정됩니다:
 ```css
 /* Desktop */
---font-size-h1: 60px;
+--font-size-h1: 64px;
 
 /* Tablet */
 @media (max-width: 1023px) {
@@ -478,7 +478,7 @@ CSS 변수가 자동으로 조정됩니다:
 
 /* Mobile */
 @media (max-width: 767px) {
-  --font-size-h1: 32px;
+  --font-size-h1: 40px;
 }
 ```
 
@@ -518,7 +518,7 @@ CSS 변수가 자동으로 조정됩니다:
 ```html
 <style>
   /* 중요한 스타일만 인라인 */
-  body { background: #0a0a0a; }
+  body { background: #ffffff; }
 </style>
 ```
 
@@ -603,7 +603,7 @@ document.body.style.overflow = '';
 ```css
 /* :root에 정의되어 있는지 확인 */
 :root {
-  --color-accent-gold: #d4af37;
+  --color-accent-primary: #0066FF;
 }
 ```
 

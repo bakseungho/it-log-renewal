@@ -116,7 +116,7 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px var(--color-line-regular), 0 10px 10px rgba(0, 0, 0, 0.04);
   --shadow-glow-primary: 0 0 30px rgba(0, 102, 255, 0.15);
   --shadow-glow-primary-strong: 0 0 40px rgba(0, 102, 255, 0.25);
   
@@ -161,7 +161,7 @@
 }
 
 /* Responsive Variables - Tablet */
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   :root {
     --font-size-display-1: 4rem;      /* 64px */
     --font-size-display-2: 3.5rem;    /* 56px */
@@ -180,7 +180,7 @@
 }
 
 /* Responsive Variables - Mobile */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   :root {
     --font-size-display-1: 3rem;      /* 48px */
     --font-size-display-2: 2.25rem;   /* 36px */
