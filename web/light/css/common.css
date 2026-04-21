@@ -4,6 +4,7 @@
 body {
   opacity: 0;
   transition: opacity 0.5s ease;
+  overflow-x: hidden;
 }
 
 body.page-loaded {
@@ -281,6 +282,10 @@ h4, .h4 {
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .container {
+    padding: 0 40px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -288,6 +293,10 @@ h4, .h4 {
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 20px;
   }
   
   .section-header {

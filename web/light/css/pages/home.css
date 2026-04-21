@@ -565,6 +565,7 @@ body.home-page .header.scrolled .header-menu-item {
 .projects-section {
   padding: var(--section-padding-y) 0;
   background: var(--color-bg-primary);
+  overflow: hidden;
 }
 
 .projects-slider-wrap {
@@ -825,10 +826,13 @@ body.home-page .header.scrolled .header-menu-item {
 
   .client-item .dim-box {
     border-radius: 8px;
+    padding: 0 16px;
   }
   
   .client-item .dim-box span {
     font-size: 16px;
+    word-break: break-all;
+    text-align: center;
   }
 
   .client-logo {

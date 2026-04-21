@@ -462,12 +462,12 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.disabled = true;
     submitBtn.textContent = "전송 중...";
 
-    if(!form.phone.value.match(/^01[0-9]?[0-9]{4}?[0-9]{4}$/)) {
-      alert("올바른 휴대폰 번호를 입력해주세요.");
-      submitBtn.disabled = false;
-      submitBtn.textContent = "문의하기";
-      return;
-    }
+    // if(!form.phone.value.match(/^01[0-9]?[0-9]{4}?[0-9]{4}$/)) {
+    //   alert("올바른 연락처로 입력해주세요.\n예) xxx-xxxx-xxxx");
+    //   submitBtn.disabled = false;
+    //   submitBtn.textContent = "문의하기";
+    //   return;
+    // }
 
     var checked = form.querySelectorAll('input[name="product"]:checked');
     if (checked.length === 0) {

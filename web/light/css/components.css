@@ -457,14 +457,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 24px 24px;
+  padding: 24px;
 }
 
 .contact-modal-form .contact-modal-content {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  height: calc(80vh - 200px);
+  height: calc(80vh - 192px);
   padding: 0 24px 16px;
   overflow-y: auto;
 }
@@ -473,7 +473,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px 24px 28px;
+  padding: 24px;
   background: #fff;
   position: absolute;
   bottom: 0;

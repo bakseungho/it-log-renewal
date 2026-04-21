@@ -554,46 +554,32 @@
   <script src="../../js/main.js"></script>
   
   <script>
-    // Swiper Tab Bar - 모바일에서만 활성화
+    // Tab Bar - 태블릿 이하 스크롤 + 센터링
     (function() {
-      var tabBarSwiper = null;
       var MOBILE_BP = 1024;
+      var tabBar = document.querySelector('.swiper-tab-bar');
+      if (!tabBar) return;
+      var wrapper = tabBar.querySelector('.swiper-wrapper');
 
-      function initTabBarSwiper() {
-        if (window.innerWidth <= MOBILE_BP && !tabBarSwiper) {
-          tabBarSwiper = new Swiper('.swiper-tab-bar', {
-            slidesPerView: 'auto',
-            freeMode: true,
-            watchOverflow: true,
-            slidesOffsetAfter: 32,
-            centeredSlides: false,
-            on: {
-              init: function() {
-                centerIfShort(this);
-              },
-              resize: function() {
-                centerIfShort(this);
-              }
-            }
-          });
-
-          function centerIfShort(swiper) {
-            var wrapper = swiper.wrapperEl;
-            var container = swiper.el;
-            if (wrapper.scrollWidth <= container.clientWidth) {
-              wrapper.style.justifyContent = 'center';
-            } else {
-              wrapper.style.justifyContent = 'flex-start';
-            }
+      function updateTabBar() {
+        if (window.innerWidth <= MOBILE_BP) {
+          tabBar.classList.add('tab-scroll-mode');
+          // 탭 전체 너비 계산
+          var slidesWidth = 0;
+          wrapper.querySelectorAll('.swiper-slide').forEach(function(s) { slidesWidth += s.offsetWidth; });
+          if (slidesWidth <= tabBar.clientWidth) {
+            wrapper.style.justifyContent = 'center';
+          } else {
+            wrapper.style.justifyContent = 'flex-start';
           }
-        } else if (window.innerWidth > MOBILE_BP && tabBarSwiper) {
-          tabBarSwiper.destroy(true, true);
-          tabBarSwiper = null;
+        } else {
+          tabBar.classList.remove('tab-scroll-mode');
+          wrapper.style.justifyContent = 'center';
         }
       }
 
-      initTabBarSwiper();
-      window.addEventListener('resize', initTabBarSwiper);
+      updateTabBar();
+      window.addEventListener('resize', updateTabBar);
     })();
 
     // Filter functionality - slide 클릭으로 처리 (모바일에서 버튼은 pointer-events:none)

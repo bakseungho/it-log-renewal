@@ -194,7 +194,7 @@
 
 .content-sub-text {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-text-secondary);
   text-align: center;
   margin: 0 0 48px;
@@ -432,18 +432,44 @@
 }
 
 @media (max-width: 1024px) {
+  .content-sub-text {
+    font-weight: 400;
+  }
+
+  .tech-section .tech-item {
+    gap: 40px;
+  }
+
   .tech-section .tech-item .tech-content-cont .tech-info-box p br {
     display: none;
   }
 
   .tech-section .tech-item .tech-img-cont {
-    width: 100%;
-    height: 60vw;
+    width: 50%;
+    height: 30vw;
   }
 
   .tech-section .tech-item .tech-img-cont img {
     width: 100% !important;
     height: 100% !important;
+  }
+
+  .tech-section .tech-item .tech-content-cont {
+    gap: 24px;
+  }
+
+  .tech-section .tech-item .tech-content-cont .tech-icon-box {
+    width: 56px;
+    height: 56px;
+  }
+
+  .tech-section .tech-item .tech-content-cont .tech-icon-box svg {
+    width: 32px;
+    height: auto;
+  }
+
+  .tech-section .tech-item .tech-content-cont .tech-info-box h4 {
+    font-size: 32px;
   }
 }
 
@@ -455,7 +481,6 @@
 
   .content-sub-text {
     font-size: 16px;
-    font-weight: 400;
     margin: 0 0 40px !important;
     text-align: center !important;
   }
@@ -494,6 +519,10 @@
     font-size: 20px !important;
   }
 
+  .company-content-text {
+    text-align: center !important;
+  }
+
   .company-content-cont .company-number-cont .company-number-item b {
     font-size: 32px;
   }
@@ -522,6 +551,11 @@
   .tech-section .tech-item {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .tech-section .tech-item .tech-img-cont {
+    width: 100%;
+    height: 45vw;
   }
 
   .tech-section .tech-item.tech-item-right {
@@ -708,12 +742,12 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .page-header {
-    padding: 24px 0 24px;
+    padding: 24px 0 80px;
     margin-top: 70px;
   }
   
   .page-header-content {
-    padding: 0 32px;
+    padding: 0;
   }
   
   .page-header-title {
@@ -724,6 +758,7 @@
   .page-header-image {
     max-width: 100%;
     box-shadow: none;
+    border-radius: 0;
   }
   
   .page-header-image img {
@@ -731,10 +766,8 @@
   }
   
   .content-card {
-    padding: 40px;
+    padding: 40px 0;
   }
-
-  
   
   .timeline-tabs {
     gap: 12px;
@@ -1490,17 +1523,28 @@
     gap: 12px;
   }
 
-  /* Swiper Tab Bar - 태블릿 이하 스와이프 탭 */
-  .swiper-tab-bar {
-    overflow: hidden;
-    padding: 0 16px;
-    margin: 0 -16px 24px;
+  /* Swiper Tab Bar - 태블릿 이하 스크롤 탭 */
+  .swiper-tab-bar.tab-scroll-mode {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 24px;
   }
 
-  .swiper-tab-bar .swiper-wrapper {
+  .swiper-tab-bar.tab-scroll-mode::-webkit-scrollbar {
+    display: none;
+  }
+
+  .swiper-tab-bar.tab-scroll-mode .swiper-wrapper {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    gap: 8px;
+    padding: 0 40px;
   }
 
   .swiper-tab-bar .swiper-slide {
@@ -1518,6 +1562,10 @@
   .swiper-tab-bar .filter-tab {
     pointer-events: none;
     font-size: 16px;
+  }
+
+  .swiper-tab-bar.tab-scroll-mode .swiper-wrapper {
+    padding: 0 20px;
   }
   
   .projects-grid {
@@ -1769,6 +1817,7 @@
 .cases-section {
   padding: var(--section-padding-y) 0;
   background: var(--color-bg-primary);
+  overflow: hidden;
 }
 
 .cases-title {
@@ -2237,7 +2286,7 @@
 /* Responsive - Solutions Specific */
 @media (max-width: 1024px) {
   .overview-features {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 24px;
     max-width: 100%;
   }
@@ -2259,6 +2308,7 @@
   .cases-slider-wrap {
     padding: 0;
     margin: 0 calc(-1 * var(--section-padding-x));
+    overflow: visible;
   }
 
   .cases-swiper-prev,
@@ -2336,6 +2386,7 @@
   }
   
   .overview-features {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
   

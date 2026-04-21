@@ -116,13 +116,11 @@ function initProjectsSwiper() {
   const el = document.querySelector('.projects-swiper');
   if (!el || typeof Swiper === 'undefined') return;
 
-  const mobilePadding = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--section-padding-x')) || 20;
-
   new Swiper('.projects-swiper', {
     slidesPerView: 1.2,
     spaceBetween: 16,
-    slidesOffsetBefore: mobilePadding,
-    slidesOffsetAfter: mobilePadding,
+    slidesOffsetBefore: 20,
+    slidesOffsetAfter: 20,
     loop: false,
     freeMode: {
       enabled: true,
@@ -137,7 +135,7 @@ function initProjectsSwiper() {
     passiveListeners: true,
     cssMode: false,
     breakpoints: {
-      769: { slidesPerView: 1.8, spaceBetween: 24, slidesOffsetBefore: mobilePadding, slidesOffsetAfter: mobilePadding },
+      769: { slidesPerView: 1.8, spaceBetween: 24, slidesOffsetBefore: 40, slidesOffsetAfter: 40 },
       1025: { slidesPerView: 3, spaceBetween: 32, slidesOffsetBefore: 0, slidesOffsetAfter: 0, freeMode: { enabled: false } },
     },
   });
@@ -149,13 +147,12 @@ function initCasesSwiper() {
   if (!el || typeof Swiper === 'undefined') return;
 
   const isTouchDevice = window.matchMedia('(max-width: 1024px)').matches;
-  const mobilePadding = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--section-padding-x')) || 20;
 
   new Swiper('.cases-swiper', {
     slidesPerView: 1.2,
     spaceBetween: 16,
-    slidesOffsetBefore: mobilePadding,
-    slidesOffsetAfter: mobilePadding,
+    slidesOffsetBefore: 20,
+    slidesOffsetAfter: 20,
     navigation: isTouchDevice ? false : {
       prevEl: '.cases-swiper-prev',
       nextEl: '.cases-swiper-next',
@@ -174,7 +171,7 @@ function initCasesSwiper() {
     passiveListeners: true,
     cssMode: false,
     breakpoints: {
-      769: { slidesPerView: 1.8, spaceBetween: 24, slidesOffsetBefore: mobilePadding, slidesOffsetAfter: mobilePadding },
+      769: { slidesPerView: 1.8, spaceBetween: 24, slidesOffsetBefore: 40, slidesOffsetAfter: 40 },
       1025: { slidesPerView: 3, spaceBetween: 32, slidesOffsetBefore: 0, slidesOffsetAfter: 0 },
     },
   });
