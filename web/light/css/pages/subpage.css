@@ -192,6 +192,14 @@
   text-align: center;
 }
 
+.content-sub-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: 0 0 48px;
+}
+
 .content-text {
   font-size: var(--font-size-body-lg);
   color: var(--color-text-secondary);
@@ -440,13 +448,19 @@
 }
 
 @media (max-width: 768px) {
-  .company-content-text, .content-text {
+  .content-text {
     font-size: 16px !important;
     font-weight: 400 !important;
-    margin: 0 0 40px;
   }
 
-  .company-content-text br {
+  .content-sub-text {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 0 40px !important;
+    text-align: center !important;
+  }
+
+  .content-sub-text br {
     display: none;
   }
 
@@ -473,6 +487,7 @@
 
   .company-content-cont .company-number-cont .company-number-item {
     width: 50%;
+    align-items: center;
   }
 
   .company-section .company-content-inner .company-content-cont .content-text {
@@ -481,6 +496,19 @@
 
   .company-content-cont .company-number-cont .company-number-item b {
     font-size: 32px;
+  }
+
+  .phil-section .phil-item {
+    gap: 32px;
+  }
+
+  .phil-section .phil-item .phil-icon-cont {
+    width: 58px;
+    height: 58px;
+  }
+
+  .phil-section .phil-item .phil-icon svg {
+    width: 48px;
   }
 
   .tech-section .tech-wrap {
@@ -705,6 +733,8 @@
   .content-card {
     padding: 40px;
   }
+
+  
   
   .timeline-tabs {
     gap: 12px;

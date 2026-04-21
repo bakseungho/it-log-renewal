@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: Production
+    # environment: Production # secrets이 아닌 environment를 사용할 경우, github repo > settings > environments 에서 미리 정의해둬야 함
 
     steps:
       # 1. 소스 코드 체크아웃
@@ -24,7 +24,6 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       # 3. S3로 파일 업로드 (sync 명령 사용)
-      # ./dist 부분을 빌드 결과물이 담긴 폴더명으로 수정하세요. (예: ./build)
       - name: Upload to S3
         run: |
           aws s3 sync ./web/light s3://${{ secrets.S3_BUCKET_NAME }} --delete

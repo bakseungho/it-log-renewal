@@ -819,12 +819,16 @@ body.home-page .header.scrolled .header-menu-item {
   
   .client-item {
     height: 80px;
-    padding: 0 12px;
+    padding: 0 20px;
     border-radius: 8px;
   }
 
   .client-item .dim-box {
     border-radius: 8px;
+  }
+  
+  .client-item .dim-box span {
+    font-size: 16px;
   }
 
   .client-logo {
