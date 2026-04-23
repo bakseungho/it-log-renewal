@@ -674,6 +674,7 @@ function initSubpageScrollAnimations() {
     '.policy-subtitle',
     '.overview-text',
     '.content-text',
+    '.content-sub-text',
     '.company-content-inner',
     '.contact-description',
     '.contact-actions',
@@ -681,6 +682,7 @@ function initSubpageScrollAnimations() {
     '.grid',
     '.overview-features',
     '.cases-grid',
+    '.cases-slider-wrap',
     '.projects-grid',
     '.components-grid',
     '.gallery-grid',
@@ -748,8 +750,12 @@ function initSubpageScrollAnimations() {
     }
 
     // 모든 대상 초기 숨김
+    const heavySelectors = '.cases-slider-wrap, .cases-grid, .projects-grid';
     animTargets.forEach(target => {
-      gsap.set(target.el, { opacity: 0, y: 30 });
+      const isHeavy = target.el.matches && target.el.matches(heavySelectors);
+      target.el.style.willChange = isHeavy ? 'opacity' : 'transform, opacity';
+      target.isHeavy = isHeavy;
+      gsap.set(target.el, isHeavy ? { opacity: 0 } : { opacity: 0, y: 20 });
     });
 
     // 섹션이 뷰포트 80% 지점에 도달하면 내부 요소 순차 등장
@@ -761,13 +767,17 @@ function initSubpageScrollAnimations() {
         let delay = 0;
         animTargets.forEach(target => {
           gsap.to(target.el, {
-            opacity: 1, y: 0,
-            duration: 0.7,
+            opacity: 1,
+            ...(target.isHeavy ? {} : { y: 0 }),
+            duration: target.isHeavy ? 0.4 : 0.5,
             delay: delay,
-            ease: 'power2.out',
-            onComplete: () => { gsap.set(target.el, { clearProps: 'transform' }); }
+            ease: 'power1.out',
+            onComplete: () => {
+              target.el.style.willChange = 'auto';
+              gsap.set(target.el, { clearProps: 'transform' });
+            }
           });
-          delay += 0.18;
+          delay += 0.12;
         });
       }
     });
@@ -1352,6 +1362,16 @@ function initTimelineTabsSticky() {
   
   // 초기 실행
   checkSticky();
+}
+
+// 개인정보처리방침 이동
+function privacyRevisionMove() {
+  const privacyRv = document.querySelector('#privacyRevision');
+  // const privacyBtn = document.querySelector('#privacyRevisionBtn');
+
+  if(privacyRv.value) {
+    location.href = privacyRv.value;
+  }
 }
 
 // DOMContentLoaded에서 타임라인 애니메이션 초기화

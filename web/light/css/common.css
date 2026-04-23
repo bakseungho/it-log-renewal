@@ -230,6 +230,14 @@ h4, .h4 {
   transform: scale(1);
 }
 
+.pc-content-image {
+  display: block;
+}
+
+.mobile-content {
+  display: none;
+}
+
 /* Fallback: Show elements after 100ms if animation doesn't trigger */
 .scale-in.will-animate {
   animation: scaleInFallback 0.1s ease 0.1s forwards;
@@ -313,6 +321,14 @@ h4, .h4 {
 
   .section-description br {
     display: none;
+  }
+
+  .pc-content-image {
+    display: none;
+  }
+
+  .mobile-content {
+    display: flex;
   }
 }
 

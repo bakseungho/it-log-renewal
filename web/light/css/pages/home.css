@@ -582,9 +582,9 @@ body.home-page .header.scrolled .header-menu-item {
 }
 
 .projects-swiper .card-project {
-  border: 1px solid var(--color-line-regular);
+  /* border: 1px solid var(--color-line-regular);
   background: var(--color-bg-light);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-lg); */
   overflow: hidden;
   display: block;
   height: 100%;

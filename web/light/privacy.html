@@ -232,9 +232,10 @@
   </header>
 
   <!-- Page Header -->
-  <section class="page-header">
+  <section class="page-header policy-header">
     <div class="page-header-content">
       <h1 class="page-header-title">개인정보처리방침</h1>
+      <p style="display: none;">시행일: 2026년 04월 23일</p>
     </div>
   </section>
 
@@ -361,6 +362,19 @@
       - 정보보호마크인증위원회 (www.eprivacy.or.kr/02-580-0533~4)<br />
       - 대검찰청 인터넷범죄수사센터 (http://icic.sppo.go.kr/02-3480-3600)<br />
       - 경찰청 사이버테러대응센터 (www.ctrc.go.kr/02-392-0330)
+
+      <!-- 과거 개정 선택 -->
+      <div class="privacy-revision-select" style="display: none;">
+        <div class="privacty_cont">
+          <select id="privacyRevision">
+            <option value="privacy.html" selected>개인정보처리방침 (2026.04.23)</option>
+            <option value="revisions/2016.html">개인정보처리방침 (2016)</option>
+          </select>
+        </div>
+
+        <button type="button" id="privacyRevisionBtn" onclick="privacyRevisionMove();">이동</button>
+      </div>
+      <!-- // 과거 개정 선택 -->
       </div>
   </section>
 
