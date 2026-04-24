@@ -947,6 +947,7 @@ body.home-page .header.scrolled .header-menu-item {
 
   .main-contact .contact-cont {
     flex-direction: column;
+    gap: 48px;
   }
 
   .main-contact .contact-cont .contact-item {
