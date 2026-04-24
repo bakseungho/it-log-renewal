@@ -1101,6 +1101,47 @@ function initCardHoverEffects() {
   });
 }
 
+// Trust stats sliding highlight (disabled)
+// function initTrustStatsHighlight() {
+//   const container = document.querySelector('.trust-stats');
+//   if (!container) return;
+//
+//   const highlight = container.querySelector('.trust-stats-highlight');
+//   const cards = container.querySelectorAll('.card-stat');
+//   if (!highlight || cards.length === 0) return;
+//
+//   let isActive = false;
+//
+//   function moveHighlight(card, animate) {
+//     const containerRect = container.getBoundingClientRect();
+//     const cardRect = card.getBoundingClientRect();
+//     const offsetX = cardRect.left - containerRect.left;
+//
+//     if (!animate) {
+//       highlight.style.transition = 'opacity 0.3s';
+//     } else {
+//       highlight.style.transition = 'transform 0.4s var(--ease-in-out), opacity 0.3s';
+//     }
+//
+//     highlight.style.width = cardRect.width + 'px';
+//     highlight.style.height = cardRect.height + 'px';
+//     highlight.style.transform = 'translateX(' + offsetX + 'px)';
+//     highlight.classList.add('active');
+//   }
+//
+//   cards.forEach(card => {
+//     card.addEventListener('mouseenter', () => {
+//       moveHighlight(card, isActive);
+//       isActive = true;
+//     });
+//   });
+//
+//   container.addEventListener('mouseleave', () => {
+//     highlight.classList.remove('active');
+//     isActive = false;
+//   });
+// }
+
 // Client logo hover
 function initClientLogoEffects() {
   const logos = document.querySelectorAll('.client-logo');
@@ -1139,6 +1180,7 @@ function initClientLogoEffects() {
 // Initialize hover effects
 document.addEventListener('DOMContentLoaded', () => {
   initCardHoverEffects();
+  // initTrustStatsHighlight();
   initClientLogoEffects();
 });
 
